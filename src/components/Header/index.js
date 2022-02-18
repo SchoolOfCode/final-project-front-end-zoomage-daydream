@@ -25,7 +25,9 @@ const Header = () => {
           </Link>
         </div>
         <div className={css.links}>
-          <p>Login</p>
+          <Link className={css.headerLinks} to="/register">
+            <p>Login</p>
+          </Link>
         </div>
       </div>
     </div>

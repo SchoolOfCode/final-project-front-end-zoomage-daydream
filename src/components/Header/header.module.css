@@ -20,4 +20,8 @@
 
 .headerLinks {
   text-decoration: none;
+  color:#000000;
+}
+.headerLinks:hover{
+font-weight: bold;
 }
