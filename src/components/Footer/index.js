@@ -1,20 +1,21 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
-import "./Footer.css";
+import css from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer">
+    <footer className={css.footerContainer}>
+      <div className={css.icons}>
         <p>Contact Us</p>
-        <SocialIcon url="https://www.facebook.com/schoolofcode" />
-        <SocialIcon url="https://www.instagram.com/theschoolofcode/?hl=en" />
-        <SocialIcon url="https://twitter.com/jaketrent" />
-        <SocialIcon url="https://www.youtube.com/channel/UCKBzheEKcrqsaJhMV0f_Dmg" />
-        <SocialIcon url="mailto:myemailaddress@gmail.com" />
+        <SocialIcon className={css.icon} url="https://www.facebook.com/schoolofcode" />
+        <SocialIcon className={css.icon} url="https://www.instagram.com/theschoolofcode/?hl=en" />
+        <SocialIcon className={css.icon} url="https://twitter.com/jaketrent" />
+        <SocialIcon className={css.icon} url="https://www.youtube.com/channel/UCKBzheEKcrqsaJhMV0f_Dmg" />
+        <SocialIcon className={css.icon} url="mailto:myemailaddress@gmail.com" />
+      </div>
         <p>Copyright ©️ Space 2022 </p>
       </footer>
-    </div>
+   
   );
 };
 
