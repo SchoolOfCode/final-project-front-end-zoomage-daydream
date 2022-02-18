@@ -7,6 +7,7 @@
   color: white;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
 }
 
@@ -14,8 +15,10 @@
   display: flex;
   padding: 2rem;
   justify-content: space-between;
+  align-items: center;
 }
 
-.icon {
+.brandIcon {
   margin-left: 1rem;
+  transform: scale(2);
 }
