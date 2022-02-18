@@ -6,21 +6,27 @@ import { Link } from "react-router-dom";
 // Header component
 const Header = () => {
   return (
-    <div>
-      Header
-      <div className={css.Logo}>
+    <div className={css.header}>
+      <div className={css.logo}>
         <Link to="/">
           <img src={Logo} alt="Logo" />
         </Link>
       </div>
-      <div>
-        <Link to="/mission">
-          <p>Our Mission</p>
-        </Link>
-        <Link to="/register">
-          <p>Become a Host</p>
-        </Link>
-        <p>Login</p>
+      <div className={css.linkList}>
+        <div className={css.links}>
+          {" "}
+          <Link className={css.headerLinks} to="/mission">
+            <p>Our Mission</p>
+          </Link>
+        </div>
+        <div className={css.links}>
+          <Link className={css.headerLinks} to="/register">
+            <p>Become a Host</p>
+          </Link>
+        </div>
+        <div className={css.links}>
+          <p>Login</p>
+        </div>
       </div>
     </div>
   );
