@@ -1,0 +1,24 @@
+.footerContainer {
+  background-color: #051bd9;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.icons {
+  display: flex;
+  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brandIcon {
+  margin-left: 1rem;
+  transform: scale(2);
+}
