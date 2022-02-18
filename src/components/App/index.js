@@ -1,5 +1,4 @@
-import Show from "../Show";
-
+import Footer from "../Footer";
 
 import "./App.css";
 
@@ -7,6 +6,7 @@ function App() {
   return (
     <div className="App">
   HEt
+  <Footer />
     </div>
   );
 }
