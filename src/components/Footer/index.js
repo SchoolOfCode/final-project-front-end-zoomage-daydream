@@ -1,10 +1,9 @@
 import React from "react";
-import { SocialIcon } from "react-social-icons";
+
+// import { SocialIcon } from "react-social-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faLinkedin,
   faTwitter,
-  faGithub,
   faYoutube,
   faInstagram
 } from "@fortawesome/free-brands-svg-icons";
@@ -17,26 +16,69 @@ const Footer = () => {
     <footer className={css.footerContainer}>
       <div className={css.icons}>
         <p>Contact Us</p>
-         <FontAwesomeIcon
-              icon={faInstagram}
-              className={css.brandIcon}
-            ></FontAwesomeIcon>
-         <FontAwesomeIcon
-              icon={faYoutube}
-              className={css.brandIcon}
-            ></FontAwesomeIcon>
-         <FontAwesomeIcon
-              icon={faTwitter}
-              className={css.brandIcon}
-            ></FontAwesomeIcon>
-         <FontAwesomeIcon
-              icon={faEnvelope}
-              className={css.brandIcon}
-            ></FontAwesomeIcon>
+
+        <a
+          href="https://twitter.com/theSchoolOfCode?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+          className="twitter"
+        >
+          <FontAwesomeIcon
+            icon={faTwitter}
+            className={css.brandIcon}
+          ></FontAwesomeIcon>
+        </a>
+
+        <a
+          href="https://www.instagram.com/theschoolofcode/?hl=en"
+          className="instagram"
+        >
+          <FontAwesomeIcon
+            icon={faInstagram}
+            className={css.brandIcon}
+          ></FontAwesomeIcon>
+        </a>
+
+        <a
+          href="https://www.youtube.com/channel/UCKBzheEKcrqsaJhMV0f_Dmg"
+          className="youtube"
+        >
+          <FontAwesomeIcon
+            icon={faYoutube}
+            className={css.brandIcon}
+          ></FontAwesomeIcon>
+        </a>
+
+        <a href="https://mail.google.com" className="mail">
+          <FontAwesomeIcon
+            icon={faEnvelope}
+            className={css.brandIcon}
+          ></FontAwesomeIcon>
+        </a>
+
+        {/* <FontAwesomeIcon
+          icon={faInstagram}
+          className={css.brandIcon}
+        ></FontAwesomeIcon> */}
+
+        {/* <FontAwesomeIcon
+          icon={faInstagram}
+          className={css.brandIcon}
+        ></FontAwesomeIcon> */}
+        {/* <FontAwesomeIcon
+          icon={faYoutube}
+          className={css.brandIcon}
+        ></FontAwesomeIcon> */}
+
+        {/* <FontAwesomeIcon
+          icon={faTwitter}
+          className={css.brandIcon}
+        ></FontAwesomeIcon> */}
+        {/* <FontAwesomeIcon
+          icon={faEnvelope}
+          className={css.brandIcon}
+        ></FontAwesomeIcon> */}
       </div>
-        <p>Copyright ©️ Space 2022 </p>
-      </footer>
-   
+      <p>Copyright ©️ Space 2022 </p>
+    </footer>
   );
 };
 
