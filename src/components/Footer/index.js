@@ -47,35 +47,14 @@ const Footer = () => {
           ></FontAwesomeIcon>
         </a>
 
-        <a href="https://mail.google.com" className="mail">
+        <a href="mailto:someone@yoursite.com" className="mail">
           <FontAwesomeIcon
             icon={faEnvelope}
             className={css.brandIcon}
           ></FontAwesomeIcon>
         </a>
 
-        {/* <FontAwesomeIcon
-          icon={faInstagram}
-          className={css.brandIcon}
-        ></FontAwesomeIcon> */}
 
-        {/* <FontAwesomeIcon
-          icon={faInstagram}
-          className={css.brandIcon}
-        ></FontAwesomeIcon> */}
-        {/* <FontAwesomeIcon
-          icon={faYoutube}
-          className={css.brandIcon}
-        ></FontAwesomeIcon> */}
-
-        {/* <FontAwesomeIcon
-          icon={faTwitter}
-          className={css.brandIcon}
-        ></FontAwesomeIcon> */}
-        {/* <FontAwesomeIcon
-          icon={faEnvelope}
-          className={css.brandIcon}
-        ></FontAwesomeIcon> */}
       </div>
       <p>Copyright ©️ Space 2022 </p>
     </footer>
