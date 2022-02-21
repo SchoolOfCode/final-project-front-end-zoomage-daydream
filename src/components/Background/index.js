@@ -1,7 +1,7 @@
 import React from "react";
-import background from "./images/background.jpg"
+// import background from "./images/background.jpg"
 import css from "./background.module.css"
-
+import background from "../../images/background.jpg"
 
 
 const Background = ()=>{
