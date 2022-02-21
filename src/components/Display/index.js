@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Mission from "../../Pages/Mission";
 import Home from "../../Pages/Home";
 import Background from "../Background";
-
+import Card from "../Card";
 const Display = () => {
   return (
     <div>
@@ -15,7 +15,7 @@ const Display = () => {
       <Header />
       <h2 className="slogan">The place to find your Space</h2>
       <Background />
-    
+      <Card />
     </div>
   );
 };
