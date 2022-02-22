@@ -19,7 +19,6 @@ const Display = () => {
       <Header />
       <h2 className="slogan">The place to find your Space</h2>
       <Background />
-      <SearchForm/>
       <Card />
     </div>
     </>
