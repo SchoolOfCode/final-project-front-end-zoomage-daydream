@@ -6,14 +6,15 @@ const SearchForm = () => {
   const [startDate, setStartDate] = useState(new Date());
 
   return (
+    
     <DatePicker
       selected={startDate}
       onChange={(date) => setStartDate(date)}
-      format="dd-MMM-yy"
+      showTimeSelect
+      dateFormat="Pp"
+      format="dd-mm-yyyy"
     />
   );
 };
 
 export default SearchForm;
-
-
