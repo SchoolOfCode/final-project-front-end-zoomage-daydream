@@ -1,45 +1,19 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-const SearchForm =(props) => {
-  const [enteredDate, setEnteredDate] = useState("");
-  
-  const dateChangeHandler = (event) => {
-    setEnteredDate(event.target.value);
-    
-    const submitHandler = (event) => {
-    event.preventDefault();
-  
-    const Date = {
-        date: new Date(enteredDate),
-      };
-  
-    props.onSaveData(Date);
-      setEnteredDate("");
-    };
+const SearchForm = () => {
+  const [startDate, setStartDate] = useState(new Date());
+
   return (
-    
-    
-    
-    <form onSubmit={submitHandler}>
-   <div className="search">
-     <label>Date</label>
-     <input
-       type="date"
-       min="2019-01-01"
-       max="2022-12-31"
-       value={enteredDate}
-       onChange={dateChangeHandler}
-     />
-      <div className="button">
-        <button type="button" onClick={props.onCancel}>
-          Cancel
-        </button>
-        <button type="submit">Add Date</button>
-      </div>
-   </div>
-   </form>
-  )
-  }
-}
+    <DatePicker
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
+      format="dd-MMM-yy"
+    />
+  );
+};
 
 export default SearchForm;
+
+
