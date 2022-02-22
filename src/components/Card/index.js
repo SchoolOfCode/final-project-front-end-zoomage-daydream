@@ -1,0 +1,1 @@
+// make a card that can be used through out the website. changing pictures and information
