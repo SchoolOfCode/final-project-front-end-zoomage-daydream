@@ -5,8 +5,12 @@ import Mission from "../../Pages/Mission";
 import Home from "../../Pages/Home";
 import Background from "../Background";
 import Card from "../Card";
+import SearchForm from "../SearchForm/SearchForm";
+
+
 const Display = () => {
   return (
+    <>
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -15,8 +19,10 @@ const Display = () => {
       <Header />
       <h2 className="slogan">The place to find your Space</h2>
       <Background />
+      <SearchForm/>
       <Card />
     </div>
+    </>
   );
 };
 
