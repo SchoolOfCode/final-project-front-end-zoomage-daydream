@@ -1,12 +1,12 @@
-.formBackground{
- width: 95%;
- margin-left: 2.5%;
- height: 40rem;
+.formBackground {
+  width: 100%;
+  height: 80vh;
+  padding-top: 1rem;
 }
 
-.form{
- background-color: blue;
- width: 40%;
- height: 70%;
-
+.form {
+  background-color: rgba(242, 242, 247, 0.9);
+  width: 20%;
+  height: 40%;
+  margin: 2rem 2rem 2rem 2rem;
 }
