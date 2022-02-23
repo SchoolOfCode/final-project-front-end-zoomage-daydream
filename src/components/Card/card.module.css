@@ -1,4 +1,11 @@
-.card1 {
-  background-color: blue;
-  border: 1px solid red;
+.card {
+margin: 2rem;
+margin-bottom: 2rem;
+
+}
+
+.details{
+  border: 2px solid black;
+  display: inline-block;
+  width: 30%;
 }

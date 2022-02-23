@@ -1,0 +1,19 @@
+.slogan {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 5rem;
+  grid-row-gap: 0px;
+  width: 90%;
+  overflow-x: scroll;
+  margin-left: 4rem;
+}
+
+.cards::-webkit-scrollbar {
+  display: none;
+}

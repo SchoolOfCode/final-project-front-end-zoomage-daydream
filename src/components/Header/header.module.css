@@ -1,6 +1,8 @@
 .header {
   display: flex;
   justify-content: space-between;
+  border: 2px solid #cac7c7;
+
 }
 
 .links {
@@ -14,7 +16,7 @@
 }
 
 .logo {
-  transform: scale(1.5);
+  transform: scale(1);
   margin: 1rem 0 0 3rem;
 }
 
