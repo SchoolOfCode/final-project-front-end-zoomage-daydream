@@ -12,26 +12,24 @@ const SearchForm = () => {
       style={{ backgroundImage: "url( " + background + ")" }}
     >
       <form className={css.form}>
-        <h3>Location</h3>
+        <label> Location: </label>
+        <br />
         <input type="text" placeholder="City" />
-        <h3>Date</h3>
+        <br/>
         <Calendar />
+        <br/>
         <Time />
-        <h3>Type of Space </h3>
-        <p></p>
-        <p></p>
-        <p></p>
+        <label>Type of space:</label>
+        <br />
+        <select name="Type of space" id="spaces">
+          <option value="Flat">Flat</option>
+          <option value="Room">Room</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
       </form>
     </div>
   );
 };
 
 export default SearchForm;
-
-// <DatePicker
-//   selected={startDate}
-//   onChange={(date) => setStartDate(date)}
-//   showTimeSelect
-//   dateFormat="Pp"
-//   format="dd-mm-yyyy"
-// />
