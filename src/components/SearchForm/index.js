@@ -1,21 +1,26 @@
 import React, { useState } from "react";
 import css from "./searchform.module.css";
 import background from "../../images/background.jpg";
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
+import useform from "react-hook-form";
+import Calendar from "../Calendar";
+import Time from "../Time/Time";
 
 const SearchForm = () => {
-  // const [startDate, setStartDate] = useState(new Date());
-
   return (
-    <div className={css.formBackground} style={{ backgroundImage: "url( "+background+")" }}>
+    <div
+      className={css.formBackground}
+      style={{ backgroundImage: "url( " + background + ")" }}
+    >
       <form className={css.form}>
-        <p>dd</p>
-        <p>dd</p>
-        <p>dd</p>
-        <p>dd</p>
-        <p>dd</p>
-        <p>dd</p>
+        <h3>Location</h3>
+        <input type="text" placeholder="City" />
+        <h3>Date</h3>
+        <Calendar />
+        <Time />
+        <h3>Type of Space </h3>
+        <p></p>
+        <p></p>
+        <p></p>
       </form>
     </div>
   );
