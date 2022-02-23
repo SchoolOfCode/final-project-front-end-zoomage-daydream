@@ -6,7 +6,7 @@ function Card() {
   return (
     <div className={css.card}>
       <div>
-        <img src={cardPic1} alt="cardPic" />
+        <img className={css.image}  src={cardPic1} alt="cardPic" />
       </div>
       <div className={css.details}>
         <p>BERMONDSEY</p>
