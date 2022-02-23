@@ -8,6 +8,7 @@ import TimeRange from "react-time-range";
 import moment from "moment";
 
 const SearchForm = () => {
+  const mm = background;
   // using hookform in react
   const { register, handleSubmit } = useForm();
   // store form input into a state
@@ -47,38 +48,50 @@ const SearchForm = () => {
   console.log(form);
 
   return (
-    <div
-      className={css.formBackground}
-      style={{ backgroundImage: "url( " + background + ")" }}
-    >
+    <div className={css.formBackground}>
       <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-        <label> Location: </label>
-        <br />
-        <input type="text" placeholder="City" {...register("location")} />
-        <br />
-        <DatePicker
-          value={dates}
-          onChange={setDates}
-          placeholder="Choose dates"
-          format="DD/MM/YYYY"
-        />
+        <h2 className={css.formHeading}>Reserve Your Space</h2>
+        <div className={css.eachSect}>
+          <label className={css.label}> Location: </label>
+          <input
+            className={css.field}
+            type="text"
+            placeholder="City"
+            {...register("location")}
+          />
+        </div>
+        <div className={css.eachSect}>
+          <label>Dates:</label>
+          <DatePicker
+            value={dates}
+            onChange={setDates}
+            placeholder="Choose dates"
+            format="DD/MM/YYYY"
+          />
+        </div>
         <br />
         <TimeRange
           startMoment={startTime}
           endMoment={endTime}
           onStartTimeChange={handleStartTime}
           onEndTimeChange={handleEndTime}
-        />
-        <label>Type of space:</label>
-        <br />
-        <select name="Type of space" id="spaces" {...register("Type of space")}>
-          <option value="Flat">Flat</option>
-          <option value="Room">Room</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
-        <br />
-        <input type="submit" />
+        />{" "}
+        <div className={css.eachSect}>
+          <label className={css.label}> Type of space:</label>
+
+          <select
+            name="Type of space"
+            id="spaces"
+            className={css.field}
+            {...register("Type of space")}
+          >
+            <option value="Flat">Flat</option>
+            <option value="Room">Room</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+        </div>
+        <input type="submit" className={css.field} />
       </form>
     </div>
   );

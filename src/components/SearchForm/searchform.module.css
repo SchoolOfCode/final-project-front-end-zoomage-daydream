@@ -1,12 +1,44 @@
 .formBackground {
-  width: 100%;
-  height: 50vh;
-  padding-top: 1rem;
+  width: 95%;
+  height: 70vh;
+  padding-top: 3rem;
+  margin-left: 2.5%;
+  background-image: url("../../images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
 .form {
-  background-color: rgba(242, 242, 247, 0.9);
-  width: 20%;
-  height: 40%;
+  background-color: rgba(242, 242, 247);
+  width: 25%;
+  height: 70%;
   margin: 2rem 2rem 2rem 2rem;
+  border-radius: 5%;
+}
+
+.formHeading {
+  font-family: "Philosopher", sans-serif;
+  text-align: center;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.label {
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.5rem;
+}
+.field {
+  transform: scale(1.5);
+}
+
+.eachSect {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.DatePicker{
+    transform: scale(1.5);
 }

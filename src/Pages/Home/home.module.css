@@ -1,6 +1,9 @@
 .slogan {
-  margin-top: 4rem;
+  padding: 4rem;
   text-align: center;
+  font-family: 'Philosopher', sans-serif;
+  color: rgb(44, 58, 180);
+  font-size: 5rem;
 }
 
 .cards {
