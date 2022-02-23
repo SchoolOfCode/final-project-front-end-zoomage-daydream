@@ -8,7 +8,6 @@ import TimeRange from "react-time-range";
 import moment from "moment";
 
 const SearchForm = () => {
-  const mm = background;
   // using hookform in react
   const { register, handleSubmit } = useForm();
   // store form input into a state
@@ -60,13 +59,14 @@ const SearchForm = () => {
             {...register("location")}
           />
         </div>
-        <div className={css.eachSect}>
+        <div className={css.Datecontainer}>
           <label>Dates:</label>
           <DatePicker
             value={dates}
             onChange={setDates}
             placeholder="Choose dates"
             format="DD/MM/YYYY"
+           className={css.fuckoff}
           />
         </div>
         <br />
