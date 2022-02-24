@@ -13,7 +13,7 @@ const Display = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="mission" element={<Mission />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="Dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </>
