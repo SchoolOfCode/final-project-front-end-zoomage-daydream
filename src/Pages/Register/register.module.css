@@ -1,5 +1,5 @@
 .inputs {
-  margin: 10px 0px 10px 30px;
+  margin: 1rem 0rem 0rem 2rem;
 }
 
 .labels {
@@ -10,16 +10,15 @@
   transform: scale(1.5);
   margin: 1rem;
 }
+
 .backgroundRegister {
-  border: 2px solid red;
   width: 30%;
   height: 30vh;
   padding-top: 3rem;
-  margin-left: 2.5%;
-  background-image: url("../../images/background.jpg");
+  margin-left: 50rem;
+  margin-bottom: 60rem;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   display: flex;
- 
 }

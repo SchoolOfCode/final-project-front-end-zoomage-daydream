@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import css from "./register.module.css";
-
+import background from "../../images/background.jpg"
 const Register = () => {
   return (
     <div>
@@ -54,9 +54,12 @@ const Register = () => {
           />
         </div>
       </div>
-      <div className={css.backgroundRegister}>
-        
-      </div>
+
+   
+        <div className={css.backgroundRegister}>
+          <img src={background} alt=""className={css.imag} />
+        </div>
+     
 
       <Footer />
     </div>
