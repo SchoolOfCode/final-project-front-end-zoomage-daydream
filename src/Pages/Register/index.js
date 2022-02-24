@@ -5,10 +5,10 @@ import css from "./register.module.css";
 import background from "../../images/background.jpg";
 const Register = () => {
   return (
-    <div>
+    <div className={css.registerSect}>
       <Header />
       <div className={css.mainContainer}>
-        <div className={css.inputs}>
+        <form className={css.inputs}>
           <div>
             <label className={css.labels}> FIRST NAME </label>
             <br></br>
@@ -59,13 +59,14 @@ const Register = () => {
               className={css.form}
             />
           </div>
-        </div>
-
+        </form>
         <div className={css.backgroundRegister}>
           <img src={background} alt="" className={css.imag} />
         </div>
       </div>
-      <Footer />
+      <div className={css.footer}>
+     <Footer/>
+      </div>
     </div>
   );
 };

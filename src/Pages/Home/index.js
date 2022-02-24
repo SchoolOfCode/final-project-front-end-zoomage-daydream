@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
 import SearchForm from "../../components/SearchForm";
-import css from"./home.module.css"
+import css from "./home.module.css";
 
 const Home = () => {
   return (
@@ -23,7 +23,6 @@ const Home = () => {
         <Card />
         <Card />
       </div>
-
       <Footer />
     </div>
   );
