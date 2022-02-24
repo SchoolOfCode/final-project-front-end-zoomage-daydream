@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
-
 import API_URL from "../../config";
 
 const SearchForm = () => {
