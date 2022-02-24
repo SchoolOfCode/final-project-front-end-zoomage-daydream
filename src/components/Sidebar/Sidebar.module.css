@@ -1,0 +1,12 @@
+.sidebarContainer {
+    background-color: aqua;
+    padding: 1.5rem;
+    width: 200px;
+    height: 700px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 15px;
+        /* .div1 { grid-area: 1 / 1 / 4 / 2; } */
+}
