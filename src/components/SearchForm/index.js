@@ -4,14 +4,14 @@ import { useForm } from "react-hook-form";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
-import axios from "axios";
-import API_URL  from "../../config";
+
+import API_URL from "../../config";
 
 const SearchForm = () => {
   // using hookform in react
   const { register, handleSubmit } = useForm();
   // store form input into a state
-  const [form, setForm] = useState();
+  const [form, setForm] = useState({});
   const [dates, setDates] = useState([]);
   // Time Range
   const [startTime, setStartTime] = useState(moment());
@@ -44,11 +44,20 @@ const SearchForm = () => {
     setForm(obj);
   };
 
- 
+  // const API_URL = process.env.REACT_APP_API_URL;
+  // console.log("url", API_URL);
+  console.log(form);
+
+  const { location, type_of_space } = form;
+
+  // console.log("location", location, "type", type_of_space);
+
   const fetchData = async () => {
-    const result = await fetch(`${API_URL}users`);
+    const result = await fetch(
+      `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
+    );
     const data = await result.json();
-    console.log(data);
+    // console.log(data);
   };
 
   useEffect(() => {
@@ -88,13 +97,13 @@ const SearchForm = () => {
           <label className={css.label}> Type of space:</label>
 
           <select
-            name="Type of space"
+            name="type_of_space"
             id="spaces"
             className={css.field}
-            {...register("Type of space")}
+            {...register("type_of_space")}
           >
-            <option value="Flat">Flat</option>
-            <option value="Room">Room</option>
+            <option value="flat">Flat</option>
+            <option value="house">House</option>
             <option value="mercedes">Mercedes</option>
             <option value="audi">Audi</option>
           </select>
