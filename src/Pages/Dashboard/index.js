@@ -12,9 +12,16 @@ function Dashboard() {
       <Header />
       <Sidebar />
       <h1>My Bookings</h1>
+      <div className={css.currentBooking}>
+        <h2>Current Booking</h2>
+        <Card />
+      </div>
       <Profile />
-      <Card />
-      <Card />
+      <div className={css.historicalBooking}>
+        <h1>History of Bookings</h1>
+        <Card />
+        <Card />
+      </div>
       <Footer />
     </div>
   );
