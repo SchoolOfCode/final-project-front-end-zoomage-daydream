@@ -1,16 +1,25 @@
 .inputs {
-    margin: 10px 0px 10px 30px;
-    
-    
-
+  margin: 10px 0px 10px 30px;
 }
 
 .labels {
-    margin-bottom: 10px;
+  font-weight: bold;
 }
 
-
 .form {
-    transform: scale(1.5);
-    margin-left: 30px;
+  transform: scale(1.5);
+  margin: 1rem;
+}
+.backgroundRegister {
+  border: 2px solid red;
+  width: 30%;
+  height: 30vh;
+  padding-top: 3rem;
+  margin-left: 2.5%;
+  background-image: url("../../images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+ 
 }
