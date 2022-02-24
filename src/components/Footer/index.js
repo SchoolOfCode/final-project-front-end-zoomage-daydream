@@ -53,8 +53,6 @@ const Footer = () => {
             className={css.brandIcon}
           ></FontAwesomeIcon>
         </a>
-
-
       </div>
       <p>Copyright ©️ Space 2022 </p>
     </footer>
