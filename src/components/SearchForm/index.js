@@ -4,8 +4,7 @@ import { useForm } from "react-hook-form";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
-import axios from "axios";
-import API_URL  from "../../config";
+import API_URL from "../../config";
 
 const SearchForm = () => {
   // using hookform in react
@@ -43,10 +42,10 @@ const SearchForm = () => {
     });
     setForm(obj);
   };
-
- 
+console.log(form)
+  console.log("Apu", API_URL);
   const fetchData = async () => {
-    const result = await fetch(`${API_URL}users`);
+    const result = await fetch(`${API_URL}/spaces/?address=11&type_of_space=house`);
     const data = await result.json();
     console.log(data);
   };
