@@ -9,6 +9,7 @@ function Dashboard() {
     <div>
       <Header />
       <Sidebar />
+      <h1>My Bookings</h1>
       <Footer />
     </div>
   );
