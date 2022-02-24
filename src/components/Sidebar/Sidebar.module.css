@@ -11,3 +11,9 @@
         /* .div1 { grid-area: 1 / 1 / 4 / 2; } */
         float: left;
 }
+
+.sidebarIcons {
+    color: blue;
+    margin-right: 0.75rem;
+
+}

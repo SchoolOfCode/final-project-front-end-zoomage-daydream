@@ -30,35 +30,35 @@ function Sidebar() {
     <div className={css.sidebarContainer}>
       <h2>
         {" "}
-        <FontAwesomeIcon icon={faUser} />
+        <FontAwesomeIcon icon={faUser} className={css.sidebarIcons} />
         Username
       </h2>
 
       <h2>
-        <FontAwesomeIcon icon={faHouse} />
+        <FontAwesomeIcon icon={faHouse} className={css.sidebarIcons} />
         Home
       </h2>
 
       <h2>
-        <FontAwesomeIcon icon={faMessage} />
+        <FontAwesomeIcon icon={faMessage} className={css.sidebarIcons}/>
         Messages
       </h2>
 
       <h2>
-        <FontAwesomeIcon icon={faCalendarCheck} />
+        <FontAwesomeIcon icon={faCalendarCheck} className={css.sidebarIcons}/>
         My Bookings
       </h2>
 
       <h2>
-        <FontAwesomeIcon icon={faHeart} />
+        <FontAwesomeIcon icon={faHeart} className={css.sidebarIcons} />
         Favourites
       </h2>
       <h2>
-        <FontAwesomeIcon icon={faGear} />
+        <FontAwesomeIcon icon={faGear} className={css.sidebarIcons} />
         Settings
       </h2>
       <h2>
-        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+        <FontAwesomeIcon icon={faArrowRightFromBracket} className={css.sidebarIcons}/>
         Log Out
       </h2>
     </div>
