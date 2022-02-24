@@ -9,16 +9,25 @@
 .form {
   transform: scale(1.5);
   margin: 1rem;
+  float: left;
 }
 
 .backgroundRegister {
-  width: 30%;
+  width: 0%;
   height: 30vh;
   padding-top: 3rem;
-  margin-left: 50rem;
-  margin-bottom: 60rem;
+  /* margin-left: 50rem;
+  margin-bottom: 60rem; */
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   display: flex;
+}
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 10;
+}
+.imag {
+  float: right;
 }

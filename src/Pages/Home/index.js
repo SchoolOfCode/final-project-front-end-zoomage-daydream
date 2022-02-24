@@ -8,7 +8,7 @@ import css from"./home.module.css"
 
 const Home = () => {
   return (
-    <div>
+    <div className={css.home}>
       <Header />
       <h2 className={css.slogan}>The place to find your Space</h2>
       <SearchForm />
