@@ -3,9 +3,7 @@ import cardPic1 from "../../images/cardPic1.jpg";
 import css from "./card.module.css";
 
 function Card({ image, address, starttime }) {
-  <div>
-    {" "}
-    return (
+  return (
     <div className={css.card}>
       <div>
         <img className={css.image} src={image} alt="cardPic" />
@@ -17,8 +15,7 @@ function Card({ image, address, starttime }) {
         <p>4.5*</p>
       </div>
     </div>
-    );
-  </div>;
+  );
 }
 
 export default Card;

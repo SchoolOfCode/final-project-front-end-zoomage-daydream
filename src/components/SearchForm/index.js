@@ -77,8 +77,8 @@ const SearchForm = () => {
             {...register("location")}
           />
         </div>
-        <div className={css.Datecontainer}>
-          <label>Dates:</label>
+        <div className={`${css.Datecontainer} ${css.eachSect}`}>
+          <label className={css.label}>Dates:</label>
           <DatePicker
             value={dates}
             onChange={setDates}
@@ -87,12 +87,14 @@ const SearchForm = () => {
           />
         </div>
         <br />
-        <TimeRange
-          startMoment={startTime}
-          endMoment={endTime}
-          onStartTimeChange={handleStartTime}
-          onEndTimeChange={handleEndTime}
-        />{" "}
+        <div className={`${css.eachSect} ${css.times}`}>
+          <TimeRange
+            startMoment={startTime}
+            endMoment={endTime}
+            onStartTimeChange={handleStartTime}
+            onEndTimeChange={handleEndTime}
+          />{" "}
+        </div>
         <div className={css.eachSect}>
           <label className={css.label}> Type of space:</label>
 
@@ -108,7 +110,9 @@ const SearchForm = () => {
             <option value="audi">Audi</option>
           </select>
         </div>
-        <input type="submit" className={css.field} />
+        <div className={css.submitSection}>
+          <input type="submit" className={css.field} />
+        </div>
       </form>
     </div>
   );

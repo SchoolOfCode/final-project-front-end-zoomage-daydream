@@ -46,13 +46,6 @@ const Home = () => {
           );
         })}
         <Card array={space} key={space.id} />
-        {/* <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card /> */}
       </div>
 
       <Footer />
