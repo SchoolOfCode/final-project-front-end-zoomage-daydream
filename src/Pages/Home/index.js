@@ -21,8 +21,8 @@ const Home = () => {
   const fetchSpaces = async () => {
     const result = await fetch(`${API_URL}/spaces/`);
     const data = await result.json();
-    const homeCard = data.payload.slice(0,8)
-    setSpace(homeCard);
+    const array = data.payload.slice(0, 7);
+    setSpace(array);
   };
 
   console.log(space);
