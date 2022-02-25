@@ -3,7 +3,6 @@ import React from "react";
 import css from "../Card/card.module.css";
 
 function EmptyCard({ address, starttime, endtime, image }) {
-  console.log(image);
   return (
     <div className={css.card}>
       <div>
