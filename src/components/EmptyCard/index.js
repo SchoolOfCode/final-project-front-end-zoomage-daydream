@@ -1,19 +1,19 @@
 import React from "react";
 // import cardPic1 from "../../images/cardPic1.jpg";
+import css from "../Card/card.module.css";
 
 function EmptyCard({ address, starttime, endtime, images }) {
   return (
-    <div>
+    <div className={css.card}>
       <div>
-        <img src={images} alt="cardPic" />
+        <img src={images} className={css.image} alt="cardPic" />
       </div>
-      <div>
+      <div className={css.details}>
         <p>{address}</p>
         <p>
           {starttime}-{endtime}
         </p>
         <p>4.7*</p>
-        <p>Hi</p>
       </div>
     </div>
   );
