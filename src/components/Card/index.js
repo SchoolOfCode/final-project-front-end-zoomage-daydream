@@ -1,5 +1,5 @@
 import React from "react";
-import cardPic1 from "../../images/cardPic1.jpg";
+
 import css from "./card.module.css";
 
 function Card({ image, address, starttime }) {
