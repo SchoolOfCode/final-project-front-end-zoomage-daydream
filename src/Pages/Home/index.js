@@ -36,7 +36,7 @@ const Home = () => {
       <SearchForm />
       <div className={css.cards}>
         {" "}
-        {space.map((item,index) => {
+        {space.map((item, index) => {
           return (
             <Card
               image={item.images[0]}
@@ -48,7 +48,6 @@ const Home = () => {
         })}
         <Card array={space} key={space.id} />
       </div>
-
       <Footer />
     </div>
   );
