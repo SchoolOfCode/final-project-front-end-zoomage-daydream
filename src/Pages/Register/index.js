@@ -16,7 +16,7 @@ const Register = () => {
   const onSubmit = (data) => {
     console.log(data);
   };
-  console.log(watch("example"));
+ 
 
   return (
     <div className={css.registerSect}>
@@ -29,7 +29,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="First Name"
-              {...register("exampleRequired", { required: true })}
+              {...register("First Name", { required: true })}
               className={css.form}
             />
           </div>
@@ -39,7 +39,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Your Surname"
-              {...register("exampleRequired", { required: true })}
+              {...register("Surname", { required: true })}
               className={css.form}
             />
           </div>
@@ -49,7 +49,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Email Address"
-              {...register("exampleRequired", { required: true })}
+              {...register("Email Address", { required: true })}
               className={css.form}
             />
           </div>
@@ -59,7 +59,7 @@ const Register = () => {
             <input
               type="date"
               placeholder="Your Date of Birth"
-              {...register("exampleRequired", { required: true })}
+              {...register("Date of Birth", { required: true })}
               className={css.form}
             />
           </div>
@@ -69,7 +69,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Choose a Username"
-              {...register("exampleRequired", { required: true })}
+              {...register("Username", { required: true })}
               className={css.form}
             />
           </div>
