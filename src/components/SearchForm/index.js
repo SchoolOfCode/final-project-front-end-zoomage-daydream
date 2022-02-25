@@ -8,7 +8,7 @@ import API_URL from "../../config";
 import { useNavigate } from "react-router-dom";
 
 const SearchForm = () => {
-  const { register, handleSubmit } = useForm(); // using hookform in react
+  const { register, handleSubmit, watch } = useForm(); // using hookform in react
   const [form, setForm] = useState({}); // store form input into a state
   const [dates, setDates] = useState([]); // store dates input into a state
   const [startTime, setStartTime] = useState(moment()); // Time Range
@@ -73,6 +73,7 @@ const SearchForm = () => {
             type="text"
             placeholder="City"
             {...register("location")}
+            required
           />
         </div>
         <div className={`${css.Datecontainer} ${css.eachSect}`}>
@@ -82,6 +83,7 @@ const SearchForm = () => {
             onChange={setDates}
             placeholder="Choose dates"
             format="DD/MM/YYYY"
+            required
           />
         </div>
         <br />
@@ -91,6 +93,7 @@ const SearchForm = () => {
             endMoment={endTime}
             onStartTimeChange={handleStartTime}
             onEndTimeChange={handleEndTime}
+            required
           />{" "}
         </div>
         <div className={css.eachSect}>
@@ -101,7 +104,9 @@ const SearchForm = () => {
             id="spaces"
             className={css.field}
             {...register("type_of_space")}
+            required
           >
+            <option>Select</option>
             <option value="flat">Flat</option>
             <option value="house">House</option>
             <option value="mercedes">Mercedes</option>

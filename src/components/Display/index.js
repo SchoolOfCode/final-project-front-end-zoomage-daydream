@@ -6,7 +6,7 @@ import Result from "../../Pages/ResultsPage";
 
 const Display = () => {
   return (
-    <>
+    
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -14,7 +14,7 @@ const Display = () => {
           <Route path="result" element={<Result />} />
         </Routes>
       </div>
-    </>
+
   );
 };
 

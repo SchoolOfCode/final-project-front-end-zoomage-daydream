@@ -21,7 +21,8 @@ const Home = () => {
   const fetchSpaces = async () => {
     const result = await fetch(`${API_URL}/spaces/`);
     const data = await result.json();
-    setSpace(data.payload);
+    const homeCard = data.payload.slice(0,8)
+    setSpace(homeCard);
   };
 
   console.log(space);
@@ -46,7 +47,6 @@ const Home = () => {
             />
           );
         })}
-        <Card array={space} key={space.id} />
       </div>
       <Footer />
     </div>
