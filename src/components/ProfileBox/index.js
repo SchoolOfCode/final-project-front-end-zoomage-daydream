@@ -19,24 +19,33 @@ function ProfileBox() {
       const data = await res.json();
       //data.?
       setUsers(data.payload);
-      console.log(data.payload);
+      // console.log(data.payload);
     };
     fetchProfileData();
   }, []);
-  console.log(users[0]);
+  // console.log(users[0]);
+  // return (
+  //   <div>
+  //     {users.map((user, index) => {
+  //       return (
+  //         <Profile
+  //           date_of_birth={user.date_of_birth}
+  //           email={user.email}
+  //           full_name={user.full_name}
+  //           username={user.username}
+  //           key={index}
+  //         />
+  //       );
+  //     })}
+  //   </div>
   return (
     <div>
-      {users.map((user, index) => {
-        return (
-          <Profile
-            date_of_birth={user.date_of_birth}
-            email={user.email}
-            full_name={user.full_name}
-            username={user.username}
-            key={index}
-          />
-        );
-      })}
+      <Profile
+        date_of_birth={users[0].date_of_birth}
+        email={users[0].email}
+        full_name={users[0].full_name}
+        username={users[0].username}
+      />
     </div>
   );
 }
