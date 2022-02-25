@@ -7,13 +7,13 @@ import Card from "../../components/Card";
 
 const Result = () => {
   const location = useLocation();
-  
+
   const results = location.state.payload;
- 
+
   return (
     <div className={css.mainContainer}>
       <Header />
-      <p>Results found for {results[0].address.split(" ")[3].slice(0, 6)}</p>
+      <p>Results found for {results[0].address.split(" ")[3].slice(0, 10)}</p>
       <div className={css.block}>
         <div className={css.result}>
           {" "}
