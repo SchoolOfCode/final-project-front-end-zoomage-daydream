@@ -1,27 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import css from "./searchform.module.css";
-import background from "../../images/background.jpg";
 import { useForm } from "react-hook-form";
-
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
+import API_URL from "../../config";
+import { useNavigate } from "react-router-dom";
 
 const SearchForm = () => {
-  // using hookform in react
-  const { register, handleSubmit } = useForm();
-  // store form input into a state
-  const [form, setForm] = useState("");
+  const { register, handleSubmit, watch } = useForm(); // using hookform in react
+  const [form, setForm] = useState({}); // store form input into a state
+  const [dates, setDates] = useState([]); // store dates input into a state
+  const [startTime, setStartTime] = useState(moment()); // Time Range
+  const [endTime, setEndTime] = useState(moment()); // Time Range
+  const navigate = useNavigate(); // use navigate to navigate to a diffeerent page
+
+  const firstMount = useRef(false);
 
   // Calendar for you to select your set of dates
-  const [dates, setDates] = useState([]);
   const datesSelected = dates.map((value) => {
     return `${value.day}-${value.month}-${value.year}`;
   });
 
-  // Time Range
-  const [startTime, setStartTime] = useState(moment());
-  const [endTime, setEndTime] = useState(moment());
   // sets the start time
   const handleStartTime = (e) => {
     setStartTime(e.startTime);
@@ -44,7 +44,23 @@ const SearchForm = () => {
     setForm(obj);
   };
 
-  console.log(form);
+  const { location, type_of_space } = form;
+
+  const fetchData = async () => {
+    const result = await fetch(
+      `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
+    );
+    const data = await result.json();
+    navigate("/result", { state: data });
+  };
+
+  useEffect(() => {
+    if (firstMount.current === false) {
+      firstMount.current = true;
+      return;
+    }
+    fetchData();
+  }, [form]);
 
   return (
     <div className={css.formBackground}>
@@ -57,41 +73,53 @@ const SearchForm = () => {
             type="text"
             placeholder="City"
             {...register("location")}
+            required
           />
         </div>
-        <div className={css.Datecontainer}>
-          <label>Dates:</label>
+        <div className={`${css.Datecontainer} ${css.eachSect}`}>
+          <label className={css.label}>Dates:</label>
           <DatePicker
             value={dates}
             onChange={setDates}
             placeholder="Choose dates"
             format="DD/MM/YYYY"
+
            className={css.justoff}
+
+            required
+
           />
         </div>
         <br />
-        <TimeRange
-          startMoment={startTime}
-          endMoment={endTime}
-          onStartTimeChange={handleStartTime}
-          onEndTimeChange={handleEndTime}
-        />{" "}
+        <div className={`${css.eachSect} ${css.times}`}>
+          <TimeRange
+            startMoment={startTime}
+            endMoment={endTime}
+            onStartTimeChange={handleStartTime}
+            onEndTimeChange={handleEndTime}
+            required
+          />{" "}
+        </div>
         <div className={css.eachSect}>
           <label className={css.label}> Type of space:</label>
 
           <select
-            name="Type of space"
+            name="type_of_space"
             id="spaces"
             className={css.field}
-            {...register("Type of space")}
+            {...register("type_of_space")}
+            required
           >
-            <option value="Flat">Flat</option>
-            <option value="Room">Room</option>
+            <option>Select</option>
+            <option value="flat">Flat</option>
+            <option value="house">House</option>
             <option value="mercedes">Mercedes</option>
             <option value="audi">Audi</option>
           </select>
         </div>
-        <input type="submit" className={css.field} />
+        <div className={css.submitSection}>
+          <input type="submit" className={css.field} />
+        </div>
       </form>
     </div>
   );

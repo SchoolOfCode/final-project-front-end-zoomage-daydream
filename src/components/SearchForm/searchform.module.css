@@ -24,6 +24,7 @@
   text-align: center;
   padding: 2rem;
   font-size: 2rem;
+  margin: 1rem;
 }
 
 .label {
@@ -39,6 +40,20 @@
   justify-content: space-evenly;
 }
 
+
 .justoff{
   width:100rem
 }
+=======
+.Datecontainer {
+  margin: 2rem;
+}
+
+.times {
+  margin-bottom: 2rem;
+}
+
+.submitSection {
+  margin: 6rem 0 0 16rem;
+}
+
