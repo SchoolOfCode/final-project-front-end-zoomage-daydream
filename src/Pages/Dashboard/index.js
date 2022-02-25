@@ -3,7 +3,7 @@ import css from "./dashboard.module.css";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
-import Profile from "../../components/Profile";
+import ProfileBox from "../../components/ProfileBox";
 import Card from "../../components/Card";
 import PreviousBookings from "../../components/PreviousBookings";
 
@@ -18,7 +18,7 @@ function Dashboard() {
         <Card />
       </div>
       <div className={css.currentProfile}>
-        <Profile />
+        <ProfileBox />
       </div>
       <div className={css.historicalBookingTitle}>
         <h1>History of Bookings</h1>
