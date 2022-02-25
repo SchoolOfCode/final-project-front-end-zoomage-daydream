@@ -4,14 +4,12 @@ import Footer from "../../components/Footer";
 import css from "./register.module.css";
 import background from "../../images/background.jpg";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Register = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors }
   } = useForm();
 
@@ -19,7 +17,7 @@ const Register = () => {
     console.log(data);
   };
 
-  const [page, setPage] = useState("/register");
+
 
   return (
     <div className={css.registerSect}>
@@ -32,7 +30,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="First Name"
-              {...register("First Name", { required: true })}
+              {...register("First Name")}
               className={css.form}
               required
             />
@@ -43,7 +41,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Your Surname"
-              {...register("Surname", { required: true })}
+              {...register("Surname")}
               className={css.form}
               required
             />
@@ -54,7 +52,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Email Address"
-              {...register("Email Address", { required: true })}
+              {...register("Email Address")}
               className={css.form}
               required
             />
@@ -65,7 +63,7 @@ const Register = () => {
             <input
               type="date"
               placeholder="Your Date of Birth"
-              {...register("Date of Birth", { required: true })}
+              {...register("Date of Birth")}
               className={css.form}
               required
             />
@@ -76,7 +74,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Choose a Username"
-              {...register("Username", { required: true })}
+              {...register("Username")}
               className={css.form}
               required
             />

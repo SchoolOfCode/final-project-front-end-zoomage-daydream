@@ -2,13 +2,12 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 17%;
-  grid-row-gap: 10%;
-  margin-left: 10%;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
 }
 
 .block {
-  display: inline-block;
+  display: inline-block
 }
 
 .mainContainer {
