@@ -36,12 +36,13 @@ const Home = () => {
       <SearchForm />
       <div className={css.cards}>
         {" "}
-        {space.map((item) => {
+        {space.map((item,index) => {
           return (
             <Card
               image={item.images[0]}
               address={item.address}
               starttime={item.starttime}
+              key={index}
             />
           );
         })}

@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import css from "./searchform.module.css";
 import { useForm } from "react-hook-form";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
 import API_URL from "../../config";
+import { useNavigate } from "react-router-dom";
 
 const SearchForm = () => {
-  // using hookform in react
-  const { register, handleSubmit } = useForm();
-  // store form input into a state
-  const [form, setForm] = useState({});
-  const [dates, setDates] = useState([]);
-  // Time Range
-  const [startTime, setStartTime] = useState(moment());
-  const [endTime, setEndTime] = useState(moment());
+  const { register, handleSubmit } = useForm(); // using hookform in react
+  const [form, setForm] = useState({}); // store form input into a state
+  const [dates, setDates] = useState([]); // store dates input into a state
+  const [startTime, setStartTime] = useState(moment()); // Time Range
+  const [endTime, setEndTime] = useState(moment()); // Time Range
+  const navigate = useNavigate(); // use navigate to navigate to a diffeerent page
+
+  const firstMount = useRef(false);
 
   // Calendar for you to select your set of dates
   const datesSelected = dates.map((value) => {
@@ -43,25 +44,23 @@ const SearchForm = () => {
     setForm(obj);
   };
 
-  // const API_URL = process.env.REACT_APP_API_URL;
-  // console.log("url", API_URL);
-  console.log(form);
-
   const { location, type_of_space } = form;
-
-  // console.log("location", location, "type", type_of_space);
 
   const fetchData = async () => {
     const result = await fetch(
       `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
     );
     const data = await result.json();
-    // console.log(data);
+    navigate("/result", { state: data });
   };
 
   useEffect(() => {
+    if (firstMount.current === false) {
+      firstMount.current = true;
+      return;
+    }
     fetchData();
-  });
+  }, [form]);
 
   return (
     <div className={css.formBackground}>
