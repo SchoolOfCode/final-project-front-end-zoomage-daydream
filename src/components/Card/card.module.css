@@ -1,18 +1,18 @@
 .card {
-margin: 2rem;
-margin-bottom: 2rem;
+  margin: 2rem;
+  margin-bottom: 2rem;
 }
 
-.details{
+.details {
   border: 2px solid black;
   display: inline-block;
   width: 20rem;
   height: 7rem;
- text-align: center;
- padding-top: 1rem;
+  text-align: center;
+  padding-top: 1rem;
 }
 
-.image{
+.image {
   width: 20rem;
   height: 20rem;
 }

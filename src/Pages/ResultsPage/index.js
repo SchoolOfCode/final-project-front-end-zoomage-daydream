@@ -2,22 +2,32 @@ import React from "react";
 import Footer from "../../components/Footer";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/Header";
-import css from "./resultpage.module.css"
+import css from "./resultpage.module.css";
+import Card from "../../components/Card";
 
 const Result = () => {
   const location = useLocation();
-  // const mu = location.state;
+  const results = location.state.payload;
+  console.log(results[0].address);
   return (
-    <div className={css.result}>
+    <div className={css.mainContainer}>
       <Header />
-      <div className={css.mainContainer}>
-        <p>sfsf</p>
-        <p>sfsf</p>
-        <p>sfsf</p>
-        <p>sfsf</p>
-        <p>sfsf</p>
-        <p>sfsf</p>
-        <p>sfsf</p>
+      <p>Results found for "{results[0].address.split(" ")[3].slice(0, 10)}"</p>
+      <div className={css.block}>
+        <div className={css.result}>
+          {" "}
+          {results.map((item, index) => {
+            return (
+              <Card
+                id={css.resultCard}
+                image={item.images[0]}
+                address={item.address}
+                starttime={item.starttime}
+                key={index}
+              />
+            );
+          })}
+        </div>
       </div>
       <Footer />
     </div>
