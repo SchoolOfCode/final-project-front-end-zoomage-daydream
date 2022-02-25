@@ -5,6 +5,7 @@ import css from "./register.module.css";
 import background from "../../images/background.jpg";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const {
@@ -19,10 +20,6 @@ const Register = () => {
   };
 
   const [page, setPage] = useState("/register");
-
-  const handleChange = () => {
-    setPage("/mission");
-  };
 
   return (
     <div className={css.registerSect}>
@@ -85,11 +82,15 @@ const Register = () => {
             />
           </div>
           {errors.exampleRequired && <p>This field is required</p>}
-          <input type="submit" onClick={handleChange} />
+
+          <div>
+            <Link to={"mission"}>
+              <button type="button">NEXT</button>
+            </Link>
+          </div>
         </form>
         <div className={css.backgroundRegister}>
           <img src={background} alt="" className={css.imag} />
-
         </div>
       </div>
       <div className={css.footer}>
