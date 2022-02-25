@@ -21,7 +21,8 @@ const Home = () => {
   const fetchSpaces = async () => {
     const result = await fetch(`${API_URL}/spaces/`);
     const data = await result.json();
-    setSpace(data.payload);
+    const array = data.payload.slice(0, 7);
+    setSpace(array);
   };
 
   console.log(space);
@@ -36,7 +37,7 @@ const Home = () => {
       <SearchForm />
       <div className={css.cards}>
         {" "}
-        {space.map((item,index) => {
+        {space.map((item, index) => {
           return (
             <Card
               image={item.images[0]}
