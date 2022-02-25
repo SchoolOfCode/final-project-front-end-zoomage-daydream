@@ -1,0 +1,35 @@
+.registerSect {
+  width: 100%;
+  height: 82vh;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+
+.inputs {
+  margin: 1rem 0rem 0rem 2rem;
+  display: block;
+}
+
+.labels {
+  font-weight: bold;
+}
+
+.form {
+  margin: 2rem;
+  transform: scale(1.5);
+}
+
+.backgroundRegister {
+  padding-top: 3rem;
+}
+
+.imag {
+  width: 30rem;
+  height: 30rem;
+  display: inline-block;
+}

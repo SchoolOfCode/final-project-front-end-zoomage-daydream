@@ -1,14 +1,10 @@
 .footerContainer {
-  background-color: #051bd9;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  background-color: rgba(38, 55, 212, 0.9);
   width: 100%;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .icons {
@@ -19,6 +15,11 @@
 }
 
 .brandIcon {
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   transform: scale(2);
+  margin-left: 30px;
+  color: white;
+}
+p {
+  margin-right: 25px;
 }

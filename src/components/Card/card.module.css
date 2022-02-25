@@ -1,0 +1,32 @@
+.card {
+  margin: 2rem;
+  margin-bottom: 2rem;
+}
+
+.details {
+  border: 2px solid black;
+  display: inline-block;
+  width: 20rem;
+  height: 7rem;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.image {
+  width: 20rem;
+  height: 20rem;
+}
+
+.card:hover {
+  animation: card-animation 0.4s forwards;
+}
+
+@keyframes card-animation {
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.card {
+  box-shadow: 3px 5px rgba(172, 168, 168, 0.8);
+}
