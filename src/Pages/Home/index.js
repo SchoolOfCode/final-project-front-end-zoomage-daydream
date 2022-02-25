@@ -5,7 +5,10 @@ import Card from "../../components/Card";
 import Footer from "../../components/Footer";
 import SearchForm from "../../components/SearchForm";
 import css from "./home.module.css";
+
+
 import API_URL from "../../config";
+
 
 const Home = () => {
   const [space, setSpace] = useState([
@@ -31,7 +34,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className={css.home}>
       <Header />
       <h2 className={css.slogan}>The place to find your Space</h2>
       <SearchForm />

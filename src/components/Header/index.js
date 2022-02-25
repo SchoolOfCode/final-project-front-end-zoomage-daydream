@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 // Header component
 const Header = () => {
+
   return (
     <div className={css.header}>
       <div className={css.logo}>

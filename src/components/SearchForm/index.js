@@ -83,7 +83,11 @@ const SearchForm = () => {
             onChange={setDates}
             placeholder="Choose dates"
             format="DD/MM/YYYY"
+
+           className={css.justoff}
+
             required
+
           />
         </div>
         <br />
