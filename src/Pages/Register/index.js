@@ -31,6 +31,7 @@ const Register = () => {
               placeholder="First Name"
               {...register("First Name", { required: true })}
               className={css.form}
+              required
             />
           </div>
           <div>
@@ -41,6 +42,7 @@ const Register = () => {
               placeholder="Your Surname"
               {...register("Surname", { required: true })}
               className={css.form}
+              required
             />
           </div>
           <div>
@@ -51,6 +53,7 @@ const Register = () => {
               placeholder="Email Address"
               {...register("Email Address", { required: true })}
               className={css.form}
+              required
             />
           </div>
           <div>
@@ -61,6 +64,7 @@ const Register = () => {
               placeholder="Your Date of Birth"
               {...register("Date of Birth", { required: true })}
               className={css.form}
+              required
             />
           </div>
           <div>
@@ -71,6 +75,8 @@ const Register = () => {
               placeholder="Choose a Username"
               {...register("Username", { required: true })}
               className={css.form}
+              required
+              
             />
           </div>
           {errors.exampleRequired && <p>This field is required</p>}
@@ -81,6 +87,7 @@ const Register = () => {
         </div>
       </div>
       <div className={css.footer}>
+      
         <Footer />
       </div>
     </div>
