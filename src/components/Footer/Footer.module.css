@@ -1,10 +1,11 @@
 .footerContainer {
-  background-color: rgba(38, 55, 212,0.9);
+  background-color: rgba(38, 55, 212, 0.9);
   width: 100%;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  bottom: 0;
 }
 
 .icons {
@@ -18,7 +19,7 @@
   /* margin-left: 1rem; */
   transform: scale(2);
   margin-left: 30px;
-  color:white;
+  color: white;
 }
 p {
   margin-right: 25px;

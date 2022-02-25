@@ -20,6 +20,8 @@ const Footer = () => {
         <a
           href="https://twitter.com/theSchoolOfCode?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
           className="twitter"
+          target="_blank"
+          rel="noreferrer"
         >
           <FontAwesomeIcon
             icon={faTwitter}
@@ -30,6 +32,8 @@ const Footer = () => {
         <a
           href="https://www.instagram.com/theschoolofcode/?hl=en"
           className="instagram"
+          target="_blank"
+          rel="noreferrer"
         >
           <FontAwesomeIcon
             icon={faInstagram}
@@ -40,6 +44,8 @@ const Footer = () => {
         <a
           href="https://www.youtube.com/channel/UCKBzheEKcrqsaJhMV0f_Dmg"
           className="youtube"
+          target="_blank"
+          rel="noreferrer"
         >
           <FontAwesomeIcon
             icon={faYoutube}
@@ -47,14 +53,17 @@ const Footer = () => {
           ></FontAwesomeIcon>
         </a>
 
-        <a href="mailto:someone@yoursite.com" className="mail">
+        <a
+          href="mailto:someone@yoursite.com"
+          className="mail"
+          target="_blank"
+          rel="noreferrer"
+        >
           <FontAwesomeIcon
             icon={faEnvelope}
             className={css.brandIcon}
           ></FontAwesomeIcon>
         </a>
-
-
       </div>
       <p>Copyright ©️ Space 2022 </p>
     </footer>

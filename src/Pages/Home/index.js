@@ -49,7 +49,6 @@ const Home = () => {
         })}
         <Card array={space} key={space.id} />
       </div>
-
       <Footer />
     </div>
   );
