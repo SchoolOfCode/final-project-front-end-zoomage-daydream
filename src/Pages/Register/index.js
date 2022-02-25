@@ -28,6 +28,7 @@ const Register = () => {
             <br></br>
             <input
               type="text"
+              placeholder="First Name"
               {...register("exampleRequired", { required: true })}
               className={css.form}
             />
@@ -37,6 +38,7 @@ const Register = () => {
             <br></br>
             <input
               type="text"
+              placeholder="Your Surname"
               {...register("exampleRequired", { required: true })}
               className={css.form}
             />
@@ -46,6 +48,7 @@ const Register = () => {
             <br></br>
             <input
               type="text"
+              placeholder="Email Address"
               {...register("exampleRequired", { required: true })}
               className={css.form}
             />
@@ -54,7 +57,8 @@ const Register = () => {
             <label className={css.labels}> DATE OF BIRTH </label>
             <br></br>
             <input
-              type="text"
+              type="date"
+              placeholder="Your Date of Birth"
               {...register("exampleRequired", { required: true })}
               className={css.form}
             />
@@ -64,6 +68,7 @@ const Register = () => {
             <br></br>
             <input
               type="text"
+              placeholder="Choose a Username"
               {...register("exampleRequired", { required: true })}
               className={css.form}
             />
