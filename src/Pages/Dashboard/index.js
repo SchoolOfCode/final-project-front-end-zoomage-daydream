@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import Profile from "../../components/Profile";
 import Card from "../../components/Card";
+import PreviousBookings from "../../components/PreviousBookings";
 
 function Dashboard() {
   return (
@@ -17,15 +18,16 @@ function Dashboard() {
         <Card />
       </div>
       <div className={css.currentProfile}>
-      <Profile />
+        <Profile />
       </div>
       <div className={css.historicalBookingTitle}>
         <h1>History of Bookings</h1>
       </div>
-        <div className={css.historicalBooking}>
+      {/* <div className={css.historicalBooking}>
         <Card />
         <Card />
-      </div>
+      </div> */}
+      <PreviousBookings />
       <Footer />
     </div>
   );
