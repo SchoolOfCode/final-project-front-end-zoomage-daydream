@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import css from "./register.module.css";
 import background from "../../images/background.jpg";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const Register = () => {
   const {
@@ -16,7 +17,12 @@ const Register = () => {
   const onSubmit = (data) => {
     console.log(data);
   };
- 
+
+  const [page, setPage] = useState("/register");
+
+  const handleChange = () => {
+    setPage("/mission");
+  };
 
   return (
     <div className={css.registerSect}>
@@ -76,18 +82,17 @@ const Register = () => {
               {...register("Username", { required: true })}
               className={css.form}
               required
-              
             />
           </div>
           {errors.exampleRequired && <p>This field is required</p>}
-          <input type="submit" />
+          <input type="submit" onClick={handleChange} />
         </form>
         <div className={css.backgroundRegister}>
           <img src={background} alt="" className={css.imag} />
+
         </div>
       </div>
       <div className={css.footer}>
-      
         <Footer />
       </div>
     </div>
