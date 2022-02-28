@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const SearchForm = () => {
   const { register, handleSubmit } = useForm(); // using hookform in react
   const [form, setForm] = useState({}); // store form input into a state
-  const [dates, setDates] = useState([{payload:""}]); // store dates input into a state
+  const [dates, setDates] = useState([{ payload: "" }]); // store dates input into a state
   const [startTime, setStartTime] = useState(moment()); // Time Range
   const [endTime, setEndTime] = useState(moment()); // Time Range
   const navigate = useNavigate(); // use navigate to navigate to a diffeerent page
@@ -46,21 +46,20 @@ const SearchForm = () => {
 
   const { location, type_of_space } = form;
 
-  const fetchData = async () => {
-    const result = await fetch(
-      `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
-    );
-    const data = await result.json();
-    navigate("/result", { state: data });
-  };
-
   useEffect(() => {
     if (firstMount.current === false) {
       firstMount.current = true;
       return;
     }
+    const fetchData = async () => {
+      const result = await fetch(
+        `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
+      );
+      const data = await result.json();
+      navigate("/result", { state: data });
+    };
     fetchData();
-  }, [form]);
+  }, [form, location, type_of_space, navigate]);
 
   return (
     <div className={css.formBackground}>
@@ -83,11 +82,8 @@ const SearchForm = () => {
             onChange={setDates}
             placeholder="Choose dates"
             format="DD/MM/YYYY"
-
-           className={css.justoff}
-
+            className={css.justoff}
             required
-
           />
         </div>
         <br />

@@ -17,6 +17,7 @@ function App() {
         <Route path="mission" element={<Mission />} />
         <Route path="result" element={<Result />} />
         <Route path="register" element={<Register />} />
+ 
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="reserve" element={<Reserve />} />
         <Route path="PropertyDetails" element={<PropertyDetails />} />
