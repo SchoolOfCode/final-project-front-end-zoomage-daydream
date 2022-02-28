@@ -3,7 +3,6 @@ import Footer from "../../components/Footer";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/Header";
 import API_URL from "../../config";
-import Card from "../../components/Card";
 import { ReserveForm } from "../../components/ReserveForm";
 import css from "./reserve.module.css";
 
@@ -19,7 +18,7 @@ const Reserve = () => {
 
     setImages(data.payload[0].images);
     setSpace(data.payload[0]);
-    console.log(space)
+    console.log(space);
   };
 
   useEffect(() => {
