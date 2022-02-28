@@ -10,12 +10,13 @@ import { useNavigate } from "react-router-dom";
 const SearchForm = () => {
   const { register, handleSubmit } = useForm(); // using hookform in react
   const [form, setForm] = useState({}); // store form input into a state
-  const [dates, setDates] = useState([{payload:""}]); // store dates input into a state
+  const [dates, setDates] = useState([{ payload: "" }]); // store dates input into a state
   const [startTime, setStartTime] = useState(moment()); // Time Range
   const [endTime, setEndTime] = useState(moment()); // Time Range
   const navigate = useNavigate(); // use navigate to navigate to a diffeerent page
 
-  const firstMount = useRef(false);
+
+  const firstMount = useRef(false);// useRef used to prevent useEffect from running on first mount.
 
   // Calendar for you to select your set of dates
   const datesSelected = dates.map((value) => {
@@ -83,11 +84,8 @@ const SearchForm = () => {
             onChange={setDates}
             placeholder="Choose dates"
             format="DD/MM/YYYY"
-
-           className={css.justoff}
-
+            className={css.justoff}
             required
-
           />
         </div>
         <br />

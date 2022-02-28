@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import EmptyCard from "../EmptyCard";
+import API_URL from "../../config";
 function PreviousBookings() {
   const [spaces, setSpaces] = useState([
     {
@@ -15,17 +16,9 @@ function PreviousBookings() {
   ]);
   useEffect(() => {
     const fetchData = async () => {
-      const url = "https://space-project-backend.herokuapp.com/spaces";
-      const res = await fetch(url);
+      const res = await fetch(`${API_URL}/spaces/`);
       const data = await res.json();
-      //data.?
       setSpaces(data.payload);
-      console.log(data.payload);
-      //   console.log(data.payload[0].address);
-      //   console.log(data.payload[0].date);
-      //   console.log(data.payload[0].endtime);
-      //   console.log(data.payload[0].images);
-      //   console.log(data.payload[0].starttime);
     };
     fetchData();
   }, []);
