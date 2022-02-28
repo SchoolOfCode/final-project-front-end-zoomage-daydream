@@ -5,8 +5,9 @@ import Result from "../../Pages/ResultsPage";
 import Register from "../../Pages/Register";
 import Dashboard from "../../Pages/Dashboard";
 import Reserve from "../../Pages/Reserve";
-import PropertyDetails from "../../Pages/PropertyDetails"
+import PropertyDetails from "../../Pages/PropertyDetails";
 import RegisterUser from "../../Pages/RegisterUser";
+
 import "./App.css";
 
 function App() {
