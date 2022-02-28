@@ -10,7 +10,6 @@ import API_URL from "../../config";
 
 function Dashboard() {
   const [space, setSpace] = useState([]);
-  console.log(space);
   useEffect(() => {
     const fetchCurrentBookings = async () => {
       const result = await fetch(`${API_URL}/spaces/`);
@@ -27,13 +26,12 @@ function Dashboard() {
       <h1>My Bookings</h1>
       <div className={css.currentBooking}>
         <h2>Current Booking</h2>
-        {space.map((item, index) => {
+        {space.map((space) => {
           return (
             <Card
-              image={item.images[0]}
-              address={item.address}
-              starttime={item.starttime}
-              key={index}
+              image={space.images[0]}
+              address={space.address}
+              starttime={space.starttime}
             />
           );
         })}
