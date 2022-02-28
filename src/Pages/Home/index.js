@@ -6,9 +6,7 @@ import Footer from "../../components/Footer";
 import SearchForm from "../../components/SearchForm";
 import css from "./home.module.css";
 
-
 import API_URL from "../../config";
-
 
 const Home = () => {
   const [space, setSpace] = useState([
