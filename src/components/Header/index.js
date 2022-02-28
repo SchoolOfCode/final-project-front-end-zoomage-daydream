@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 // Header component
 const Header = () => {
-
   return (
     <div className={css.header}>
       <div className={css.logo}>
@@ -26,7 +25,12 @@ const Header = () => {
           </Link>
         </div>
         <div className={css.links}>
-          <Link className={css.headerLinks} to="/register">
+          <Link className={css.headerLinks} to="/registerUser">
+            <p>Become a user</p>
+          </Link>
+        </div>
+        <div className={css.links}>
+          <Link className={css.headerLinks} to="/dashboard">
             <p>Login</p>
           </Link>
         </div>

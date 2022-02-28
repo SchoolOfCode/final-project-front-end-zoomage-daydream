@@ -32,6 +32,7 @@ function Dashboard() {
               image={space.images[0]}
               address={space.address}
               starttime={space.starttime}
+              key={space.id}
             />
           );
         })}

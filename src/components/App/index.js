@@ -6,7 +6,7 @@ import Register from "../../Pages/Register";
 import Dashboard from "../../Pages/Dashboard";
 import Reserve from "../../Pages/Reserve";
 import PropertyDetails from "../../Pages/PropertyDetails"
-
+import RegisterUser from "../../Pages/RegisterUser";
 import "./App.css";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Route path="mission" element={<Mission />} />
         <Route path="result" element={<Result />} />
         <Route path="register" element={<Register />} />
- 
+        <Route path="registerUser" element={<RegisterUser />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="reserve" element={<Reserve />} />
         <Route path="PropertyDetails" element={<PropertyDetails />} />
