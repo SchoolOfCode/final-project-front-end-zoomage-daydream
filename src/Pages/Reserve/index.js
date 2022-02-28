@@ -3,7 +3,8 @@ import Footer from "../../components/Footer";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/Header";
 import API_URL from "../../config";
-import Card from "../../components/Card";
+import { ReserveForm } from "../../components/ReserveForm";
+import css from "./reserve.module.css";
 
 const Reserve = () => {
   const location = useLocation();
@@ -17,6 +18,7 @@ const Reserve = () => {
 
     setImages(data.payload[0].images);
     setSpace(data.payload[0]);
+    console.log(space);
   };
 
   useEffect(() => {
@@ -42,20 +44,27 @@ const Reserve = () => {
               </div>
             );
           })}
-        <h2>Property Details</h2>
-        <h3>{space.type_of_space}</h3>
-        <h3>{space.fraction_of_space}</h3>
-        <p>Check in: </p>
-        <p>Cancellation</p>
-        <p>Instructions on how to use go here</p>
-        <h3>Amenities</h3>
-        <div>
-          {space.amenities &&
-            space.amenities.map((item, index) => {
-              return <p key={index}>{item}</p>;
-            })}
+        <div className={css.reserveContainer}>
+          <div>
+            <h2>Property Details</h2>
+            <h3>{space.type_of_space}</h3>
+            <h3>{space.fraction_of_space}</h3>
+            <p>Check in: </p>
+            <p>Cancellation</p>
+            <p>Instructions on how to use go here</p>
+            <h3>Amenities</h3>
+            <div>
+              {space.amenities &&
+                space.amenities.map((item, index) => {
+                  return <p key={index}>{item}</p>;
+                })}
+            </div>
+            <p>Our host says "{space.additional_information}"</p>
+          </div>
+          <div>
+            <ReserveForm />
+          </div>
         </div>
-        <p>Our host says "{space.additional_information}"</p>
       </div>
       <Footer />
     </div>
