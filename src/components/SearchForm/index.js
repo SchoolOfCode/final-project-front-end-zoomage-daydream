@@ -35,8 +35,8 @@ const SearchForm = () => {
   let end = String(endTime).slice(11, 16);
 
   // on form submit
-  const onSubmit = (pik) => {
-    const obj = Object.assign(pik, {
+  const onSubmit = (selected) => {
+    const obj = Object.assign(selected, {
       date: datesSelected,
       startT: start,
       endT: end
