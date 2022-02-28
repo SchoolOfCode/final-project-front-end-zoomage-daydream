@@ -85,7 +85,7 @@ const Register = () => {
             <Link to={"/PropertyDetails"}>
               <button type="button">HOST</button>
             </Link>
-             <Link to={"/dashboard"}>
+            <Link to={"/dashboard"}>
               <button type="button">My Bookings</button>
             </Link></div>
         </form>
