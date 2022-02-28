@@ -1,5 +1,4 @@
 import React from "react";
-// import cardPic1 from "../../images/cardPic1.jpg";
 import css from "../Card/card.module.css";
 
 function EmptyCard({ address, starttime, endtime, image }) {
