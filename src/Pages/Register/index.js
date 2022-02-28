@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import css from "./register.module.css";
 import background from "../../images/background.jpg";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const {
@@ -12,12 +12,12 @@ const Register = () => {
     handleSubmit,
     formState: { errors }
   } = useForm();
+  const navigate = useNavigate();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (ok) => {
+    console.log(ok);
+    navigate("/PropertyDetails");
   };
-
-
 
   return (
     <div className={css.registerSect}>
@@ -78,14 +78,11 @@ const Register = () => {
               className={css.form}
               required
             />
+            <div>
+              <input type="submit"/>
+            </div>
           </div>
           {errors.exampleRequired && <p>This field is required</p>}
-
-          <div>
-            <Link to={"mission"}>
-              <button type="button">NEXT</button>
-            </Link>
-          </div>
         </form>
         <div className={css.backgroundRegister}>
           <img src={background} alt="" className={css.imag} />
