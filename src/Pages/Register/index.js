@@ -12,16 +12,12 @@ const Register = () => {
     handleSubmit,
     formState: { errors }
   } = useForm();
-const navigate = useNavigate()
+  const navigate = useNavigate();
 
-
-  const onSubmit = () => {
-    console.log();
-
-    navigate("/PropertyDetails")
+  const onSubmit = (ok) => {
+    console.log(ok);
+    navigate("/PropertyDetails");
   };
-
-
 
   return (
     <div className={css.registerSect}>
@@ -81,13 +77,9 @@ const navigate = useNavigate()
               {...register("Username")}
               className={css.form}
               required
-            /><div>
-       
-              <input type="button">to HOST</input>
-            
-           
-          {/* <button type="button">My Bookings</button> */}
-            
+            />
+            <div>
+              <input type="submit"/>
             </div>
           </div>
           {errors.exampleRequired && <p>This field is required</p>}
