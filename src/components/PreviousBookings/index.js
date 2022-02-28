@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EmptyCard from "../EmptyCard";
 import API_URL from "../../config";
+
 function PreviousBookings() {
   const [spaces, setSpaces] = useState([
     {
@@ -14,13 +15,13 @@ function PreviousBookings() {
       date: ["2022-03-07T00:00:00.000Z", "2022-03-19T00:00:00.000Z"]
     }
   ]);
+  const fetchData = async () => {
+    const res = await fetch(`${API_URL}/spaces`);
+    const data = await res.json();
+    setSpaces(data.payload);
+    console.log(data.payload);
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(  `${API_URL}/spaces`);
-      const data = await res.json();
-      setSpaces(data.payload);
-      console.log(spaces);
-    };
     fetchData();
   }, []);
   return (

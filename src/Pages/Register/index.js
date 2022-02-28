@@ -82,10 +82,12 @@ const Register = () => {
           {errors.exampleRequired && <p>This field is required</p>}
 
           <div>
-            <Link to={"mission"}>
-              <button type="button">NEXT</button>
+            <Link to={"/PropertyDetails"}>
+              <button type="button">HOST</button>
             </Link>
-          </div>
+            <Link to={"/dashboard"}>
+              <button type="button">My Bookings</button>
+            </Link></div>
         </form>
         <div className={css.backgroundRegister}>
           <img src={background} alt="" className={css.imag} />
