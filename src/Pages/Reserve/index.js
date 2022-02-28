@@ -63,7 +63,7 @@ const Reserve = () => {
             <p>Our host says "{space.additional_information}"</p>
           </div>
           <div>
-            <ReserveForm />
+            <ReserveForm price={space.hourly_price} />
           </div>
         </div>
       </div>

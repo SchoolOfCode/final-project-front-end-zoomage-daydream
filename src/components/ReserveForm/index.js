@@ -29,19 +29,27 @@ export const ReserveForm = ({ price }) => {
   //   // gets the actual time from the startTime and EndTime date format
   let start = String(startTime).slice(11, 16);
   let end = String(endTime).slice(11, 16);
+  const allDates = datesSelected.join();
+  const numberOfDays = datesSelected.length;
 
   const findHours = (sTime, eTime) => {
     const startTimeNum = Number(sTime.split(/[.:]/).join("."));
     const endTimeNum = Number(eTime.split(/[.:]/).join("."));
     return endTimeNum - startTimeNum;
   };
-  console.log("dd",findHours(start, end));
+
+  const hourDifference = findHours(start, end).toFixed(2);
+  const totalPrice = hourDifference * price * numberOfDays;
+  const cleaningFee = 20;
+  const totalPriceWithCleaningFee = totalPrice + cleaningFee;
 
   return (
     <div className={css.reserveSpace}>
       <h2 className={css.formHeading}>Reserve your space</h2>
-      <p>£{price} per hour</p>
-      <div className={`${css.Datecontainer} ${css.eachSect}`}>
+      <p>Price: £{price}/per hour</p>
+      <div
+        className={`${css.Datecontainer} ${css.eachSect} ${css.customDatePickerWidth}`}
+      >
         <label className={css.label}>Dates:</label>
         <DatePicker
           value={dates}
@@ -70,6 +78,27 @@ export const ReserveForm = ({ price }) => {
           <option>3+</option>
         </select>
       </div>
+      <div>
+        <p>
+          {price}£ x {hourDifference}hrs x {numberOfDays}days
+        </p>
+        <p>{totalPrice}£</p>
+      </div>
+      <div>
+        <p>Cleaning fee: {cleaningFee}£</p>
+      </div>
+      <div>
+        <p>Total price: {totalPriceWithCleaningFee}£ </p>
+      </div>
+      <div>
+        <a href="mailto:kazeem@yahoo.com?subject=Enquiry about your space&body={alldates}">
+          <button>RESERVE</button>
+        </a>
+      </div>
     </div>
   );
 };
+
+// "{!'https://' + v.boxStatus}";
+
+
