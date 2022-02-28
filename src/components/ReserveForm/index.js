@@ -1,14 +1,14 @@
 import React from "react";
 import css from "./ReserveForm.module.css";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 export const ReserveForm = ({ price }) => {
-  const { register, handleSubmit } = useForm(); // using hookform in react
-  const [form, setForm] = useState({}); // store form input into a state
+  // const { register, handleSubmit } = useForm(); // using hookform in react
+  // const [form, setForm] = useState({}); // store form input into a state
   const [dates, setDates] = useState([{ payload: "" }]); // store dates input into a state
   const [startTime, setStartTime] = useState(moment()); // Time Range
   const [endTime, setEndTime] = useState(moment()); // Time Range
@@ -29,7 +29,7 @@ export const ReserveForm = ({ price }) => {
   //   // gets the actual time from the startTime and EndTime date format
   let start = String(startTime).slice(11, 16);
   let end = String(endTime).slice(11, 16);
-  const allDates = datesSelected.join();
+  // const allDates = datesSelected.join();
   const numberOfDays = datesSelected.length;
 
   const findHours = (sTime, eTime) => {
