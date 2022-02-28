@@ -7,9 +7,8 @@ import Card from "../../components/Card";
 
 const Result = () => {
   const location = useLocation();
-  
   const results = location.state.payload;
- 
+
   return (
     <div className={css.mainContainer}>
       <Header />
@@ -17,14 +16,14 @@ const Result = () => {
       <div className={css.block}>
         <div className={css.result}>
           {" "}
-          {results.map((item, index) => {
+          {results.map((item) => {
             return (
               <Card
-                id={css.resultCard}
                 image={item.images[0]}
                 address={item.address}
                 starttime={item.starttime}
-                key={index}
+                key={item.id}
+                id={item.id}
               />
             );
           })}

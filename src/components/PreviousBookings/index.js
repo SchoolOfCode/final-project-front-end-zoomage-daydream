@@ -19,7 +19,7 @@ function PreviousBookings() {
       const res = await fetch(  `${API_URL}/spaces`);
       const data = await res.json();
       setSpaces(data.payload);
-      console.log(data.payload);
+      console.log(spaces);
     };
     fetchData();
   }, []);

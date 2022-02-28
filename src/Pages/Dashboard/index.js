@@ -23,10 +23,6 @@ function Dashboard() {
       <div className={css.historicalBookingTitle}>
         <h1>History of Bookings</h1>
       </div>
-      {/* <div className={css.historicalBooking}>
-        <Card />
-        <Card />
-      </div> */}
       <PreviousBookings />
       <Footer />
     </div>
