@@ -2,6 +2,7 @@ import React from "react";
 import css from "./header.module.css";
 import Logo from "../../images/Logo.png";
 import { Link } from "react-router-dom";
+import MenuListComposition from "../SignUpMenu";
 
 // Header component
 const Header = () => {
@@ -16,22 +17,15 @@ const Header = () => {
         <div className={css.links}>
           {" "}
           <Link className={css.headerLinks} to="/mission">
-            <p>Our Mission</p>
+            <p>OUR MISSION</p>
           </Link>
         </div>
-        <div className={css.links}>
-          <Link className={css.headerLinks} to="/register">
-            <p>Become a Host</p>
-          </Link>
-        </div>
-        <div className={css.links}>
-          <Link className={css.headerLinks} to="/registerUser">
-            <p>Become a user</p>
-          </Link>
+        <div>
+          <MenuListComposition/>
         </div>
         <div className={css.links}>
           <Link className={css.headerLinks} to="/dashboard">
-            <p>Login</p>
+            <p>LOGIN</p>
           </Link>
         </div>
       </div>
