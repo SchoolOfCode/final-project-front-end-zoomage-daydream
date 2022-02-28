@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Footer from "react-multi-date-picker/plugins/range_picker_footer";
+import Footer from "../../components/Footer";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/Header";
 import API_URL from "../../config";
@@ -16,8 +16,13 @@ const Reserve = () => {
 
   useEffect(() => {
     fetchData();
-  }, [id]);
-  return <div></div>;
+  }, []);
+  return (
+    <div>
+      <Header />
+      <Footer/>
+    </div>
+  );
 };
 
 export default Reserve;
