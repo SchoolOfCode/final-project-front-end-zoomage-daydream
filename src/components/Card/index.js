@@ -1,13 +1,14 @@
 import React from "react";
-import cardPic1 from "../../images/cardPic1.jpg";
 import css from "./card.module.css";
 import { useNavigate } from "react-router-dom";
 
-function Card({ image, address, starttime }) {
+function Card({ image, address, starttime, id }) {
   const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/dashboard");
+  const handleClick = (e) => {
+    const id = e.target.id;
+    navigate("/reserve", { state: id });
   };
+
   return (
     <div className={css.card}>
       <div>
@@ -16,6 +17,7 @@ function Card({ image, address, starttime }) {
           src={image}
           alt="cardPic"
           onClick={handleClick}
+          id={id}
         />
       </div>
       <div className={css.details}>

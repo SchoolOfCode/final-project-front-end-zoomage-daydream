@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import css from "./register.module.css";
+import css from "../Register/register.module.css";
 import background from "../../images/background.jpg";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const RegisterUser = () => {
   const {
     register,
     handleSubmit,
@@ -16,7 +16,7 @@ const Register = () => {
 
   const onSubmit = (ok) => {
     console.log(ok);
-    navigate("/PropertyDetails");
+    navigate("/dashboard");
   };
 
   return (
@@ -95,4 +95,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterUser;

@@ -14,15 +14,15 @@ function PreviousBookings() {
       date: ["2022-03-07T00:00:00.000Z", "2022-03-19T00:00:00.000Z"]
     }
   ]);
+  const fetchData = async () => {
+    const res = await fetch(`${API_URL}/spaces`);
+    const data = await res.json();
+    setSpaces(data.payload);
+    console.log(data.payload);
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(`${API_URL}/spaces/`);
-      const data = await res.json();
-      setSpaces(data.payload);
-    };
     fetchData();
   }, []);
-  console.log(spaces);
   return (
     <div>
       {spaces.map((space, index) => {

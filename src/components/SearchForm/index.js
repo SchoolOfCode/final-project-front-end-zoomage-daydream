@@ -36,8 +36,8 @@ const SearchForm = () => {
   let end = String(endTime).slice(11, 16);
 
   // on form submit
-  const onSubmit = (pik) => {
-    const obj = Object.assign(pik, {
+  const onSubmit = (selected) => {
+    const obj = Object.assign(selected, {
       date: datesSelected,
       startT: start,
       endT: end
@@ -47,21 +47,20 @@ const SearchForm = () => {
 
   const { location, type_of_space } = form;
 
-  const fetchData = async () => {
-    const result = await fetch(
-      `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
-    );
-    const data = await result.json();
-    navigate("/result", { state: data });
-  };
-
   useEffect(() => {
     if (firstMount.current === false) {
       firstMount.current = true;
       return;
     }
+    const fetchData = async () => {
+      const result = await fetch(
+        `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
+      );
+      const data = await result.json();
+      navigate("/result", { state: data });
+    };
     fetchData();
-  }, [form]);
+  }, [form, location, type_of_space, navigate]);
 
   return (
     <div className={css.formBackground}>

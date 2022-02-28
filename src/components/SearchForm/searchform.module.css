@@ -40,11 +40,10 @@
   justify-content: space-evenly;
 }
 
-
-.justoff{
-  width:100rem
+.justoff {
+  width: 100rem;
 }
-=======
+
 .Datecontainer {
   margin: 2rem;
 }
@@ -56,4 +55,3 @@
 .submitSection {
   margin: 6rem 0 0 16rem;
 }
-
