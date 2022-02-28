@@ -19,6 +19,7 @@ const Reserve = () => {
 
     setImages(data.payload[0].images);
     setSpace(data.payload[0]);
+    console.log(space)
   };
 
   useEffect(() => {
@@ -61,9 +62,9 @@ const Reserve = () => {
             </div>
             <p>Our host says "{space.additional_information}"</p>
           </div>
-        </div>
-        <div>
-          <ReserveForm />
+          <div>
+            <ReserveForm />
+          </div>
         </div>
       </div>
       <Footer />

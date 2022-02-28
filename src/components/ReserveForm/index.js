@@ -30,18 +30,15 @@ export const ReserveForm = ({ price }) => {
   let start = String(startTime).slice(11, 16);
   let end = String(endTime).slice(11, 16);
 
-  // on form submit
-  //   const onSubmit = (pik) => {
-  //     const obj = Object.assign(pik, {
-  //       date: datesSelected,
-  //       startT: start,
-  //       endT: end
-  //     });
-  //     setForm(obj);
-  //   };
+  const findHours = (sTime, eTime) => {
+    const startTimeNum = Number(sTime.split(/[.:]/).join("."));
+    const endTimeNum = Number(eTime.split(/[.:]/).join("."));
+    return endTimeNum - startTimeNum;
+  };
+  console.log("dd",findHours(start, end));
 
   return (
-    <div>
+    <div className={css.reserveSpace}>
       <h2 className={css.formHeading}>Reserve your space</h2>
       <p>£{price} per hour</p>
       <div className={`${css.Datecontainer} ${css.eachSect}`}>
@@ -64,6 +61,14 @@ export const ReserveForm = ({ price }) => {
           onEndTimeChange={handleEndTime}
           required
         />{" "}
+      </div>
+      <div>
+        <label>No of People</label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3+</option>
+        </select>
       </div>
     </div>
   );

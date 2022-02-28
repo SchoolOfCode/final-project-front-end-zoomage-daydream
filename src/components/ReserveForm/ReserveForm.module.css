@@ -25,3 +25,8 @@
 .times {
   margin-bottom: 2rem;
 }
+
+.reserveSpace{
+  border: 2px solid black;
+  margin: 2rem;
+}
