@@ -23,7 +23,7 @@ const Home = () => {
 
   const [spaces] = useFetch(`${API_URL}/spaces/`);
   const arrays = spaces.slice(0, 7);
-  console.log(arrays);
+  console.log("d",arrays);
 
   return (
     <div className={css.home}>
