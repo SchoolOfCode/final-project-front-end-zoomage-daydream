@@ -10,18 +10,22 @@ const Reserve = () => {
   const location = useLocation();
   const id = location.state;
   const [space, setSpace] = useState([]);
-  const [images, setImages] = useState([]);
+  const [user, setUser] = useState([]);
 
   const fetchData = async () => {
     const result = await fetch(`${API_URL}/spaces/${id}`);
     const data = await result.json();
-
-    setImages(data.payload[0].images);
     setSpace(data.payload[0]);
-    console.log(space);
   };
+  const fetchUser = async () => {
+    const result = await fetch(`${API_URL}/users/${id}`);
+    const data = await result.json();
+    setUser(data.payload[0]);
+  };
+  console.log("dd", user);
 
   useEffect(() => {
+    fetchUser();
     fetchData();
   }, []);
   return (
@@ -62,7 +66,7 @@ const Reserve = () => {
             <p>Our host says "{space.additional_information}"</p>
           </div>
           <div>
-            <ReserveForm price={space.hourly_price} />
+            <ReserveForm price={space.hourly_price} user={user} />
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ import TimeRange from "react-time-range";
 import moment from "moment";
 import { useState } from "react";
 
-export const ReserveForm = ({ price }) => {
+export const ReserveForm = ({ price, user }) => {
   // const { register, handleSubmit } = useForm(); // using hookform in react
   // const [form, setForm] = useState({}); // store form input into a state
   const [dates, setDates] = useState([{ payload: "" }]); // store dates input into a state
@@ -29,7 +29,7 @@ export const ReserveForm = ({ price }) => {
   //   // gets the actual time from the startTime and EndTime date format
   let start = String(startTime).slice(11, 16);
   let end = String(endTime).slice(11, 16);
-  // const allDates = datesSelected.join();
+  const allDays = datesSelected.join();
   const numberOfDays = datesSelected.length;
 
   const findHours = (sTime, eTime) => {
@@ -42,8 +42,7 @@ export const ReserveForm = ({ price }) => {
   const totalPrice = hourDifference * price * numberOfDays;
   const cleaningFee = 20;
   const totalPriceWithCleaningFee = totalPrice + cleaningFee;
-  const emailLink =
-    "mailto:kazeem@yahoo.com?subject=Enquiry about your space&body={alldates}";
+  const emailLink = `mailto:${user.email}?subject=Enquiry about your space&body=Hi ${user.full_name}. These are the details for my reservation. The total cost is £${totalPriceWithCleaningFee}. I am looking to book for these days ${allDays} for the following time slot ${start} - ${end}.`;
 
   return (
     <div className={css.reserveSpace}>
