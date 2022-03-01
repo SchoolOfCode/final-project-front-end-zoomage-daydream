@@ -22,3 +22,5 @@ const useFetch = (URL) => {
   return [payload];
 };
 export default useFetch;
+
+// This is a custom hook
