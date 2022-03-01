@@ -2,15 +2,17 @@ import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AddressInput from "../../components/AddressInput";
+import ImageInput from "../../components/ImageInput";
 import css from "./propertyDetailsForm.module.css";
 
 function PropertyDetails() {
   return (
     <div>
       <Header />
-
+      <ImageInput />
       <form className={css.propertyDetailsForm}>
         <AddressInput />
+
         <div className={css.propertyDetailsDiv}>
           <label> Type of Space:</label>
           <br />
