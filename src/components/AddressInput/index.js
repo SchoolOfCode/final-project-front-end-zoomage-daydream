@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { css } from "@emotion/react";
+import css from "./addressInput.module.css"
 
 function AddressInput() {
   const [state, setState] = useState({
@@ -34,6 +34,7 @@ function AddressInput() {
       noValidate
       autoComplete="off"
     >
+    <div className={css.addressContainer}>
       <div>
         <TextField
           required
@@ -93,6 +94,7 @@ function AddressInput() {
           value={state.postcode}
           onChange={handleChange}
         />
+      </div>
       </div>
     </Box>
   );
