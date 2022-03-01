@@ -8,8 +8,9 @@ function PropertyDetails() {
   return (
     <div>
       <Header />
-      <AddressInput/>
+
       <form className={css.propertyDetailsForm}>
+        <AddressInput />
         <div className={css.propertyDetailsDiv}>
           <label> Type of Space:</label>
           <br />

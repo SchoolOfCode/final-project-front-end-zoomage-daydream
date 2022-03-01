@@ -13,7 +13,7 @@ function AddressInput() {
     postcode: "",
     lastName: ""
   });
-  console.log(state.city);
+
   function handleChange(e) {
     const value = e.target.value;
     setState({
@@ -21,18 +21,15 @@ function AddressInput() {
       [e.target.name]: value
     });
   }
-  //   function handleChange(e) {
-  //     setState(e.target.value);
-  //   }
 
   return (
     <Box
       component="form"
-      sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" }
-      }}
-      noValidate
-      autoComplete="off"
+      //   sx={{
+      //     "& .MuiTextField-root": { m: 1, width: "25ch" }
+      //   }}
+      //   noValidate
+      //   autoComplete="off"
     >
       <div>
         <TextField
