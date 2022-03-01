@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+
 import EmptyCard from "../EmptyCard";
 import API_URL from "../../config";
 import useFetch from "../hooks/useFetch";

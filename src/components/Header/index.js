@@ -3,6 +3,7 @@ import css from "./header.module.css";
 import Logo from "../../images/Logo.png";
 import { Link } from "react-router-dom";
 import MenuListComposition from "../SignUpMenu";
+import LoginButton from "../Login";
 
 // Header component
 const Header = () => {
@@ -21,12 +22,10 @@ const Header = () => {
           </Link>
         </div>
         <div>
-          <MenuListComposition/>
+          <MenuListComposition />
         </div>
         <div className={css.links}>
-          <Link className={css.headerLinks} to="/dashboard">
-            <p>LOGIN</p>
-          </Link>
+          <LoginButton />
         </div>
       </div>
     </div>

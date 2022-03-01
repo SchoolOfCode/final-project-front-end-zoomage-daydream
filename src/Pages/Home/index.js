@@ -10,17 +10,6 @@ import useFetch from "../../components/hooks/useFetch";
 import API_URL from "../../config";
 
 const Home = () => {
-  // const [space, setSpace] = useState([]);
-  // const fetchSpaces = async () => {
-  //   const result = await fetch(`${API_URL}/spaces/`);
-  //   const data = await result.json();
-  //   const array = data.payload.slice(0, 7);
-  //   setSpace(array);
-  // };
-  // useEffect(() => {
-  //   fetchSpaces();
-  // }, []);
-
   const [spaces] = useFetch(`${API_URL}/spaces/`);
   const arrays = spaces.slice(0, 7);
   console.log("d",arrays);
