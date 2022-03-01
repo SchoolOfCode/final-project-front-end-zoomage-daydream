@@ -8,9 +8,29 @@ import MenuItem from "@mui/material/MenuItem";
 import MenuList from "@mui/material/MenuList";
 import Stack from "@mui/material/Stack";
 import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+
+// const LogoutButton = () => {
+//   const { logout } = useAuth0();
+
+//   return (
+//     <p onClick={() => logout({ returnTo: window.location.origin })}>LOG OUT</p>
+//   );
+// };
+
+// const LoginButton = () => {
+//   const { loginWithRedirect } = useAuth0();
+
+//   return (
+//     <p className={css.links} onClick={() => loginWithRedirect()}>
+//       LOG IN
+//     </p>
+//   );
+// };
 
 const MenuListComposition = () => {
-  const navigate = useNavigate()
+  const { loginWithRedirect } = useAuth0();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const anchorRef = useRef(null);
 
@@ -22,9 +42,8 @@ const MenuListComposition = () => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }
-
+    loginWithRedirect({ returnTo: `http://localhost:3000/registeruser` });
     setOpen(false);
-    navigate("/registerhost")
   };
 
   const handleUser = (event) => {
@@ -34,8 +53,6 @@ const MenuListComposition = () => {
     setOpen(false);
     navigate("/registeruser");
   };
-
-
 
   function handleListKeyDown(event) {
     if (event.key === "Tab") {
@@ -66,7 +83,7 @@ const MenuListComposition = () => {
           aria-expanded={open ? "true" : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
-          style={{color:"black"}}
+          style={{ color: "black", backgroundColor: "none" }}
         >
           Sign Up
         </Button>

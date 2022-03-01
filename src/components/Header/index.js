@@ -4,9 +4,13 @@ import Logo from "../../images/Logo.png";
 import { Link } from "react-router-dom";
 import MenuListComposition from "../SignUpMenu";
 import LoginButton from "../Login";
+import LogoutButton from "../LogOut";
+
+import { useAuth0 } from "@auth0/auth0-react";
 
 // Header component
 const Header = () => {
+   const {  isAuthenticated } = useAuth0();
   return (
     <div className={css.header}>
       <div className={css.logo}>
@@ -21,12 +25,13 @@ const Header = () => {
             <p>OUR MISSION</p>
           </Link>
         </div>
-        <div>
+        <div className={css.links}>
           <MenuListComposition />
         </div>
         <div className={css.links}>
-          <LoginButton />
+          {isAuthenticated?<LogoutButton/>:<LoginButton />}
         </div>
+        
       </div>
     </div>
   );

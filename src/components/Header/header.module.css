@@ -25,6 +25,8 @@
   text-decoration: none;
   color:#000000;
 }
-.headerLinks:hover{
+.links:hover{
 font-weight: bold;
+background: rgba(244, 243, 243, 0.9);
+padding: 0.6rem;
 }
