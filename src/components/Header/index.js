@@ -10,7 +10,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 // Header component
 const Header = () => {
-   const {  isAuthenticated } = useAuth0();
+  const { isAuthenticated } = useAuth0();
   return (
     <div className={css.header}>
       <div className={css.logo}>
@@ -26,12 +26,22 @@ const Header = () => {
           </Link>
         </div>
         <div className={css.links}>
-          <MenuListComposition />
+          {isAuthenticated ? (
+            <Link className={css.headerLinks} to="/dashboard">
+              <p>DASHBOARD</p>
+            </Link>
+          ) : (
+            <MenuListComposition />
+          )}
         </div>
+        {isAuthenticated && (
+          <Link className={css.headerLinks} to="/PropertyDetails">
+            <div>LIST YOUR SPACE</div>
+          </Link>
+        )}
         <div className={css.links}>
-          {isAuthenticated?<LogoutButton/>:<LoginButton />}
+          {isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </div>
-        
       </div>
     </div>
   );

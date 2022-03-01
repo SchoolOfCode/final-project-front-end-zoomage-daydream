@@ -60,7 +60,7 @@ const SearchForm = () => {
       navigate("/result", { state: data });
     };
     fetchData();
-  }, [form, location, type_of_space, navigate]);
+  }, [form]);
 
   return (
     <div className={css.formBackground}>
