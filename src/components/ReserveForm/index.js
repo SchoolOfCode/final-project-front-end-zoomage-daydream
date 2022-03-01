@@ -4,7 +4,7 @@ import css from "./ReserveForm.module.css";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
-import { useState} from "react";
+import { useState } from "react";
 
 export const ReserveForm = ({ price }) => {
   // const { register, handleSubmit } = useForm(); // using hookform in react
@@ -42,6 +42,8 @@ export const ReserveForm = ({ price }) => {
   const totalPrice = hourDifference * price * numberOfDays;
   const cleaningFee = 20;
   const totalPriceWithCleaningFee = totalPrice + cleaningFee;
+  const emailLink =
+    "mailto:kazeem@yahoo.com?subject=Enquiry about your space&body={alldates}";
 
   return (
     <div className={css.reserveSpace}>
@@ -80,18 +82,18 @@ export const ReserveForm = ({ price }) => {
       </div>
       <div>
         <p>
-          {price}£ x {hourDifference}hrs x {numberOfDays}days
+          £{price} x {hourDifference}hrs x {numberOfDays}days
         </p>
-        <p>{totalPrice}£</p>
+        <p>£{totalPrice}</p>
       </div>
       <div>
-        <p>Cleaning fee: {cleaningFee}£</p>
+        <p>Cleaning fee: £{cleaningFee}</p>
       </div>
       <div>
-        <p>Total price: {totalPriceWithCleaningFee}£ </p>
+        <p>Total price: £{totalPriceWithCleaningFee} </p>
       </div>
       <div>
-        <a href="mailto:kazeem@yahoo.com?subject=Enquiry about your space&body={alldates}">
+        <a href={emailLink}>
           <button>RESERVE</button>
         </a>
       </div>
@@ -100,5 +102,3 @@ export const ReserveForm = ({ price }) => {
 };
 
 // "{!'https://' + v.boxStatus}";
-
-
