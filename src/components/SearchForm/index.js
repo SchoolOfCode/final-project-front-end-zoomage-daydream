@@ -51,6 +51,7 @@ const SearchForm = () => {
       firstMount.current = true;
       return;
     }
+
     const fetchData = async () => {
       const result = await fetch(
         `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`

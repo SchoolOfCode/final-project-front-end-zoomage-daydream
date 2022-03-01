@@ -5,29 +5,20 @@ import Header from "../../components/Header";
 import API_URL from "../../config";
 import { ReserveForm } from "../../components/ReserveForm";
 import css from "./reserve.module.css";
+import useFetch from "../../components/hooks/useFetch";
 
 const Reserve = () => {
   const location = useLocation();
   const id = location.state;
-  const [space, setSpace] = useState([]);
-  const [user, setUser] = useState([]);
 
-  const fetchData = async () => {
-    const result = await fetch(`${API_URL}/spaces/${id}`);
-    const data = await result.json();
-    setSpace(data.payload[0]);
-  };
-  const fetchUser = async () => {
-    const result = await fetch(`${API_URL}/users/${id}`);
-    const data = await result.json();
-    setUser(data.payload[0]);
-  };
-  console.log("dd", user);
+  const [spaces] = useFetch(`${API_URL}/spaces/${id}`);
 
-  useEffect(() => {
-    fetchUser();
-    fetchData();
-  }, []);
+  const space = spaces[0];
+
+  const [users] = useFetch(`${API_URL}/users/${id}`);
+
+  const user = users[0];
+
   return (
     <div>
       <Header />

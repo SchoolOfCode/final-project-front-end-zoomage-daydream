@@ -5,20 +5,25 @@ import Card from "../../components/Card";
 import Footer from "../../components/Footer";
 import SearchForm from "../../components/SearchForm";
 import css from "./home.module.css";
+import useFetch from "../../components/hooks/useFetch";
 
 import API_URL from "../../config";
 
 const Home = () => {
-  const [space, setSpace] = useState([]);
-  const fetchSpaces = async () => {
-    const result = await fetch(`${API_URL}/spaces/`);
-    const data = await result.json();
-    const array = data.payload.slice(0, 7);
-    setSpace(array);
-  };
-  useEffect(() => {
-    fetchSpaces();
-  }, []);
+  // const [space, setSpace] = useState([]);
+  // const fetchSpaces = async () => {
+  //   const result = await fetch(`${API_URL}/spaces/`);
+  //   const data = await result.json();
+  //   const array = data.payload.slice(0, 7);
+  //   setSpace(array);
+  // };
+  // useEffect(() => {
+  //   fetchSpaces();
+  // }, []);
+
+  const [spaces] = useFetch(`${API_URL}/spaces/`);
+  const arrays = spaces.slice(0, 7);
+  console.log(arrays);
 
   return (
     <div className={css.home}>
@@ -27,7 +32,7 @@ const Home = () => {
       <SearchForm />
       <div className={css.cards}>
         {" "}
-        {space.map((item,index) => {
+        {arrays.map((item, index) => {
           return (
             <Card
               image={item.images[0]}
