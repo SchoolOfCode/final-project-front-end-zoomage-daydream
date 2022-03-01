@@ -5,7 +5,8 @@ import Result from "../../Pages/ResultsPage";
 import Register from "../../Pages/Register";
 import Dashboard from "../../Pages/Dashboard";
 import Reserve from "../../Pages/Reserve";
-import PropertyDetails from "../../Pages/PropertyDetails"
+import PropertyDetails from "../../Pages/PropertyDetails";
+import RegisterUser from "../../Pages/RegisterUser";
 
 import "./App.css";
 
@@ -16,8 +17,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="mission" element={<Mission />} />
         <Route path="result" element={<Result />} />
-        <Route path="register" element={<Register />} />
- 
+        <Route path="registerhost" element={<Register />} />
+        <Route path="registeruser" element={<RegisterUser />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="reserve" element={<Reserve />} />
         <Route path="PropertyDetails" element={<PropertyDetails />} />

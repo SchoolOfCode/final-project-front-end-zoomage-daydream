@@ -2,13 +2,12 @@ import React from "react";
 import css from "./card.module.css";
 import { useNavigate } from "react-router-dom";
 
-function Card({ image, address, starttime,id }) {
+function Card({ image, address, starttime, id }) {
   const navigate = useNavigate();
   const handleClick = (e) => {
-    const id = e.target.id
-  navigate("/reserve", {state:id})
+    const id = e.target.id;
+    navigate("/reserve", { state: id });
   };
-
 
   return (
     <div className={css.card}>

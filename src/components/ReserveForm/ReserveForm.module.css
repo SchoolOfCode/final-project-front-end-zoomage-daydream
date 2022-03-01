@@ -1,0 +1,32 @@
+.formHeading {
+  font-family: "Philosopher", sans-serif;
+  text-align: center;
+  padding: 2rem;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.label {
+  font-family: "Philosopher", sans-serif;
+  font-size: 1.5rem;
+}
+
+.eachSect {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Datecontainer {
+  margin: 2rem;
+}
+
+.justoff {
+  width: 100rem;
+}
+.times {
+  margin-bottom: 2rem;
+}
+
+.reserveSpace{
+  border: 2px solid black;
+  margin: 2rem;
+}
