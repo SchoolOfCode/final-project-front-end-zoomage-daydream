@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import css from "./AdditionalInfo.module.css";
 
 function AdditionalInfo() {
+  const [text, setText] = useState("");
+  //
+  function handleChange(e) {
+    setText(e.target.value);
+  }
   return (
-    <div className="additional-info-container">
-      <input type="text">hi</input>
-      <textarea id="w3review" name="w3review" rows="4" cols="50"></textarea>
+    <div className={css.additionalInfoContainer}>
+      <div>
+        <h2>Additional Information</h2>
+      </div>
+      <textarea
+        rows="8"
+        cols="50"
+        onChange={handleChange}
+        value={text}
+      ></textarea>
     </div>
   );
 }

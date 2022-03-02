@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AddressInput from "../../components/AddressInput";
 import ImageInput from "../../components/ImageInput";
+import AdditionalInfo from "../../components/AdditionalInfo";
 import css from "./propertyDetailsForm.module.css";
 
 function PropertyDetails() {
@@ -10,6 +11,7 @@ function PropertyDetails() {
     <div>
       <Header />
       <ImageInput />
+      <AdditionalInfo />
       <form className={css.propertyDetailsForm}>
         <AddressInput />
 
