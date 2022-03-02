@@ -14,7 +14,7 @@ const useFetch = (URL) => {
         setPayload(json.payload);
       });
   };
-
+  
   useEffect(() => {
     fetchData();
   }, [URL]);

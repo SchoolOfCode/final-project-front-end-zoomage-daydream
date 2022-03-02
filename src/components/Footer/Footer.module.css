@@ -5,21 +5,65 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 4rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  bottom: 0;
 }
 
 .icons {
   display: flex;
-  padding: 2rem;
   justify-content: space-between;
   align-items: center;
 }
 
-.brandIcon {
-  /* margin-left: 1rem; */
-  transform: scale(2);
-  margin-left: 30px;
-  color: white;
+.text {
+  font-size: small;
+  font-weight: bold;
 }
-p {
-  margin-right: 25px;
+
+.brandIcon {
+  color: white;
+  padding: 0.2rem;
+}
+
+.iconList {
+  padding: 0.8rem;
+}
+
+@media only screen and (min-width: 641px) {
+  .iconList {
+    padding: 1.3rem;
+  }
+  .text {
+    font-size: medium;
+  }
+  .brandIcon {
+ transform: scale(1.4);
+   padding: 0.5rem;
+}
+.footerContainer{
+   padding-left: 1rem;
+  padding-right: 1rem;
+}
+}
+
+@media only screen and (min-width: 1008px) {
+  .footerContainer{
+    height: 7rem;
+  }
+    .iconList {
+    padding: 1.7rem;
+  }
+  .text {
+    font-size: large;
+  }
+  .brandIcon {
+ transform: scale(1.4);
+   padding: 0.8rem;
+}
+.footerContainer{
+   padding-left: 2rem;
+  padding-right: 2rem;
+}
 }

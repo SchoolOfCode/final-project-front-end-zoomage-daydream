@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import css from "./searchform.module.css";
+import "./searchform.css";
 import { useForm } from "react-hook-form";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
@@ -57,38 +57,42 @@ const SearchForm = () => {
         `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
       );
       const data = await result.json();
-      navigate("/result", { state: data });
+      // navigate("/result", { state: data });
     };
     fetchData();
   }, [form]);
 
   return (
-    <div className={css.formBackground}>
-      <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-        <h2 className={css.formHeading}>Reserve Your Space</h2>
-        <div className={css.eachSect}>
-          <label className={css.label}> Location: </label>
+    <div className="formBackground">
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          {" "}
+          <h2 className="formHeading">Reserve Your Space</h2>
+        </div>
+        <div className="eachSect">
+          <label className="label"> Location: </label>
           <input
-            className={css.field}
+            className="field"
             type="text"
             placeholder="City"
             {...register("location")}
             required
           />
         </div>
-        <div className={`${css.Datecontainer} ${css.eachSect}`}>
-          <label className={css.label}>Dates:</label>
-          <DatePicker
-            value={dates}
-            onChange={setDates}
-            placeholder="Choose dates"
-            format="DD/MM/YYYY"
-            className={css.justoff}
-            required
-          />
+        <div className="eachSect">
+          <label className="label">Dates:</label>
+          <div className="dateContainer">
+            <DatePicker
+              value={dates}
+              onChange={setDates}
+              placeholder="Choose dates"
+              format="DD/MM/YYYY"
+              required
+            />
+          </div>
         </div>
-        <br />
-        <div className={`${css.eachSect} ${css.times}`}>
+
+        <div className="times">
           <TimeRange
             startMoment={startTime}
             endMoment={endTime}
@@ -97,13 +101,13 @@ const SearchForm = () => {
             required
           />{" "}
         </div>
-        <div className={css.eachSect}>
-          <label className={css.label}> Type of space:</label>
+        <div className="spaceType">
+          <label className="labelSpace"> Type of space:</label>
 
           <select
             name="type_of_space"
             id="spaces"
-            className={css.field}
+            className="spaces"
             {...register("type_of_space")}
             required
           >
@@ -114,8 +118,8 @@ const SearchForm = () => {
             <option value="audi">Audi</option>
           </select>
         </div>
-        <div className={css.submitSection}>
-          <input type="submit" className={css.field} />
+        <div className="submitSection">
+          <input type="submit" className="submit" />
         </div>
       </form>
     </div>

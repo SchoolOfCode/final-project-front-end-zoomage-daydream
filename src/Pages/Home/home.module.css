@@ -1,12 +1,29 @@
+.home {
+  width: 100%;
+}
+
 .slogan {
-  padding: 4rem;
+  padding: 2rem;
   text-align: center;
   font-family: "Philosopher", sans-serif;
   color: rgb(44, 58, 180);
-  font-size: 5rem;
+  font-size: 2rem;
 }
 
-.cards {
+
+@media only screen and (min-width: 641px) {
+.slogan{
+  font-size: 4rem;
+}
+}
+@media only screen and (min-width: 1008px) {
+.slogan{
+  padding: 4rem;
+  font-size: 5rem;
+}
+}
+
+/* .cards {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 1fr;
@@ -20,6 +37,4 @@
 .cards::-webkit-scrollbar {
   display: none;
 }
-.home {
-  width: 100%;
-}
+ */

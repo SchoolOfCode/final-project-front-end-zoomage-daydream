@@ -9,7 +9,9 @@ import useFetch from "../../components/hooks/useFetch";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 
+
 import API_URL from "../../config";
+import ImageUploader from "../../components/fileUploader";
 
 const Home = () => {
   const { user, isAuthenticated } = useAuth0();
@@ -17,6 +19,7 @@ const Home = () => {
   const arrays = spaces.slice(0, 7);
   const [users] = useFetch(`${API_URL}/users/`);
   const navigate = useNavigate();
+
 
   if (isAuthenticated === true) {
     console.log(user.email);
@@ -28,13 +31,17 @@ const Home = () => {
   return (
     <div className={css.home}>
       <Header />
+      <h2 className={css.slogan}>The place to find your Space</h2>
+      <SearchForm />
+      <ImageUploader/>
+      <Footer />
     </div>
   );
 };
 
 export default Home;
 
-/* <Header />
+/* 
       <h2 className={css.slogan}>The place to find your Space</h2>
       <SearchForm />
       <div className={css.cards}>
