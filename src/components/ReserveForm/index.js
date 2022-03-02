@@ -47,7 +47,11 @@ export const ReserveForm = ({ price, user }) => {
   return (
     <div className={css.reserveSpace}>
       <h2 className={css.formHeading}>Reserve your space</h2>
-      <p>Price: £{price}/per hour</p>
+      <div className={css.price}>
+        <p>Price: £{price}/per hour</p>
+        <p>4.5</p>
+      </div>
+
       <div
         className={`${css.Datecontainer} ${css.eachSect} ${css.customDatePickerWidth}`}
       >
@@ -71,29 +75,33 @@ export const ReserveForm = ({ price, user }) => {
           required
         />{" "}
       </div>
-      <div>
-        <label>No of People</label>
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3+</option>
-        </select>
-      </div>
-      <div>
-        <p>
-          £{price} x {hourDifference}hrs x {numberOfDays}days
-        </p>
-        <p>£{totalPrice}</p>
-      </div>
-      <div>
-        <p>Cleaning fee: £{cleaningFee}</p>
-      </div>
-      <div>
-        <p>Total price: £{totalPriceWithCleaningFee} </p>
+      <div className={css.reserveBottom}>
+        <div>
+          <label className={css.people}>No of People</label>
+          <select className={css.select}>
+            <option>1</option>
+            <option>2</option>
+            <option>3+</option>
+          </select>
+        </div>
+        <div>
+          <p>
+            £{price} x {hourDifference}hrs x {numberOfDays}days
+          </p>
+          <p>£{totalPrice}</p>
+        </div>
+        <div>
+          <p>Cleaning fee: £{cleaningFee}</p>
+        </div>
+        <div>
+          <p>Total price: £{totalPriceWithCleaningFee} </p>
+        </div>
       </div>
       <div>
         <a href={emailLink}>
-          <button>RESERVE</button>
+          <div className={css.buttonContainer}>
+            <button className={css.button}>RESERVE</button>
+          </div>
         </a>
       </div>
     </div>

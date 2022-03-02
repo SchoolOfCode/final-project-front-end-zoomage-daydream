@@ -1,13 +1,27 @@
 .formHeading {
   font-family: "Philosopher", sans-serif;
   text-align: center;
-  padding: 2rem;
-  font-size: 2rem;
-  margin: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
 }
+
+@media (min-width: 736px) {
+  .formHeading {
+    font-size: 2rem;
+    padding: 2rem;
+    margin: 1rem;
+  }
+}
+
 .label {
   font-family: "Philosopher", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 736px) {
+  .label {
+    font-size: 1.5rem;
+  }
 }
 
 .eachSect {
@@ -24,9 +38,75 @@
 }
 .times {
   margin-bottom: 2rem;
+  font-size: 1rem;
 }
 
-.reserveSpace{
+@media (min-width: 736px) {
+  .times {
+    font-size: 1.5rem;
+  }
+}
+
+.reserveSpace {
   border: 2px solid black;
-  margin: 2rem;
+  margin: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (min-width: 736px) {
+  .reserveSpace {
+    border: 2px solid black;
+    margin: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+.price {
+  font-size: 1rem;
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (min-width: 736px) {
+  .price {
+    font-size: 1.6rem;
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.button {
+  transform: scale(1);
+}
+
+@media (min-width: 736px) {
+  .button {
+    transform: scale(1.5);
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.people {
+  margin-right: 1rem;
+}
+
+.reserveBottom {
+  margin-left: 1rem;
+}
+.select {
+  transform: scale(0.6);
+}
+
+@media (min-width: 736px) {
+  .select {
+    transform: scale(1.3);
+  }
 }
