@@ -8,6 +8,7 @@ import Reserve from "../../Pages/Reserve";
 import PropertyDetails from "../../Pages/PropertyDetails";
 import RegisterUser from "../../Pages/RegisterUser";
 
+
 import "./App.css";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="PropertyDetails" element={<PropertyDetails />} />
       </Routes>
     </div>
+
   );
 }
 
