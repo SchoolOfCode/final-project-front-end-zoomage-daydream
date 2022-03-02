@@ -8,10 +8,15 @@ import Reserve from "../../Pages/Reserve";
 import PropertyDetails from "../../Pages/PropertyDetails";
 import RegisterUser from "../../Pages/RegisterUser";
 
+
 import "./App.css";
 
 function App() {
+<<<<<<< HEAD
   console.warn = () => {}; 
+=======
+  console.warn = () => {};
+>>>>>>> front_end_MFJ
   return (
     <div className="App">
       <Routes>
@@ -25,6 +30,7 @@ function App() {
         <Route path="PropertyDetails" element={<PropertyDetails />} />
       </Routes>
     </div>
+
   );
 }
 

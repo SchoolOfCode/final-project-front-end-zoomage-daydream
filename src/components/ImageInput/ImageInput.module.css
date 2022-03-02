@@ -1,0 +1,10 @@
+.ImageUploadContainer {
+  border: 3px solid black;
+  width: 10%;
+  position: fixed;
+  bottom: 20%;
+  left: 80%;
+}
+/* .ImageUploadButton {
+  /* border: 3px solid red; 
+} */

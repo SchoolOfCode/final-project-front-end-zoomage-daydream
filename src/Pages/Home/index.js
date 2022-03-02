@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/Header";
-import { useEffect, useState } from "react";
+
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
 import SearchForm from "../../components/SearchForm";
@@ -25,6 +25,7 @@ const Home = () => {
       navigate("/registerhost");
     }
   }
+
   return (
     <div className={css.home}>
       <Header />

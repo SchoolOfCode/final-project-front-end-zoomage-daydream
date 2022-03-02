@@ -6,8 +6,10 @@ import TimeRange from "react-time-range";
 import moment from "moment";
 import API_URL from "../../config";
 import { useNavigate } from "react-router-dom";
+import background from "../../images/background.jpg";
 
 const SearchForm = () => {
+  // const [bgimage, setBgImage] = useState();
   const { register, handleSubmit } = useForm(); // using hookform in react
   const [form, setForm] = useState({}); // store form input into a state
   const [dates, setDates] = useState([{ payload: "" }]); // store dates input into a state
@@ -61,6 +63,7 @@ const SearchForm = () => {
     };
     fetchData();
   }, [form]);
+
 
   return (
     <div className="formBackground">
