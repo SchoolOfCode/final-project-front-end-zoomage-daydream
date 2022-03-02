@@ -5,15 +5,15 @@ import AddressInput from "../../components/AddressInput";
 import ImageInput from "../../components/ImageInput";
 import AdditionalInfo from "../../components/AdditionalInfo";
 import css from "./propertyDetailsForm.module.css";
-// import { Checkbox } from '@mui/material'
-import CheckBox from '../../components/CheckBox'
+import  Checkbox  from "../../components/Checkbox";
+
 
 function PropertyDetails() {
   return (
     <div>
       <Header />
       <ImageInput />
-      <CheckBox />
+      <Checkbox/>
       <AdditionalInfo />
       <form className={css.propertyDetailsForm}>
         <AddressInput />
