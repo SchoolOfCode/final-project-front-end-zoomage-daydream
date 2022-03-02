@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/Header";
-import { useEffect, useState } from "react";
+
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
 import SearchForm from "../../components/SearchForm";
@@ -19,15 +19,12 @@ const Home = () => {
   const navigate = useNavigate();
 
   if (isAuthenticated === true) {
-    console.log(user.email)
-    const userStatus = users.some((item) => 
-       item.email === user.email
-    );
-   if(userStatus===false){
-     navigate("/registerhost")
-   }
-    
+    const userStatus = users.some((item) => item.email === user.email);
+    if (userStatus === false) {
+      navigate("/registerhost");
+    }
   }
+
   return (
     <div className={css.home}>
       <Header />

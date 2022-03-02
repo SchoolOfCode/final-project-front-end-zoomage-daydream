@@ -11,6 +11,7 @@ import RegisterUser from "../../Pages/RegisterUser";
 import "./App.css";
 
 function App() {
+  console.warn = () => {};
   return (
     <div className="App">
       <Routes>
