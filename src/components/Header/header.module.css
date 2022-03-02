@@ -5,16 +5,21 @@
   border: 2px solid black;
 }
 
+.text{
+  width: 4rem;
+}
+
 .linkList {
   display: flex;
   align-items: center;
 }
 .links {
   font-size: 0.5rem;
+ 
 }
 
 .logo {
-  transform: scale(1);
+  transform: scale(0.5);
 }
 
 /*.headerLinks {

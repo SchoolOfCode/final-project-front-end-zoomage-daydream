@@ -22,7 +22,7 @@ const Header = () => {
         <div className={css.links}>
           {" "}
           <Link className={css.headerLinks} to="/mission">
-            <p>OUR MISSION</p>
+            <p className={css.text}>OUR MISSION</p>
           </Link>
         </div>
         <div className={css.links}>
