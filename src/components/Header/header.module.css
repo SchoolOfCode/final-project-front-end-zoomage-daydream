@@ -1,11 +1,17 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  border: 2px solid #cac7c7;
-
+   display: flex;
+  align-items: center;
+  justify-content: center;
+border: 2px solid black;
 }
 
-.links {
+
+
+/* display: flex; */
+/* justify-content: space-between;
+  border: 2px solid #cac7c7; */
+
+/* .links {
   padding: 1rem;
 }
 
@@ -29,4 +35,4 @@
 font-weight: bold;
 background: rgba(244, 243, 243, 0.9);
 padding: 0.6rem;
-}
+} */

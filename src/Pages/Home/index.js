@@ -31,23 +31,7 @@ const Home = () => {
   return (
     <div className={css.home}>
       <Header />
-      <h2 className={css.slogan}>The place to find your Space</h2>
-      <SearchForm />
-      <div className={css.cards}>
-        {" "}
-        {arrays.map((item, index) => {
-          return (
-            <Card
-              image={item.images[0]}
-              address={item.address}
-              starttime={item.starttime}
-              key={item.id}
-              id={item.id}
-            />
-          );
-        })}
-      </div>
-      <Footer />
+      
     </div>
   );
 };
