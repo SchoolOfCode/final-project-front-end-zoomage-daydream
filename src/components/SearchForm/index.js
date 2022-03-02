@@ -6,7 +6,7 @@ import TimeRange from "react-time-range";
 import moment from "moment";
 import API_URL from "../../config";
 import { useNavigate } from "react-router-dom";
-import background from "../../images/background.jpg";
+
 
 const SearchForm = () => {
   // const [bgimage, setBgImage] = useState();

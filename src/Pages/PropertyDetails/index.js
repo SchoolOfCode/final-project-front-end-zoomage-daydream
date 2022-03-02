@@ -2,10 +2,9 @@ import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AddressInput from "../../components/AddressInput";
-import ImageInput from "../../components/ImageInput";
 import AdditionalInfo from "../../components/AdditionalInfo";
 import css from "./propertyDetailsForm.module.css";
-import  Checkbox  from "../../components/Checkbox";
+import CheckBox  from "../../components/CheckBox";
 import ImageUploader from "../../components/fileUploader";
 
 
@@ -13,10 +12,10 @@ function PropertyDetails() {
   return (
     <div>
       <Header />
-      <ImageInput />
-      <Checkbox/>
-      <ImageUploader/>
+      <CheckBox />
+
       <AdditionalInfo />
+
       <form className={css.propertyDetailsForm}>
         <AddressInput />
 
@@ -39,6 +38,7 @@ function PropertyDetails() {
             <option value="audi"></option>
           </select>
         </div>
+        <ImageUploader />
         <div className={css.propertyDetailsDiv}>
           <label> Purpose of space:</label>
           <br />
