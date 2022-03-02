@@ -16,7 +16,7 @@ const Register = () => {
 
   const onSubmit = (ok) => {
     console.log(ok);
-    navigate("/PropertyDetails");
+    navigate("/dashboard");
   };
 
   return (

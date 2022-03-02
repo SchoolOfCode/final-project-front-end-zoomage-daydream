@@ -2,7 +2,7 @@ import React from "react";
 import css from "./header.module.css";
 import Logo from "../../images/Logo.png";
 import { Link } from "react-router-dom";
-import MenuListComposition from "../SignUpMenu";
+import SignUp from "../SignUp";
 import LoginButton from "../Login";
 import LogoutButton from "../LogOut";
 
@@ -31,7 +31,7 @@ const Header = () => {
               <p>DASHBOARD</p>
             </Link>
           ) : (
-            <MenuListComposition />
+            <SignUp />
           )}
         </div>
         {isAuthenticated && (
