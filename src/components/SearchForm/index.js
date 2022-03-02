@@ -59,7 +59,7 @@ const SearchForm = () => {
         `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
       );
       const data = await result.json();
-      // navigate("/result", { state: data });
+      navigate("/result", { state: data })
     };
     fetchData();
   }, [form]);
