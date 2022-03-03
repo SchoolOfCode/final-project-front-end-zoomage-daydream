@@ -43,14 +43,9 @@ const Reserve = () => {
                   );
                 })}
               </div>
+
               <div>
-                {space.images.slice(2, 2).map((item, index) => {
-                  return (
-                    <div key={index}>
-                      <img src={item} alt="" />
-                    </div>
-                  );
-                })}
+                <img src={space.images[2]} alt="" />
               </div>
               <div className={css.images}>
                 {space.images.slice(3, 5).map((item, index) => {
