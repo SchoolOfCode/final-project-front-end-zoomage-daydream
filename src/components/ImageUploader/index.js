@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import css from "./ImageUploader.module.css";
 
@@ -8,17 +8,19 @@ const ImageUploader = ({ picture }) => {
   const handleClick = (e) => {
     setImages([...images, e.target.files]);
   };
-  if (images[0] !== undefined) {
-    console.log(images[0][0].name);
-  }
 
-  console.log(images);
+
+
+useEffect(()=>{
+  picture(images)
+},[images])
+
 
   const handleDelete = (e) => {
     const index = e.target.value;
     const array = [...images.slice(0, index), ...images.slice(index + 1)];
     setImages(array);
-    picture(images);
+
   };
 
   return (
@@ -27,7 +29,7 @@ const ImageUploader = ({ picture }) => {
 
       {images[0] !== undefined ? (
         images.map((item, index) => (
-          <div className={css.images}>
+          <div className={css.images} key={index}>
             <p>{item[0].name}</p>
             <button value={index} onClick={handleDelete}>
               x
