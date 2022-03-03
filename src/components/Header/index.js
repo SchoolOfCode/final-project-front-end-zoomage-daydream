@@ -22,7 +22,7 @@ const Header = () => {
         <div className={css.links}>
           {" "}
           <Link className={css.headerLinks} to="/mission">
-            <p>OUR MISSION</p>
+            <p className={css.links}>OUR MISSION</p>
           </Link>
         </div>
         <div className={css.links}>
@@ -36,7 +36,7 @@ const Header = () => {
         </div>
         {isAuthenticated && (
           <Link className={css.headerLinks} to="/PropertyDetails">
-            <div>LIST YOUR SPACE</div>
+            <div className={css.links}>LIST YOUR SPACE</div>
           </Link>
         )}
         <div className={css.links}>

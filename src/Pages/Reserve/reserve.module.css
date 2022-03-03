@@ -1,47 +1,21 @@
 .reserveContainer {
   display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-  line-height: 2rem;
-  font-size: 0.9rem;
-}
-
-@media (min-width: 736px) {
-  .reserveContainer {
-    font-size: 1.4rem;
-    line-height: 4rem;
-  }
+  flex-direction: column;
 }
 
 .topContainer {
-  margin-left: 2rem;
-  margin-top: 2rem;
-
-  font-family: "Philosopher", sans-serif;
-  font-size: 1.2 rem;
+  padding: 1rem;
+  font-size: x-small;
 }
 
-@media (min-width: 736px) {
-  .topContainer {
-    font-size: 1.4rem;
-  }
+imagesRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.imageContainer {
-  direction: flex;
-  flex-direction: column;
-
-  margin-top: 1rem;
-}
-
-.images {
-  transform: scale(0.7);
-}
-
-@media (min-width: 736px) {
-  .images {
-    transform: scale(1);
-    direction: flex;
-    flex-direction: row;
-  }
+.images_right {
+  width: 5rem;
+  height: 5rem;
+  justify-content: center;
 }
