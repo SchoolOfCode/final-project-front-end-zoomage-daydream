@@ -77,6 +77,30 @@
 }
 @media only screen and (min-width: 1008px) {
   .imag {
+    width: 50rem;
+    margin-top: 3rem;
+    margin-right: 1rem;
+    height: auto;
+    display: inline-block;
+  }
+  .category {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2rem;
+    height: 10rem;
+    /* line-height: 6rem; */
+  }
+  .form {
+    margin: 2rem;
+    transform: scale(2);
+  }
+  .button {
+    transform: scale(3.5);
+  }
+}
+
+@media only screen and (min-width: 1640px) {
+  .imag {
     width: 70rem;
     margin-top: 3rem;
     margin-right: 1rem;
