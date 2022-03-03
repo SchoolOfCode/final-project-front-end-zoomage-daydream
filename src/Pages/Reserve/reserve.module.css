@@ -14,7 +14,6 @@
   padding: 1rem;
 }
 
-
 .imagesRight {
   display: flex;
   flex-direction: column;
@@ -108,7 +107,7 @@
   }
 
   .propertyHeader {
-    text-align:start;
+    text-align: start;
     padding: 1rem;
   }
 
@@ -130,13 +129,14 @@
     margin-top: 1rem;
   }
 
-  .bottomContainer{
+  .bottomContainer {
     display: flex;
     justify-content: space-around;
   }
 }
 
-@media only screen and (min-width: 1008px) {.topContainer {
+@media only screen and (min-width: 1008px) {
+  .topContainer {
     font-size: large;
   }
 
@@ -172,7 +172,7 @@
   }
 
   .propertyHeader {
-    text-align:start;
+    text-align: start;
     padding: 1rem;
   }
 
@@ -192,4 +192,65 @@
 
   .host {
     margin-top: 1rem;
-  }}
+  }
+}
+
+@media only screen and (min-width: 1640px) {
+  .topContainer {
+    font-size: large;
+  }
+
+  .images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .images_right {
+    width: 30rem;
+    height: 30rem;
+  }
+  .imageCenter {
+    padding: 1rem;
+  }
+
+  .images_center {
+    width: 50rem;
+    height: 40rem;
+  }
+
+  .images_left {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .bottomContainer {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+  }
+
+  .propertyHeader {
+    text-align: start;
+    padding: 1rem;
+  }
+
+  .details {
+    padding-left: 1rem;
+  }
+
+  .amenitiesHeader {
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  .amenities {
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .host {
+    margin-top: 1rem;
+  }
+}
