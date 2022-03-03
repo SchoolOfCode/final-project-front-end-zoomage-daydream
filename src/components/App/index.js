@@ -6,13 +6,10 @@ import Register from "../../Pages/Register";
 import Dashboard from "../../Pages/Dashboard";
 import Reserve from "../../Pages/Reserve";
 import PropertyDetails from "../../Pages/PropertyDetails";
-import RegisterUser from "../../Pages/RegisterUser";
-
-
 import "./App.css";
 
 function App() {
-  console.warn = () => {};
+  console.warn = () => {}; 
   return (
     <div className="App">
       <Routes>
@@ -20,13 +17,12 @@ function App() {
         <Route path="mission" element={<Mission />} />
         <Route path="result" element={<Result />} />
         <Route path="registerhost" element={<Register />} />
-        <Route path="registeruser" element={<RegisterUser />} />
+
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="reserve" element={<Reserve />} />
         <Route path="PropertyDetails" element={<PropertyDetails />} />
       </Routes>
     </div>
-
   );
 }
 

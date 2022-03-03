@@ -49,24 +49,21 @@ export const ReserveForm = ({ price, user }) => {
       <h2 className={css.formHeading}>Reserve your space</h2>
       <div className={css.price}>
         <p>Price: £{price}/per hour</p>
-        <p>4.5</p>
+        <p>4.5*</p>
       </div>
 
-      <div
-        className={`${css.Datecontainer} ${css.eachSect} ${css.customDatePickerWidth}`}
-      >
+      <div className={css.date}>
         <label className={css.label}>Dates:</label>
         <DatePicker
           value={dates}
           onChange={setDates}
           placeholder="Choose dates"
           format="DD/MM/YYYY"
-          className={css.justoff}
           required
         />
       </div>
       <br />
-      <div className={`${css.eachSect} ${css.times}`}>
+      <div className={css.times}>
         <TimeRange
           startMoment={startTime}
           endMoment={endTime}
@@ -76,25 +73,21 @@ export const ReserveForm = ({ price, user }) => {
         />{" "}
       </div>
       <div className={css.reserveBottom}>
-        <div>
+        <div className={css.selectSection}>
           <label className={css.people}>No of People</label>
-          <select className={css.select}>
+          <select className={css.sect}>
             <option>1</option>
             <option>2</option>
             <option>3+</option>
           </select>
         </div>
-        <div>
-          <p>
+        <div className={css.priceSection}>
+          <p className={css.sect}>
             £{price} x {hourDifference}hrs x {numberOfDays}days
           </p>
-          <p>£{totalPrice}</p>
-        </div>
-        <div>
-          <p>Cleaning fee: £{cleaningFee}</p>
-        </div>
-        <div>
-          <p>Total price: £{totalPriceWithCleaningFee} </p>
+          <p className={css.sect}>£{totalPrice}</p>
+          <p className={css.sect}>Cleaning fee: £{cleaningFee}</p>
+          <p className={css.sect}>Total price: £{totalPriceWithCleaningFee} </p>
         </div>
       </div>
       <div>

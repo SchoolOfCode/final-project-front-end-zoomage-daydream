@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import css from "./addressInput.module.css"
+import css from "./addressInput.module.css";
 
 function AddressInput() {
   const [state, setState] = useState({
@@ -31,67 +31,67 @@ function AddressInput() {
       //   noValidate
       //   autoComplete="off"
     >
-    <div className={css.addressContainer}>
-      <div>
-        <TextField
-          required
-          id="standard-required"
-          label="Address Line 1 "
-          placeholder="Required"
-          variant="standard"
-          value={state.addressone}
-          name="addressone"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <TextField
-          required
-          id="standard-required"
-          label="Address Line 2"
-          placeholder="Required"
-          variant="standard"
-          value={state.addresstwo}
-          name="addresstwo"
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <TextField
-          required
-          id="standard-required"
-          label="City"
-          placeholder="Required"
-          variant="standard"
-          name="city"
-          value={state.city}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <TextField
-          required
-          id="standard-required"
-          label="Region"
-          placeholder="Required"
-          variant="standard"
-          name="region"
-          value={state.region}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <TextField
-          required
-          id="standard-required"
-          label="Postal Code"
-          placeholder="Required"
-          variant="standard"
-          name="postcode"
-          value={state.postcode}
-          onChange={handleChange}
-        />
-      </div>
+      <div className={css.addressContainer}>
+        <div>
+          <TextField
+            required
+            id="standard-required"
+            label="Address Line 1 "
+            placeholder="Required"
+            variant="standard"
+            value={state.addressone}
+            name="addressone"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <TextField
+            required
+            id="standard-required"
+            label="Address Line 2"
+            placeholder="Required"
+            variant="standard"
+            value={state.addresstwo}
+            name="addresstwo"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <TextField
+            required
+            id="standard-required"
+            label="City"
+            placeholder="Required"
+            variant="standard"
+            name="city"
+            value={state.city}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <TextField
+            required
+            id="standard-required"
+            label="Region"
+            placeholder="Required"
+            variant="standard"
+            name="region"
+            value={state.region}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <TextField
+            required
+            id="standard-required"
+            label="Postal Code"
+            placeholder="Required"
+            variant="standard"
+            name="postcode"
+            value={state.postcode}
+            onChange={handleChange}
+          />
+        </div>
       </div>
     </Box>
   );

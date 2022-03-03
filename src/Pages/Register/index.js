@@ -5,6 +5,7 @@ import css from "./register.module.css";
 import background from "../../images/background.jpg";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../../config";
 
 const Register = () => {
   const {
@@ -14,8 +15,26 @@ const Register = () => {
   } = useForm();
   const navigate = useNavigate();
 
-  const onSubmit = (ok) => {
-    console.log(ok);
+  const onSubmit = async (userDetails) => {
+    console.log(userDetails);
+
+    const { firstName, surname, emailAddress, dateOfBirth, username } =
+      userDetails;
+    const fullName = firstName + " " + surname;
+    console.log(fullName);
+    navigate("/dashboard");
+    const post = await fetch(`${API_URL}/users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        full_name: fullName,
+        username: username,
+        email: emailAddress,
+        date_of_birth: dateOfBirth
+      })
+    });
     navigate("/dashboard");
   };
 
@@ -30,7 +49,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="First Name"
-              {...register("First Name")}
+              {...register("firstName")}
               className={css.form}
               required
             />
@@ -41,7 +60,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Your Surname"
-              {...register("Surname")}
+              {...register("surname")}
               className={css.form}
               required
             />
@@ -52,7 +71,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Email Address"
-              {...register("Email Address")}
+              {...register("emailAddress")}
               className={css.form}
               required
             />
@@ -63,7 +82,7 @@ const Register = () => {
             <input
               type="date"
               placeholder="Your Date of Birth"
-              {...register("Date of Birth")}
+              {...register("dateOfBirth")}
               className={css.form}
               required
             />
@@ -74,12 +93,12 @@ const Register = () => {
             <input
               type="text"
               placeholder="Choose a Username"
-              {...register("Username")}
+              {...register("username")}
               className={css.form}
               required
             />
             <div>
-              <input type="submit"/>
+              <input type="submit" />
             </div>
           </div>
           {errors.exampleRequired && <p>This field is required</p>}
