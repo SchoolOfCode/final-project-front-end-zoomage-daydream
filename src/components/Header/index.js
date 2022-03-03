@@ -2,10 +2,15 @@ import React from "react";
 import css from "./header.module.css";
 import Logo from "../../images/Logo.png";
 import { Link } from "react-router-dom";
-import MenuListComposition from "../SignUpMenu";
+import SignUp from "../SignUp";
+import LoginButton from "../Login";
+import LogoutButton from "../LogOut";
+
+import { useAuth0 } from "@auth0/auth0-react";
 
 // Header component
 const Header = () => {
+  const { isAuthenticated } = useAuth0();
   return (
     <div className={css.header}>
       <div className={css.logo}>
@@ -17,16 +22,25 @@ const Header = () => {
         <div className={css.links}>
           {" "}
           <Link className={css.headerLinks} to="/mission">
-            <p>OUR MISSION</p>
+            <p className={css.links}>OUR MISSION</p>
           </Link>
-        </div>
-        <div>
-          <MenuListComposition/>
         </div>
         <div className={css.links}>
-          <Link className={css.headerLinks} to="/dashboard">
-            <p>LOGIN</p>
+          {isAuthenticated ? (
+            <Link className={css.headerLinks} to="/dashboard">
+              <p>DASHBOARD</p>
+            </Link>
+          ) : (
+            <SignUp />
+          )}
+        </div>
+        {isAuthenticated && (
+          <Link className={css.headerLinks} to="/PropertyDetails">
+            <div className={css.links}>LIST YOUR SPACE</div>
           </Link>
+        )}
+        <div className={css.links}>
+          {isAuthenticated ? <LogoutButton /> : <LoginButton />}
         </div>
       </div>
     </div>

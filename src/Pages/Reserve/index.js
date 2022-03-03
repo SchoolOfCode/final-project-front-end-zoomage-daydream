@@ -5,65 +5,99 @@ import Header from "../../components/Header";
 import API_URL from "../../config";
 import { ReserveForm } from "../../components/ReserveForm";
 import css from "./reserve.module.css";
+import useFetch from "../../components/hooks/useFetch";
 
 const Reserve = () => {
   const location = useLocation();
   const id = location.state;
-  const [space, setSpace] = useState([]);
-  const [images, setImages] = useState([]);
+  const [spaces] = useFetch(`${API_URL}/spaces/${id}`); //custom hook fetch
+  const space = spaces[0];
+  const [users] = useFetch(`${API_URL}/users/${id}`); //custom hook fetch
+  const user = users[0];
 
-  const fetchData = async () => {
-    const result = await fetch(`${API_URL}/spaces/${id}`);
-    const data = await result.json();
+  console.log(space);
 
-    setImages(data.payload[0].images);
-    setSpace(data.payload[0]);
-    console.log(space);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
-    <div>
+    <div className={css.reserveContainer}>
       <Header />
-      <div>
-        {" "}
-        <p>{space.purpose_of_space}</p>
-        <p>{space.address}</p>
-        <p>4.5</p>
-        <p>Reviews(48)</p>
-      </div>
-
-      <div>
-        {space.images &&
-          space.images.map((item, index) => {
-            return (
-              <div key={index}>
-                <img src={item} alt="" />
-              </div>
-            );
-          })}
-        <div className={css.reserveContainer}>
+      <div className={css.topContainer}>
+        {space && (
           <div>
-            <h2>Property Details</h2>
-            <h3>{space.type_of_space}</h3>
-            <h3>{space.fraction_of_space}</h3>
-            <p>Check in: </p>
-            <p>Cancellation</p>
-            <p>Instructions on how to use go here</p>
-            <h3>Amenities</h3>
+            {" "}
+            <p>{space.purpose_of_space}</p>
+            <p>{space.address}</p>
+            <p>4.5</p>
+            <p>Reviews(48)</p>
+          </div>
+        )}
+      </div>
+      <div className={css.images}>
+        <div className={css.imagesRight}>
+          {space &&
+            space.images.slice(0, 2).map((item, index) => {
+              return (
+                <div key={index}>
+                  <img className={css.images_right} src={item} alt="" />
+                </div>
+              );
+            })}
+        </div>
+        <div className={css.imageCenter}>
+          {space && (
             <div>
-              {space.amenities &&
-                space.amenities.map((item, index) => {
+              <img className={css.images_center} src={space.images[2]} alt="" />
+            </div>
+          )}
+        </div>
+        <div className={css.imagesLeft}>
+          {space &&
+            space.images.slice(3, 5).map((item, index) => {
+              return (
+                <div key={index}>
+                  <img className={css.images_left} src={item} alt="" />
+                </div>
+              );
+            })}
+        </div>
+      </div>
+      <div className={css.bottomContainer}>
+        <div>
+          <h2 className={css.propertyHeader}>Property Details</h2>
+          <div>
+            {space && (
+              <div className={css.details}>
+                {" "}
+                <p>Type of space:{space.type_of_space}</p>
+                <p>Fraction of space: {space.fraction_of_space}</p>
+                <p>Check in: </p>
+                <p>Cancellation</p>
+                <p>Instructions on how to use go here</p>
+              </div>
+            )}{" "}
+          </div>
+          <h3 className={css.amenitiesHeader}>Amenities</h3>
+          <div className={css.amenities}>
+            {space && (
+              <div>
+                {space.amenities.map((item, index) => {
                   return <p key={index}>{item}</p>;
                 })}
+              </div>
+            )}
+            {space && (
+              <div className={css.host}>
+                {" "}
+                <p>Our host says "{space.additional_information}"</p>
+              </div>
+            )}
+          </div>
+        </div>
+        <div>
+          {user && space && (
+            <div>
+              <ReserveForm price={space.hourly_price} user={user} />
             </div>
-            <p>Our host says "{space.additional_information}"</p>
-          </div>
-          <div>
-            <ReserveForm price={space.hourly_price} />
-          </div>
+          )}
         </div>
       </div>
       <Footer />

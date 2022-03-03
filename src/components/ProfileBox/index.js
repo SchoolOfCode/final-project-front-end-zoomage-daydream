@@ -41,7 +41,7 @@ function ProfileBox() {
   return (
     <div>
       <Profile
-        date_of_birth={users[0].date_of_birth}
+        date_of_birth={users[0].date_of_birth.split("").slice(0, 10)}
         email={users[0].email}
         full_name={users[0].full_name}
         username={users[0].username}

@@ -5,8 +5,11 @@ import css from "./register.module.css";
 import background from "../../images/background.jpg";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../../config";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Register = () => {
+   const { user } = useAuth0();
   const {
     register,
     handleSubmit,
@@ -14,9 +17,26 @@ const Register = () => {
   } = useForm();
   const navigate = useNavigate();
 
-  const onSubmit = (ok) => {
-    console.log(ok);
-    navigate("/PropertyDetails");
+  const onSubmit = async (userDetails) => {
+    // console.log(userDetails);
+
+    const { firstName, surname, emailAddress, dateOfBirth, username } =
+      userDetails;
+    const fullName = firstName + " " + surname;
+    navigate("/dashboard");
+    const post = await fetch(`${API_URL}/users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        full_name: fullName,
+        username: username,
+        email: emailAddress,
+        date_of_birth: dateOfBirth
+      })
+    });
+    navigate("/dashboard");
   };
 
   return (
@@ -24,68 +44,74 @@ const Register = () => {
       <Header />
       <div className={css.mainContainer}>
         <form className={css.inputs} onSubmit={handleSubmit(onSubmit)}>
-          <div>
+          <div className={css.category}>
             <label className={css.labels}> FIRST NAME </label>
             <br></br>
             <input
               type="text"
               placeholder="First Name"
-              {...register("First Name")}
+              {...register("firstName")}
               className={css.form}
               required
             />
           </div>
-          <div>
+          <div className={css.category}>
             <label className={css.labels}> LAST NAME </label>
             <br></br>
             <input
               type="text"
               placeholder="Your Surname"
-              {...register("Surname")}
+              {...register("surname")}
               className={css.form}
               required
             />
           </div>
-          <div>
+          <div className={css.category}>
             <label className={css.labels}> EMAIL ADDRESS </label>
             <br></br>
             <input
               type="text"
               placeholder="Email Address"
-              {...register("Email Address")}
+              {...register("emailAddress")}
               className={css.form}
+              value={user.email}
               required
             />
           </div>
-          <div>
+          <div className={css.category}>
             <label className={css.labels}> DATE OF BIRTH </label>
             <br></br>
             <input
               type="date"
               placeholder="Your Date of Birth"
-              {...register("Date of Birth")}
+              {...register("dateOfBirth")}
               className={css.form}
               required
             />
           </div>
-          <div>
+          <div className={css.category}>
             <label className={css.labels}> PLEASE CHOOSE A USERNAME </label>
             <br></br>
             <input
               type="text"
               placeholder="Choose a Username"
-              {...register("Username")}
+              {...register("username")}
               className={css.form}
+              value={user.nickname}
               required
             />
             <div>
-              <input type="submit"/>
+              <input className={css.button} type="submit" />
             </div>
           </div>
           {errors.exampleRequired && <p>This field is required</p>}
         </form>
         <div className={css.backgroundRegister}>
-          <img src={background} alt="" className={css.imag} />
+          <img
+            className={css.imag}
+            src="https://www.introtodigital.com/wp-content/uploads/2020/01/Happy-PC-user.png"
+            alt=""
+          />
         </div>
       </div>
       <div className={css.footer}>
