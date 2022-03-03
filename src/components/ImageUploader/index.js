@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import css from "./fileuploader.module.css"
+import css from "./ImageUploader.module.css";
 
-const ImageUploader = () => {
+const ImageUploader = ({ picture }) => {
   const [images, setImages] = useState([]);
 
   const handleClick = (e) => {
@@ -16,8 +16,9 @@ const ImageUploader = () => {
 
   const handleDelete = (e) => {
     const index = e.target.value;
-    const array = [...images.slice(0, index ), ...images.slice(index + 1)];
-   setImages(array)
+    const array = [...images.slice(0, index), ...images.slice(index + 1)];
+    setImages(array);
+    picture(images);
   };
 
   return (

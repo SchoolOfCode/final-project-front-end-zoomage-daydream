@@ -22,7 +22,7 @@ const Mission = () => {
         area businesses, community leaders and our neighbors to create a clean
         and safe place to work.<br /><br />
         
-        If you are interested in this project please contact the School of Code to get in touch with the team. 
+        If you are interested in this project please contact the <a href="https://www.schoolofcode.co.uk/">School of Code</a> to get in touch with the team. 
         </div>
         
         </h3>

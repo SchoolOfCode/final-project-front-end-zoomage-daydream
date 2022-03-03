@@ -34,7 +34,7 @@ text {
   }
 
   .border {
-    border: 0.5rem outset rgba(44, 58, 180, 0.534);
+    border: 0.5rem outset rgb(44, 58, 180);
     outline: 0.5rem solid khaki;
     box-shadow: 0 0 0 2rem skyblue;
     border-radius: 12px;
