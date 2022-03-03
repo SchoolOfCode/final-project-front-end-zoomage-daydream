@@ -6,8 +6,10 @@ import background from "../../images/background.jpg";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import API_URL from "../../config";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Register = () => {
+   const { user } = useAuth0();
   const {
     register,
     handleSubmit,
@@ -21,7 +23,6 @@ const Register = () => {
     const { firstName, surname, emailAddress, dateOfBirth, username } =
       userDetails;
     const fullName = firstName + " " + surname;
-    console.log(fullName);
     navigate("/dashboard");
     const post = await fetch(`${API_URL}/users`, {
       method: "POST",
@@ -73,6 +74,7 @@ const Register = () => {
               placeholder="Email Address"
               {...register("emailAddress")}
               className={css.form}
+              value={user.email}
               required
             />
           </div>
@@ -95,6 +97,7 @@ const Register = () => {
               placeholder="Choose a Username"
               {...register("username")}
               className={css.form}
+              value={user.nickname}
               required
             />
             <div>
