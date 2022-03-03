@@ -18,7 +18,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (userDetails) => {
-    console.log(userDetails);
+    // console.log(userDetails);
 
     const { firstName, surname, emailAddress, dateOfBirth, username } =
       userDetails;
@@ -44,7 +44,7 @@ const Register = () => {
       <Header />
       <div className={css.mainContainer}>
         <form className={css.inputs} onSubmit={handleSubmit(onSubmit)}>
-          <div>
+          <div className={css.category}>
             <label className={css.labels}> FIRST NAME </label>
             <br></br>
             <input
@@ -55,7 +55,7 @@ const Register = () => {
               required
             />
           </div>
-          <div>
+          <div className={css.category}>
             <label className={css.labels}> LAST NAME </label>
             <br></br>
             <input
@@ -66,7 +66,7 @@ const Register = () => {
               required
             />
           </div>
-          <div>
+          <div className={css.category}>
             <label className={css.labels}> EMAIL ADDRESS </label>
             <br></br>
             <input
@@ -78,7 +78,7 @@ const Register = () => {
               required
             />
           </div>
-          <div>
+          <div className={css.category}>
             <label className={css.labels}> DATE OF BIRTH </label>
             <br></br>
             <input
@@ -89,7 +89,7 @@ const Register = () => {
               required
             />
           </div>
-          <div>
+          <div className={css.category}>
             <label className={css.labels}> PLEASE CHOOSE A USERNAME </label>
             <br></br>
             <input
@@ -101,13 +101,17 @@ const Register = () => {
               required
             />
             <div>
-              <input type="submit" />
+              <input className={css.button} type="submit" />
             </div>
           </div>
           {errors.exampleRequired && <p>This field is required</p>}
         </form>
         <div className={css.backgroundRegister}>
-          <img src={background} alt="" className={css.imag} />
+          <img
+            className={css.imag}
+            src="https://www.introtodigital.com/wp-content/uploads/2020/01/Happy-PC-user.png"
+            alt=""
+          />
         </div>
       </div>
       <div className={css.footer}>
