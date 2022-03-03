@@ -3,7 +3,6 @@ import css from "./AdditionalInfo.module.css";
 
 function AdditionalInfo() {
   const [text, setText] = useState("");
-  //
   function handleChange(e) {
     setText(e.target.value);
   }
