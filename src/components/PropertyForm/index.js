@@ -5,12 +5,16 @@ import ImageUploader from "../../components/ImageUploader";
 
 const PropertyForm = () => {
   const { register, handleSubmit } = useForm();
-  const [form, setForm] = useState("");
-  const handleRegistration = (data) => setForm(data);
+  const [uploadedImages, setUploadedImages] = useState("");
+
   function propertyInfo(images) {
-    const propertyImageData = Object.assign(form, { image: images });
-    console.log(propertyImageData);
+    setUploadedImages(images);
   }
+  const handleRegistration = (data) => {
+    const propertyDetailsData = Object.assign(data, { images: uploadedImages });
+    console.log("dd", propertyDetailsData);
+  };
+
   return (
     <form onSubmit={handleSubmit(handleRegistration)}>
       <div className="Address">
@@ -81,9 +85,7 @@ const PropertyForm = () => {
                 {...register("type_of_space")}
                 required
               >
-                <option value="" disabled selected>
-                  Select your option
-                </option>
+                <option value="">Select your option</option>
                 <option value="flat">House</option>
                 <option value="house">Apartment/Flat</option>
                 <option value="other">Other</option>
@@ -99,9 +101,7 @@ const PropertyForm = () => {
                 required
                 {...register("category_of_space")}
               >
-                <option value="" disabled selected>
-                  Select your option
-                </option>
+                <option value="">Select your option</option>
                 <option value="remote working">Remote Working</option>
                 <option value="music space">Music Space</option>
                 <option value="gym space">Gym Space</option>
@@ -118,9 +118,7 @@ const PropertyForm = () => {
                 {...register("fraction_of_space")}
                 required
               >
-                <option value="" disabled selected>
-                  Select your option
-                </option>
+                <option value="">Select your option</option>
                 <option value="whole property">Whole Property</option>
                 <option value="private room">Private Room</option>
                 <option value="duplex condo">Duplex Condo</option>

@@ -10,9 +10,6 @@
   font-size: 2rem;
 }
 
-
-
-
 .cards {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -29,16 +26,16 @@
 }
 
 @media only screen and (min-width: 641px) {
-.slogan{
-  font-size: 4rem;
-}
+  .slogan {
+    font-size: 4rem;
+  }
 }
 @media only screen and (min-width: 1008px) {
-.slogan{
-  padding: 4rem;
-  font-size: 5rem;
-}
-.cards{
-  margin-left: 5.5rem;
-}
+  .slogan {
+    padding: 4rem;
+    font-size: 5rem;
+  }
+  .cards {
+    margin-left: 5.5rem;
+  }
 }
