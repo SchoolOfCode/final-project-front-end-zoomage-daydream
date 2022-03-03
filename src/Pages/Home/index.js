@@ -39,6 +39,7 @@ const Home = () => {
               image={item.images[0]}
               address={item.address}
               starttime={item.starttime}
+              price={item.hourly_price}
               key={item.id}
               id={item.id}
             />
