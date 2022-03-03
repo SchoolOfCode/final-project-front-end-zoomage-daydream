@@ -8,20 +8,29 @@ import Card from "../../components/Card";
 const Result = () => {
   const location = useLocation();
   const [lowToHigh, setLowToHigh] = useState([]);
-  const [HighToLow, setHighToLow] = useState([]);
+  const [highToLow, setHighToLow] = useState([]);
   const results = location.state.payload;
   // console.log(results);
 
-  
   const sortHighToLow = (e) => {
-    // const filterResults = [...results]
-  const value = e.target.value
- 
-console.log(value)
-if(value!==1){
-  console.log(value)
-}
+    const filterResults = [...results];
+    const value = e.target.value;
+
+    if (value === "high") {
+      const sortHigh = filterResults.sort(
+        (a, b) => b.hourly_price - a.hourly_price
+      );
+      setHighToLow(sortHigh);
+    } else if (value === "low") {
+      const sortHigh = filterResults.sort(
+        (a, b) => a.hourly_price - b.hourly_price
+      );
+      setLowToHigh(sortHigh);
+    }
   };
+
+   console.log(lowToHigh[0]);
+   console.log(results[0])
 
   return (
     <div className={css.mainContainer}>
@@ -34,8 +43,8 @@ if(value!==1){
         <div className={css.filter}>
           <select onChange={sortHighToLow}>
             <option></option>
-            <option value={1}>Low to high</option>
-            <option value={2}>High to Low</option>
+            <option value="low">Low to high</option>
+            <option value="high">High to Low</option>
           </select>
         </div>
       </div>
@@ -43,20 +52,46 @@ if(value!==1){
       <div className={css.block}>
         <div className={css.result}>
           {" "}
-          {results.map((item) => {
-            return (
-              <Card
-                image={item.images[0]}
-                address={item.address}
-                starttime={item.starttime}
-                key={item.id}
-                id={item.id}
-              />
-            );
-          })}
+          {lowToHigh[0]
+            ? lowToHigh.map((item) => {
+                return (
+                  <Card
+                    image={item.images[0]}
+                    address={item.address}
+                    starttime={item.starttime}
+                    key={item.id}
+                    id={item.id}
+                  />
+                );
+              })
+            : highToLow[0]
+            ? highToLow.map((item) => {
+                return (
+                  <Card
+                    image={item.images[0]}
+                    address={item.address}
+                    starttime={item.starttime}
+                    key={item.id}
+                    id={item.id}
+                  />
+                );
+              })
+            : results.map((item) => {
+                return (
+                  <Card
+                    image={item.images[0]}
+                    address={item.address}
+                    starttime={item.starttime}
+                    key={item.id}
+                    id={item.id}
+                  />
+                );
+              })}
         </div>
       </div>
-      <Footer />
+      <div className={css.footer}>
+        <Footer />
+      </div>
     </div>
   );
 };

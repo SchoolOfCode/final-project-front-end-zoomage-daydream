@@ -8,7 +8,6 @@
   height: 4rem;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
-  bottom: 0;
 }
 
 .icons {
@@ -39,31 +38,31 @@
     font-size: medium;
   }
   .brandIcon {
- transform: scale(1.4);
-   padding: 0.5rem;
-}
-.footerContainer{
-   padding-left: 1rem;
-  padding-right: 1rem;
-}
+    transform: scale(1.4);
+    padding: 0.5rem;
+  }
+  .footerContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 @media only screen and (min-width: 1008px) {
-  .footerContainer{
+  .footerContainer {
     height: 7rem;
   }
-    .iconList {
+  .iconList {
     padding: 1.7rem;
   }
   .text {
     font-size: large;
   }
   .brandIcon {
- transform: scale(1.4);
-   padding: 0.8rem;
-}
-.footerContainer{
-   padding-left: 2rem;
-  padding-right: 2rem;
-}
+    transform: scale(1.4);
+    padding: 0.8rem;
+  }
+  .footerContainer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
