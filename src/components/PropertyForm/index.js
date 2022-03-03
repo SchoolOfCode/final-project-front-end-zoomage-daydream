@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
+import ImageUploader from "../../components/ImageUploader";
 
 const PropertyForm = () => {
   const { register, handleSubmit } = useForm();
-  const handleRegistration = (data) => console.log(data);
-
+  const [form, setForm] = useState("");
+  const handleRegistration = (data) => setForm(data);
+  function propertyInfo(images) {
+    const propertyImageData = Object.assign(form, { image: images });
+    console.log(propertyImageData);
+  }
   return (
     <form onSubmit={handleSubmit(handleRegistration)}>
       <div className="Address">
@@ -175,11 +180,23 @@ const PropertyForm = () => {
                 name="additionalinfo"
                 {...register("additionalinfo")}
               ></textarea>
+              <div className="ImageUpload">
+                {/* <input
+                  id="files"
+                  input
+                  type="file"
+                  name="images"
+                  multiple
+                  {...register("images")}
+                ></input> */}
+                <ImageUploader picture={propertyInfo} />
+              </div>
             </div>
           </div>
 
           <button>Submit</button>
         </div>
+        <div></div>
       </div>
     </form>
   );

@@ -5,7 +5,7 @@ import AddressInput from "../../components/AddressInput";
 import AdditionalInfo from "../../components/AdditionalInfo";
 import css from "./propertyDetailsForm.module.css";
 import CheckBox from "../../components/CheckBox";
-import ImageUploader from "../../components/fileUploader";
+import ImageUploader from "../../components/ImageUploader";
 import SpacesDropDown from "../../components/SpacesDropDown";
 import PropertyForm from "../../components/PropertyForm";
 
