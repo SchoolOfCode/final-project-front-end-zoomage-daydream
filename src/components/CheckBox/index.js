@@ -1,4 +1,4 @@
-import css from "./checkbox.module.css";
+import css from "./checkbox.module.css"
 
 const CheckBox = () => {
   return (
