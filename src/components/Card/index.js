@@ -11,7 +11,7 @@ function Card({ image, address, starttime, id, price }) {
 
   return (
     <div className={css.card}>
-      <div>
+      <div data-testid="img">
         <img
           className={css.image}
           src={image}
@@ -20,7 +20,7 @@ function Card({ image, address, starttime, id, price }) {
           id={id}
         />
       </div>
-      <div className={css.details}>
+      <div className={css.details} data-testid="details">
         <p>{address}</p>
         <p>{starttime} - 17:00</p>
         <p>Sundays - Fridays</p>
