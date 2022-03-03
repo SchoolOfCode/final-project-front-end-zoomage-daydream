@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import css from "./checkbox.module.css"
-=======
-import css from "./CheckBox.module.css";
->>>>>>> front_end_MFJ
+import css from "./checkbox.module.css";
 
 const CheckBox = () => {
   return (
