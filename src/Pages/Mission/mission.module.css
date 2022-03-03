@@ -29,16 +29,12 @@ text {
   }
 
 .body {
-    color: blue;
-    text-align: center;
+    height: 100%;
   }
 
   .border {
-    border: 0.5rem outset rgb(44, 58, 180);
-    outline: 0.5rem solid khaki;
-    box-shadow: 0 0 0 2rem skyblue;
+    outline: 0.5rem solid rgb(44, 58, 180, 0.7);
     border-radius: 12px;
-    font: bold 1rem sans-serif;
     margin: 2rem;
     padding: 1rem;
     outline-offset: 0.5rem;
