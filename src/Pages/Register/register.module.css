@@ -29,7 +29,7 @@
 
 .form {
   margin: 2rem;
-  transform: scale(1);
+  transform: scale(1.3);
 }
 
 .backgroundRegister {
@@ -60,7 +60,7 @@
     text-align: center;
     font-size: 1.5rem;
     height: 10rem;
-    /* line-height: 3rem; */
+    /* line-height: 6rem; */
   }
   .registerSect {
     width: 100%;
@@ -69,13 +69,31 @@
   .button {
     transform: scale(2.2);
   }
+  .form {
+    margin: 2rem;
+    transform: scale(2);
+  }
 }
 @media only screen and (min-width: 1008px) {
-  .slogan {
-    padding: 4rem;
-    font-size: 5rem;
+  .imag {
+    width: 70rem;
+    margin-top: 3rem;
+    margin-right: 1rem;
+    height: auto;
+    display: inline-block;
   }
-  .cards {
-    margin-left: 5.5rem;
+  .category {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2rem;
+    height: 10rem;
+    /* line-height: 6rem; */
+  }
+  .form {
+    margin: 2rem;
+    transform: scale(2.4);
+  }
+  .button {
+    transform: scale(3.5);
   }
 }
