@@ -6,8 +6,9 @@ import Footer from "../../components/Footer";
 
 const Mission = () => {
   return (
-    <div>
-      <Header />
+    <div className={css.body}>
+    <Header />
+      
       <h1>Our Mission</h1>
       <div className={css.border}>
         <h3>
@@ -25,7 +26,7 @@ const Mission = () => {
             create a clean and safe place to work.
             <br />
             <br />
-            If you are interested in this project please contact the{" "}
+            If you are interested in this project, please contact the{" "}
             <a
               href="https://www.schoolofcode.co.uk/"
               target="_blank"
@@ -39,6 +40,8 @@ const Mission = () => {
       </div>
       <Footer />
     </div>
+ 
+
   );
 };
 
