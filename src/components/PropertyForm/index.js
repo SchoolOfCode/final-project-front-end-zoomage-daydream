@@ -7,9 +7,10 @@ const PropertyForm = () => {
   const { register, handleSubmit } = useForm();
   const [uploadedImages, setUploadedImages] = useState("");
 
-  function propertyInfo(images) {
+  const propertyInfo = (images) => {
     setUploadedImages(images);
-  }
+  };
+
   const handleRegistration = (data) => {
     const propertyDetailsData = Object.assign(data, { images: uploadedImages });
     console.log("dd", propertyDetailsData);
