@@ -39,13 +39,10 @@ const Result = () => {
   return (
     <div className={css.mainContainer}>
       <Header />
-<<<<<<< HEAD
-      <p>Results found for {results[0].address.split(" ")[3].slice(0, 10)}</p>
-=======
       <div className={css.locAndFilter}>
         {" "}
         <p className={css.locationName}>
-          Results found for {results[0].address.split(" ")[3].slice(0, 6)}
+          Results found for {results[0].address.split(" ")[3].slice(0, 10)}
         </p>
         <div className={css.filter}>
           <select onChange={sortHighToLow}>
@@ -56,7 +53,6 @@ const Result = () => {
         </div>
       </div>
 
->>>>>>> front_end_MFJ
       <div className={css.block}>
         <div className={css.result}>
           {" "}
