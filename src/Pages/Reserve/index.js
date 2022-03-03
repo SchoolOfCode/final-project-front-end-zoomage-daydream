@@ -95,7 +95,7 @@ const Reserve = () => {
         <div>
           {user && space && (
             <div>
-              <ReserveForm price={space.hourly_price} user={user} />
+              <ReserveForm price={space.hourly_price} user={user}/>
             </div>
           )}
         </div>
