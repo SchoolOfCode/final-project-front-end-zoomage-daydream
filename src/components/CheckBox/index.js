@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import css from "./checkbox.module.css";
-=======
-import css from "./checkbox.module.css"
->>>>>>> 8997b6babd55e05948c028b1dd19b0c39bd4aa3b
 
 const CheckBox = () => {
   return (
