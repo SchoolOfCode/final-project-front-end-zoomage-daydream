@@ -87,7 +87,7 @@
     text-align: center;
     margin-top: 1rem;
     font-size: 2rem;
-    height: 10rem;
+    height: 8rem;
     /* line-height: 6rem; */
   }
   .form {
@@ -95,7 +95,7 @@
     transform: scale(2);
   }
   .button {
-    transform: scale(3.5);
+    transform: scale(3);
   }
 }
 
