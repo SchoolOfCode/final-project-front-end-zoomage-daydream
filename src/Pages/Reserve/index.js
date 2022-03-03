@@ -34,13 +34,70 @@ const Reserve = () => {
       <div className={css.images}>
         <div className={css.imagesRight}>
           {space &&
-            space.images.slice(0, 2).map((item,index) => {
+            space.images.slice(0, 2).map((item, index) => {
               return (
                 <div key={index}>
                   <img className={css.images_right} src={item} alt="" />
                 </div>
               );
             })}
+        </div>
+        <div className={css.imageCenter}>
+          {space && (
+            <div>
+              <img className={css.images_center} src={space.images[2]} alt="" />
+            </div>
+          )}
+        </div>
+        <div className={css.imagesLeft}>
+          {space &&
+            space.images.slice(3, 5).map((item, index) => {
+              return (
+                <div key={index}>
+                  <img className={css.images_left} src={item} alt="" />
+                </div>
+              );
+            })}
+        </div>
+      </div>
+      <div className={css.bottomContainer}>
+        <div>
+          <h2 className={css.propertyHeader}>Property Details</h2>
+          <div>
+            {space && (
+              <div className={css.details}>
+                {" "}
+                <p>Type of space:{space.type_of_space}</p>
+                <p>Fraction of space: {space.fraction_of_space}</p>
+                <p>Check in: </p>
+                <p>Cancellation</p>
+                <p>Instructions on how to use go here</p>
+              </div>
+            )}{" "}
+          </div>
+          <h3 className={css.amenitiesHeader}>Amenities</h3>
+          <div className={css.amenities}>
+            {space && (
+              <div>
+                {space.amenities.map((item, index) => {
+                  return <p key={index}>{item}</p>;
+                })}
+              </div>
+            )}
+            {space && (
+              <div className={css.host}>
+                {" "}
+                <p>Our host says "{space.additional_information}"</p>
+              </div>
+            )}
+          </div>
+        </div>
+        <div>
+          {user && space && (
+            <div>
+              <ReserveForm price={space.hourly_price} user={user} />
+            </div>
+          )}
         </div>
       </div>
       <Footer />
@@ -49,56 +106,3 @@ const Reserve = () => {
 };
 
 export default Reserve;
-
-//         {space && (
-//          <div>
-//            <div className={css.imageContainer}>
-//                <div className={css.images}>
-//                {space.images.slice(0, 2).map((item, index) => {
-//                  return (
-//                      <div key={index}>
-//                      <img src={item} alt="" />
-//                   </div>
-//                  );
-//               })}
-//               </div>
-
-//               <div>
-//                <img src={space.images[2]} alt="" />
-//                </div>
-//               <div className={css.images}>
-//                 {space.images.slice(3, 5).map((item, index) => {
-//                    return (
-//                      <div key={index}>
-//                       <img src={item} alt="" />
-//                  </div>
-//                   );
-//               })}
-//                </div>
-//            </div>
-// {/*
-// //             <div className={css.reserveContainer}>
-// //               <div>
-// //                 <h2>Property Details</h2>
-// //                 <h3>{space.type_of_space}</h3>
-// //                 <h3>{space.fraction_of_space}</h3>
-// //                 <p>Check in: </p>
-// //                 <p>Cancellation</p>
-// //                 <p>Instructions on how to use go here</p>
-// //                 <h3>Amenities</h3>
-// //                 <div>
-// //                   {space.amenities.map((item, index) => {
-// //                     return <p key={index}>{item}</p>;
-// //                   })}
-// //                 </div>
-// //                 <p>Our host says "{space.additional_information}"</p>
-// //               </div>
-// //               {user && (
-// //                 <div>
-// //                   <ReserveForm price={space.hourly_price} user={user} />
-// //                 </div>
-// //               )}
-// //             </div>
-// //           </div>
-// //         )}
-// //       </div> */}
