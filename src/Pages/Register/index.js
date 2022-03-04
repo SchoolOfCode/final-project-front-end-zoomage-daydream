@@ -41,6 +41,7 @@ const Register = () => {
   return (
     <div className={css.registerSect}>
       <Header />
+      <h1>Register with us</h1>
       <div className={css.mainContainer}>
         <form className={css.inputs} onSubmit={handleSubmit(onSubmit)}>
           <div className={css.category}>

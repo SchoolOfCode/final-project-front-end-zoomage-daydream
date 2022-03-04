@@ -12,54 +12,6 @@ const PropertyForm = () => {
     setUploadedImages(images);
   };
 
-  const onSubmitForm = async (hostPropertyDetails, data) => {
-    const {
-      additionalInfo,
-      addressOne,
-      addressTwo,
-      categoryOfSpace,
-      city,
-      fractionOfSpace,
-      fridgeCheck,
-      images,
-      microwaveCheck,
-      postcode,
-      region,
-      showerCheck,
-      standingDeskCheck,
-      typeOfSpace,
-      wifiCheck
-    } = hostPropertyDetails;
-    console.log("hi", hostPropertyDetails);
-    const formSubmission = await fetch(`${API_URL}/spaces`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        additionalinfo: additionalInfo,
-        addressone: addressOne,
-        addresstwo: addressTwo,
-        category_of_space: categoryOfSpace,
-        city: city,
-        fraction_of_space: fractionOfSpace,
-        fridgecheck: fridgeCheck,
-        images: images,
-        microwavecheck: microwaveCheck,
-        postcode: postcode,
-        region: region,
-        showercheck: showerCheck,
-        standingddeskcheck: standingDeskCheck,
-        type_of_space: typeOfSpace,
-        wificheck: wifiCheck
-      })
-    });
-    // console.log(formSubmission);
-    // const handleRegistration = (data) => {
-    //   const propertyDetailsData = Object.assign(data, {
-    //     images: uploadedImages
-    //   });
-    //   console.log("dd", propertyDetailsData);
-    // };
-  };
   const handleRegistration = async (data) => {
     const propertyDetailsData = Object.assign(data, {
       images: uploadedImages
