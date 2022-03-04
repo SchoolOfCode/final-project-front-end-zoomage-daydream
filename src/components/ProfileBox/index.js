@@ -35,7 +35,7 @@ function ProfileBox() {
   return (
     <div>
       {" "}
-      {user && (
+      {users && (
         <Profile
           date_of_birth={users[0].date_of_birth.split("").slice(0, 10)}
           email={user.email}
