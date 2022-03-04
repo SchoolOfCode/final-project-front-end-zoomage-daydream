@@ -108,7 +108,7 @@ const Register = () => {
         </form>
         <div className={css.backgroundRegister}>
           <img
-            className={css.imag}
+            className={css.img}
             src="https://www.introtodigital.com/wp-content/uploads/2020/01/Happy-PC-user.png"
             alt=""
           />
