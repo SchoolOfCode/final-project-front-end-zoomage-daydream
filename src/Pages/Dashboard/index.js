@@ -41,7 +41,7 @@ function Dashboard() {
         <ProfileBox />
       </div>
       <div className={css.historicalBookingTitle}>
-        <h1>History of Bookings</h1>
+        <h1> of Bookings</h1>
       </div>
       <PreviousBookings />
       <Footer />
