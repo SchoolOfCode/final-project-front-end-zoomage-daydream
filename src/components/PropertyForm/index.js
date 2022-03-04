@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
+import css from "./PropertyForm.module.css";
 
 const PropertyForm = () => {
   const { register, handleSubmit } = useForm();
@@ -119,7 +120,7 @@ const PropertyForm = () => {
             {...register("postcode")}
           />
 
-          <div className="SpacesDropDownContainer">
+          <div className={css.SpacesDropDownContainer}>
             <div>
               <label> Type of Space:</label>
               <br />
@@ -172,7 +173,7 @@ const PropertyForm = () => {
               </select>
             </div>
           </div>
-          <div className="amenitiesContainer">
+          <div className={css.amenitiesContainer}>
             <div>Amenities</div>
             <label>
               <input
@@ -214,7 +215,7 @@ const PropertyForm = () => {
               />
               Fridge
             </label>
-            <div className="additionalInfoContainer">
+            <div className={css.additionalInfoContainer}>
               <div>
                 <h2>Additional Information</h2>
               </div>
@@ -224,7 +225,7 @@ const PropertyForm = () => {
                 name="additionalinfo"
                 {...register("additionalinfo")}
               ></textarea>
-              <div className="ImageUpload">
+              <div className={css.ImageUpload}>
                 {/* <input
                   id="files"
                   input
@@ -238,7 +239,7 @@ const PropertyForm = () => {
             </div>
           </div>
 
-          <button>Submit</button>
+          <button className={css.submitButton}>Submit</button>
         </div>
         <div></div>
       </div>
