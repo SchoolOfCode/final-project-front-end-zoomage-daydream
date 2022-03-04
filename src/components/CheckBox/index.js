@@ -1,4 +1,4 @@
-import css from "./checkbox.module.css";
+import css from "./CheckBox.module.css";
 
 const CheckBox = () => {
   return (
@@ -21,7 +21,7 @@ const CheckBox = () => {
         Standing Desk
       </label>
       <label>
-        <input type="checkbox" data-testid="fridge-checkbox"/>
+        <input type="checkbox" data-testid="fridge-checkbox" />
         Fridge
       </label>
     </div>

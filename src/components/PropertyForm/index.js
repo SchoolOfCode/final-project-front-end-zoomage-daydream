@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
-<<<<<<< HEAD
-import API_URL from "../../config"
-
-=======
 import API_URL from "../../config";
->>>>>>> cf5d7a35fe297c275fa16a36376bcf2b172467ca
 
 const PropertyForm = () => {
   const { register, handleSubmit } = useForm();
@@ -17,27 +12,103 @@ const PropertyForm = () => {
     setUploadedImages(images);
   };
 
-
-const onSubmitForm = async (hostPropertyDetails, data) => {
-  const {additionalInfo, addressOne, addressTwo, categoryOfSpace, city, fractionOfSpace, fridgeCheck, images, microwaveCheck, postcode, region, showerCheck, standingDeskCheck, typeOfSpace, wifiCheck} = hostPropertyDetails
-  console.log("hi", hostPropertyDetails)
-  const formSubmission = await fetch (
-    `${API_URL}/spaces`, {method: "POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({additionalinfo:additionalInfo, addressone:addressOne, addresstwo:addressTwo, category_of_space:categoryOfSpace, city:city, fraction_of_space:fractionOfSpace, fridgecheck:fridgeCheck, images:images, microwavecheck:microwaveCheck, postcode:postcode, region:region, showercheck:showerCheck, standingddeskcheck:standingDeskCheck, type_of_space:typeOfSpace, wificheck:wifiCheck})
-  })
-  // const handleRegistration = (data) => {
-    const propertyDetailsData = Object.assign(data, { images: uploadedImages });
-    console.log("dd", propertyDetailsData);
-  // };
-}
+  const onSubmitForm = async (hostPropertyDetails, data) => {
+    const {
+      additionalInfo,
+      addressOne,
+      addressTwo,
+      categoryOfSpace,
+      city,
+      fractionOfSpace,
+      fridgeCheck,
+      images,
+      microwaveCheck,
+      postcode,
+      region,
+      showerCheck,
+      standingDeskCheck,
+      typeOfSpace,
+      wifiCheck
+    } = hostPropertyDetails;
+    console.log("hi", hostPropertyDetails);
+    const formSubmission = await fetch(`${API_URL}/spaces`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        additionalinfo: additionalInfo,
+        addressone: addressOne,
+        addresstwo: addressTwo,
+        category_of_space: categoryOfSpace,
+        city: city,
+        fraction_of_space: fractionOfSpace,
+        fridgecheck: fridgeCheck,
+        images: images,
+        microwavecheck: microwaveCheck,
+        postcode: postcode,
+        region: region,
+        showercheck: showerCheck,
+        standingddeskcheck: standingDeskCheck,
+        type_of_space: typeOfSpace,
+        wificheck: wifiCheck
+      })
+    });
+    // console.log(formSubmission);
+    // const handleRegistration = (data) => {
+    //   const propertyDetailsData = Object.assign(data, {
+    //     images: uploadedImages
+    //   });
+    //   console.log("dd", propertyDetailsData);
+    // };
+  };
   const handleRegistration = async (data) => {
     const propertyDetailsData = Object.assign(data, {
       images: uploadedImages
     });
-  
+    console.log("dd", propertyDetailsData);
+    const {
+      additionalInfo,
+      addressOne,
+      addressTwo,
+      categoryOfSpace,
+      city,
+      fractionOfSpace,
+      fridgeCheck,
+      images,
+      microwaveCheck,
+      postcode,
+      region,
+      showerCheck,
+      standingDeskCheck,
+      typeOfSpace,
+      wifiCheck
+    } = propertyDetailsData;
+    console.log("hi", propertyDetailsData);
+    const formSubmission = await fetch(`${API_URL}/spaces`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        additionalinfo: additionalInfo,
+        addressone: addressOne,
+        addresstwo: addressTwo,
+        category_of_space: categoryOfSpace,
+        city: city,
+        fraction_of_space: fractionOfSpace,
+        fridgecheck: fridgeCheck,
+        images: images,
+        microwavecheck: microwaveCheck,
+        postcode: postcode,
+        region: region,
+        showercheck: showerCheck,
+        standingddeskcheck: standingDeskCheck,
+        type_of_space: typeOfSpace,
+        wificheck: wifiCheck
+      })
+    });
+    const postData = formSubmission.json();
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmitForm)}>
+    <form onSubmit={handleSubmit(handleRegistration)}>
       <div className="Address">
         <div>
           <TextField
