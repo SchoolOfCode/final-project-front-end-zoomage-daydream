@@ -56,7 +56,8 @@ const PropertyForm = () => {
         wificheck: wifiCheck
       })
     });
-    const postData = formSubmission.json();
+    const postData = await formSubmission.json();
+    console.log(postData);
   };
 
   return (
