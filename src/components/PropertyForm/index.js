@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
+import css from "./PropertyForm.module.css";
 
 const PropertyForm = () => {
   const { register, handleSubmit } = useForm();
@@ -16,47 +17,49 @@ const PropertyForm = () => {
     const propertyDetailsData = Object.assign(data, {
       images: uploadedImages
     });
-    console.log("dd", propertyDetailsData);
+    console.log("heloo again", propertyDetailsData);
     const {
-      additionalInfo,
-      addressOne,
-      addressTwo,
-      categoryOfSpace,
+      additionalinfo,
+      addressone,
+      addresstwo,
+      category_of_space,
       city,
-      fractionOfSpace,
-      fridgeCheck,
+      fraction_of_space,
+      fridgecheck,
       images,
-      microwaveCheck,
+      microwavecheck,
       postcode,
       region,
-      showerCheck,
-      standingDeskCheck,
-      typeOfSpace,
-      wifiCheck
+      showercheck,
+      standingdeskcheck,
+      type_of_space,
+      wificheck
     } = propertyDetailsData;
     console.log("hi", propertyDetailsData);
-    const formSubmission = await fetch(`${API_URL}/spaces`, {
+
+    const address = `${addressone}, ${addresstwo}, ${city}, ${region}, ${postcode}`;
+    const amenities = [
+      fridgecheck ? "fridge" : "",
+      microwavecheck ? "microwave" : "",
+      showercheck ? "shower" : "",
+      standingdeskcheck ? "standingdesk" : "",
+      wificheck ? "wifi" : ""
+    ];
+    const formSubmission = await fetch(`${API_URL}spaces`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        additionalinfo: additionalInfo,
-        addressone: addressOne,
-        addresstwo: addressTwo,
-        category_of_space: categoryOfSpace,
-        city: city,
-        fraction_of_space: fractionOfSpace,
-        fridgecheck: fridgeCheck,
+        additional_information: additionalinfo,
+        address: address,
+        purpose_of_space: category_of_space,
+        fraction_of_space: fraction_of_space,
         images: images,
-        microwavecheck: microwaveCheck,
-        postcode: postcode,
-        region: region,
-        showercheck: showerCheck,
-        standingddeskcheck: standingDeskCheck,
-        type_of_space: typeOfSpace,
-        wificheck: wifiCheck
+        type_of_space: type_of_space,
+        amenities: amenities
       })
     });
-    const postData = formSubmission.json();
+    const postData = await formSubmission.json();
+
   };
 
   return (
@@ -117,7 +120,7 @@ const PropertyForm = () => {
             {...register("postcode")}
           />
 
-          <div className="SpacesDropDownContainer">
+          <div className={css.SpacesDropDownContainer}>
             <div>
               <label> Type of Space:</label>
               <br />
@@ -170,7 +173,7 @@ const PropertyForm = () => {
               </select>
             </div>
           </div>
-          <div className="amenitiesContainer">
+          <div className={css.amenitiesContainer}>
             <div>Amenities</div>
             <label>
               <input
@@ -212,7 +215,7 @@ const PropertyForm = () => {
               />
               Fridge
             </label>
-            <div className="additionalInfoContainer">
+            <div className={css.additionalInfoContainer}>
               <div>
                 <h2>Additional Information</h2>
               </div>
@@ -222,7 +225,7 @@ const PropertyForm = () => {
                 name="additionalinfo"
                 {...register("additionalinfo")}
               ></textarea>
-              <div className="ImageUpload">
+              <div className={css.ImageUpload}>
                 {/* <input
                   id="files"
                   input
@@ -236,7 +239,7 @@ const PropertyForm = () => {
             </div>
           </div>
 
-          <button>Submit</button>
+          <button className={css.submitButton}>Submit</button>
         </div>
         <div></div>
       </div>
