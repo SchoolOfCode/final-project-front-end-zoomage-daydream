@@ -45,7 +45,7 @@ const PropertyForm = () => {
       standingdeskcheck ? "standingdesk" : "",
       wificheck ? "wifi" : ""
     ];
-    const formSubmission = await fetch(`http://localhost:3000/spaces`, {
+    const formSubmission = await fetch(`${API_URL}spaces`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
