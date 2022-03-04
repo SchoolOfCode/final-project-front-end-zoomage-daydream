@@ -23,9 +23,9 @@ function Dashboard() {
     <div>
       <Header />
       <Sidebar />
-      <h1>My Bookings</h1>
+      <h1 className={css.booking}>My Bookings</h1>
       <div className={css.currentBooking}>
-        <h2>Current Booking</h2>
+        <h2 className={css.current}>Current Booking</h2>
         {space.map((space) => {
           return (
             <Card

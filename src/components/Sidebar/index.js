@@ -1,19 +1,3 @@
-// import css from "./Sidebar.module.css";
-
-// function Sidebar() {
-//   return (
-//     <div className={css.sidebarContainer}>
-//       <h2>👤 Username</h2>
-//       <h2>🏠 Home</h2>
-//       <h2>💬 Messages</h2>
-//       <h2>📆 My Bookings</h2>
-//       <h2>❤️ Favourites</h2>
-//       <h2>⚙️ Settings</h2>
-//       <h2>🅇 Log Out</h2>
-//     </div>
-//   );
-// }
-// export default Sidebar
 import css from "./Sidebar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -40,12 +24,12 @@ function Sidebar() {
       </h2>
 
       <h2>
-        <FontAwesomeIcon icon={faMessage} className={css.sidebarIcons}/>
+        <FontAwesomeIcon icon={faMessage} className={css.sidebarIcons} />
         Messages
       </h2>
 
       <h2>
-        <FontAwesomeIcon icon={faCalendarCheck} className={css.sidebarIcons}/>
+        <FontAwesomeIcon icon={faCalendarCheck} className={css.sidebarIcons} />
         My Bookings
       </h2>
 
@@ -58,7 +42,10 @@ function Sidebar() {
         Settings
       </h2>
       <h2>
-        <FontAwesomeIcon icon={faArrowRightFromBracket} className={css.sidebarIcons}/>
+        <FontAwesomeIcon
+          icon={faArrowRightFromBracket}
+          className={css.sidebarIcons}
+        />
         Log Out
       </h2>
     </div>
