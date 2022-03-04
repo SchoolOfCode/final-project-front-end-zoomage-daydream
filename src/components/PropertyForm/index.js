@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
+<<<<<<< HEAD
 import API_URL from "../../config"
 
+=======
+import API_URL from "../../config";
+>>>>>>> cf5d7a35fe297c275fa16a36376bcf2b172467ca
 
 const PropertyForm = () => {
- 
   const { register, handleSubmit } = useForm();
   const [uploadedImages, setUploadedImages] = useState("");
 
@@ -26,6 +29,12 @@ const onSubmitForm = async (hostPropertyDetails, data) => {
     console.log("dd", propertyDetailsData);
   // };
 }
+  const handleRegistration = async (data) => {
+    const propertyDetailsData = Object.assign(data, {
+      images: uploadedImages
+    });
+  
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmitForm)}>

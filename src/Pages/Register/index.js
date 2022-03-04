@@ -9,7 +9,7 @@ import API_URL from "../../config";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Register = () => {
-   const { user } = useAuth0();
+  const { user } = useAuth0();
   const {
     register,
     handleSubmit,
@@ -18,8 +18,6 @@ const Register = () => {
   const navigate = useNavigate();
 
   const onSubmit = async (userDetails) => {
-    // console.log(userDetails);
-
     const { firstName, surname, emailAddress, dateOfBirth, username } =
       userDetails;
     const fullName = firstName + " " + surname;
@@ -36,6 +34,7 @@ const Register = () => {
         date_of_birth: dateOfBirth
       })
     });
+    const data = post.json();
     navigate("/dashboard");
   };
 
