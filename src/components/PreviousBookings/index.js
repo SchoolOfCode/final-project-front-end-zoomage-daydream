@@ -7,7 +7,7 @@ function PreviousBookings() {
   const [spaces] = useFetch(`${API_URL}/spaces`);
   return (
     <div>
-      {spaces.map((space, index) => {
+      {spaces.images&&spaces.map((space, index) => {
         return (
           <EmptyCard
             image={space.images[0]}

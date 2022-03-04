@@ -19,7 +19,6 @@ const Home = () => {
   const navigate = useNavigate();
 
   if (isAuthenticated === true) {
-    console.log(user.email);
     const userStatus = users.some((item) => item.email === user.email);
     if (userStatus === false) {
       navigate("/registerhost");
