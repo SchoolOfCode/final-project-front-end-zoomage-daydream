@@ -35,25 +35,26 @@ const PropertyForm = () => {
       wifiCheck
     } = propertyDetailsData;
     console.log("hi", propertyDetailsData);
+
+    const address = `${addressOne}, ${addressTwo}, ${city}, ${region}, ${postcode}`;
+    const amenities = [
+      fridgeCheck ? "fridge" : "",
+      microwaveCheck ? "microwave" : "",
+      showerCheck ? "shower" : "",
+      standingDeskCheck ? "standingdesk" : "",
+      wifiCheck ? "wifi" : ""
+    ];
     const formSubmission = await fetch(`${API_URL}/spaces`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         additionalinfo: additionalInfo,
-        addressone: addressOne,
-        addresstwo: addressTwo,
+        address: address,
         category_of_space: categoryOfSpace,
-        city: city,
         fraction_of_space: fractionOfSpace,
-        fridgecheck: fridgeCheck,
         images: images,
-        microwavecheck: microwaveCheck,
-        postcode: postcode,
-        region: region,
-        showercheck: showerCheck,
-        standingddeskcheck: standingDeskCheck,
         type_of_space: typeOfSpace,
-        wificheck: wifiCheck
+        amenities: amenities
       })
     });
     const postData = await formSubmission.json();
