@@ -19,6 +19,7 @@ const ImageUploader = ({ picture }) => {
 
   const handleClick = (e) => {
     const file = e.target.files[0];
+    console.log(file)
     previewFile(e, file);
   };
 

@@ -16,15 +16,7 @@ const PropertyForm = () => {
     const propertyDetailsData = Object.assign(data, {
       images: uploadedImages
     });
-    console.log(propertyDetailsData)
-    const post = await fetch(`http://localhost:3000/spaces`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(propertyDetailsData)
-    });
-    const res = post.json();
+  
   };
 
   return (
