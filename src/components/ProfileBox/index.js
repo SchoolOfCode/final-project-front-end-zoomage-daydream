@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import API_URL from "../../config";
 import Profile from "../Profile";
+import { useAuth0 } from "@auth0/auth0-react";
 function ProfileBox() {
   const [users, setUsers] = useState([
     {
@@ -12,40 +12,37 @@ function ProfileBox() {
       username: "Ayomide"
     }
   ]);
+  const { user, getAccessTokenSilently } = useAuth0();
+
+  useEffect(() => {
+    const getUserMetadata = async () => {};
+
+    getUserMetadata();
+  }, [getAccessTokenSilently, user?.sub]);
+
   useEffect(() => {
     const fetchProfileData = async () => {
-      const url = "https://space-project-backend.herokuapp.com/users";
+      const url = `${API_URL}/users/?email=${user.email}`;
       const res = await fetch(url);
       const data = await res.json();
-      //data.?
+      console.log(data);
+
       setUsers(data.payload);
-      // console.log(data.payload);
     };
     fetchProfileData();
-  }, []);
-  // console.log(users[0]);
-  // return (
-  //   <div>
-  //     {users.map((user, index) => {
-  //       return (
-  //         <Profile
-  //           date_of_birth={user.date_of_birth}
-  //           email={user.email}
-  //           full_name={user.full_name}
-  //           username={user.username}
-  //           key={index}
-  //         />
-  //       );
-  //     })}
-  //   </div>
+  }, [user]);
+
   return (
     <div>
-      <Profile
-        date_of_birth={users[0].date_of_birth.split("").slice(0, 10)}
-        email={users[0].email}
-        full_name={users[0].full_name}
-        username={users[0].username}
-      />
+      {" "}
+      {user && (
+        <Profile
+          date_of_birth={users[0].date_of_birth.split("").slice(0, 10)}
+          email={user.email}
+          full_name={user.name}
+          username={users[0].username}
+        />
+      )}
     </div>
   );
 }
