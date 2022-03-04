@@ -5,10 +5,23 @@ import css from "./ImageUploader.module.css";
 const ImageUploader = ({ picture }) => {
   const [images, setImages] = useState([]);
 
-  const handleClick = (e) => {
-    setImages([...images, e.target.files]);
+  const previewFile = (e, file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      const base64Image = reader.result;
+      setImages([
+        ...images,
+        { name: e.target.files[0].name, base64: base64Image }
+      ]);
+    };
   };
-  
+
+  const handleClick = (e) => {
+    const file = e.target.files[0];
+    previewFile(e, file);
+  };
+
   useEffect(() => {
     picture(images);
   }, [images]);
@@ -23,10 +36,11 @@ const ImageUploader = ({ picture }) => {
     <div>
       <input type="file" onChange={handleClick} />
 
-      {images[0] !== undefined ? (
+      {images !== undefined ? (
         images.map((item, index) => (
           <div className={css.images} key={index}>
-            <p>{item[0].name}</p>
+            <p>{item.name}</p>
+
             <button value={index} onClick={handleDelete}>
               x
             </button>

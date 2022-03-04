@@ -11,7 +11,7 @@ ReactDOM.render(
       <Auth0Provider
         domain={process.env.REACT_APP_DOMAIN}
         clientId={process.env.REACT_APP_CLIENT}
-        redirectUri="https://angry-perlman-7ec02a.netlify.app/"
+        redirectUri={window.location.origin}
       >
         <App />
       </Auth0Provider>

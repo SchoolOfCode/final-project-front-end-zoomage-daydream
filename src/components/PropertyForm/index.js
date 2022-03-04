@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
-
+import API_URL from "../../config";
 
 const PropertyForm = () => {
- 
   const { register, handleSubmit } = useForm();
   const [uploadedImages, setUploadedImages] = useState("");
 
@@ -13,9 +12,19 @@ const PropertyForm = () => {
     setUploadedImages(images);
   };
 
-  const handleRegistration = (data) => {
-    const propertyDetailsData = Object.assign(data, { images: uploadedImages });
-    console.log("dd", propertyDetailsData);
+  const handleRegistration = async (data) => {
+    const propertyDetailsData = Object.assign(data, {
+      images: uploadedImages
+    });
+    console.log(propertyDetailsData)
+    const post = await fetch(`http://localhost:3000/spaces`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(propertyDetailsData)
+    });
+    const res = post.json();
   };
 
   return (
