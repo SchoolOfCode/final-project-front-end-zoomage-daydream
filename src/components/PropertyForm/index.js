@@ -59,7 +59,6 @@ const PropertyForm = () => {
       })
     });
     const postData = await formSubmission.json();
-
   };
 
   return (
@@ -225,17 +224,9 @@ const PropertyForm = () => {
                 name="additionalinfo"
                 {...register("additionalinfo")}
               ></textarea>
-              <div className={css.ImageUpload}>
-                {/* <input
-                  id="files"
-                  input
-                  type="file"
-                  name="images"
-                  multiple
-                  {...register("images")}
-                ></input> */}
-                <ImageUploader picture={propertyInfo} />
-              </div>
+            </div>
+            <div className={css.ImageUpload}>
+              <ImageUploader picture={propertyInfo} />
             </div>
           </div>
 
