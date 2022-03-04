@@ -16,7 +16,7 @@ const PropertyForm = () => {
     const propertyDetailsData = Object.assign(data, {
       images: uploadedImages
     });
-    console.log("dd", propertyDetailsData);
+    console.log("heloo again", propertyDetailsData);
     const {
       additionalInfo,
       addressOne,
