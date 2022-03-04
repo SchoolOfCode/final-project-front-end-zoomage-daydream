@@ -18,47 +18,47 @@ const PropertyForm = () => {
     });
     console.log("heloo again", propertyDetailsData);
     const {
-      additionalInfo,
-      addressOne,
-      addressTwo,
-      categoryOfSpace,
+      additionalinfo,
+      addressone,
+      addresstwo,
+      category_of_space,
       city,
-      fractionOfSpace,
-      fridgeCheck,
+      fraction_of_space,
+      fridgecheck,
       images,
-      microwaveCheck,
+      microwavecheck,
       postcode,
       region,
-      showerCheck,
-      standingDeskCheck,
-      typeOfSpace,
-      wifiCheck
+      showercheck,
+      standingdeskcheck,
+      type_of_space,
+      wificheck
     } = propertyDetailsData;
     console.log("hi", propertyDetailsData);
 
-    const address = `${addressOne}, ${addressTwo}, ${city}, ${region}, ${postcode}`;
+    const address = `${addressone}, ${addresstwo}, ${city}, ${region}, ${postcode}`;
     const amenities = [
-      fridgeCheck ? "fridge" : "",
-      microwaveCheck ? "microwave" : "",
-      showerCheck ? "shower" : "",
-      standingDeskCheck ? "standingdesk" : "",
-      wifiCheck ? "wifi" : ""
+      fridgecheck ? "fridge" : "",
+      microwavecheck ? "microwave" : "",
+      showercheck ? "shower" : "",
+      standingdeskcheck ? "standingdesk" : "",
+      wificheck ? "wifi" : ""
     ];
-    const formSubmission = await fetch(`${API_URL}/spaces`, {
+    const formSubmission = await fetch(`http://localhost:3000/spaces`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        additionalinfo: additionalInfo,
+        additional_information: additionalinfo,
         address: address,
-        category_of_space: categoryOfSpace,
-        fraction_of_space: fractionOfSpace,
+        purpose_of_space: category_of_space,
+        fraction_of_space: fraction_of_space,
         images: images,
-        type_of_space: typeOfSpace,
+        type_of_space: type_of_space,
         amenities: amenities
       })
     });
     const postData = await formSubmission.json();
-    console.log(postData);
+
   };
 
   return (
