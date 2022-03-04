@@ -11,33 +11,41 @@
 }
 
 .inputs {
-  margin: 1rem 0rem 0rem 2rem;
   display: block;
-  line-height: 2rem;
+  padding: 0.1rem 0.2rem;
+  margin-bottom: 10px;
+ 
 }
 
 .labels {
-  font-weight: bold;
+  font-weight: normal;
+  font-size: medium;
+  margin: 2rem 0rem 0rem 1rem;
+  line-height: 0.05rem;
+ 
 }
 
 .category {
   text-align: center;
   font-size: 0.8rem;
-  margin-left: 2rem;
+  margin-left: 1rem;
 
   /* line-height: 3rem; */
 }
 
 .form {
-  margin: 2rem;
-  transform: scale(1);
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 }
 
 .backgroundRegister {
   padding-top: 3rem;
 }
 
-.imag {
+.img {
   width: 15rem;
   margin-top: 13rem;
   margin-right: 2rem;
@@ -50,7 +58,7 @@
 }
 
 @media only screen and (min-width: 641px) {
-  .imag {
+  .img {
     width: 22rem;
     margin-top: 20rem;
     margin-right: 1rem;
@@ -69,6 +77,16 @@
   }
   .button {
     transform: scale(2);
+    background: #051BD9;
+    background-image: linear-gradient(to bottom, #051BD9, #2980b9);
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 8px;
+    padding: 4px 8px 4px 8px;
+   
   }
   .form {
     margin: 2rem;
@@ -76,7 +94,7 @@
   }
 }
 @media only screen and (min-width: 1008px) {
-  .imag {
+  .img {
     width: 40rem;
     margin-top: 3rem;
     margin-right: 1rem;
@@ -105,7 +123,7 @@
 }
 
 @media only screen and (min-width: 1640px) {
-  .imag {
+  .img {
     width: 70rem;
     margin-top: 3rem;
     margin-right: 1rem;
