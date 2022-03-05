@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
 import css from "./PropertyForm.module.css";
+import axios from "axios"
 
 const PropertyForm = () => {
   const { register, handleSubmit } = useForm();
@@ -17,7 +18,6 @@ const PropertyForm = () => {
     const propertyDetailsData = Object.assign(data, {
       images: uploadedImages
     });
-    console.log("heloo again", propertyDetailsData);
     const {
       additionalinfo,
       addressone,
@@ -45,20 +45,18 @@ const PropertyForm = () => {
       standingdeskcheck ? "standingdesk" : "",
       wificheck ? "wifi" : ""
     ];
-    const formSubmission = await fetch(`${API_URL}spaces`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        additional_information: additionalinfo,
-        address: address,
-        purpose_of_space: category_of_space,
-        fraction_of_space: fraction_of_space,
-        images: images,
-        type_of_space: type_of_space,
-        amenities: amenities
-      })
+    const submit = axios.post(`${API_URL}/spaces`, {
+      additional_information: additionalinfo,
+      address: address,
+      purpose_of_space: category_of_space,
+      fraction_of_space: fraction_of_space,
+      images: images,
+      type_of_space: type_of_space,
+      amenities: amenities
+      
     });
-    const postData = await formSubmission.json();
+   
+    const pData = await submit.json();
 
   };
 
@@ -226,14 +224,7 @@ const PropertyForm = () => {
                 {...register("additionalinfo")}
               ></textarea>
               <div className={css.ImageUpload}>
-                {/* <input
-                  id="files"
-                  input
-                  type="file"
-                  name="images"
-                  multiple
-                  {...register("images")}
-                ></input> */}
+                
                 <ImageUploader picture={propertyInfo} />
               </div>
             </div>

@@ -9,8 +9,6 @@ const useFetch = (URL) => {
         return response.json();
       })
       .then((json) => {
-        // console.log(json);
-
         setPayload(json.payload);
       });
   };

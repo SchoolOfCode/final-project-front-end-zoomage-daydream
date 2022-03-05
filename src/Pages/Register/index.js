@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import css from "./register.module.css";
@@ -16,12 +16,13 @@ const Register = () => {
     formState: { errors }
   } = useForm();
   const navigate = useNavigate();
+  const [data1, setData1]=useState()
 
   const onSubmit = async (userDetails) => {
     const { firstName, surname, emailAddress, dateOfBirth, username } =
       userDetails;
     const fullName = firstName + " " + surname;
-    navigate("/dashboard");
+
     const post = await fetch(`${API_URL}/users`, {
       method: "POST",
       headers: {
@@ -35,8 +36,10 @@ const Register = () => {
       })
     });
     const data = post.json();
-    navigate("/dashboard");
-  };
+    setData1(data)
+   };
+   
+   navigate("/");
 
   return (
     <div className={css.registerSect}>

@@ -15,7 +15,6 @@ const Reserve = () => {
   const [users] = useFetch(`${API_URL}/users/${id}`); //custom hook fetch
   const user = users[0];
 
-  console.log(space);
 
   return (
     <div className={css.reserveContainer}>
