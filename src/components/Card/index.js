@@ -11,8 +11,9 @@ function Card({ image, address, starttime, id, price }) {
 
   return (
     <div className={css.card}>
-      <div data-testid="img">
+      <div>
         <img
+          data-testid="img"
           className={css.image}
           src={image}
           alt="cardPic"

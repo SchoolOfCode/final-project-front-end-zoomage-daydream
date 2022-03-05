@@ -1,0 +1,23 @@
+.additionalInfoContainer {
+  position: fixed;
+  top: 15%;
+  left: 70%;
+  width: 20%;
+}
+.SpacesDropDownContainer {
+  float: right;
+  margin: 10%;
+}
+.ImageUpload {
+  float: right;
+}
+.amenitiesContainer {
+  position: fixed;
+  bottom: 25%;
+}
+.submitButton {
+  position: fixed;
+  bottom: 20%;
+  left: 50%;
+  float: right;
+}

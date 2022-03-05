@@ -6,7 +6,8 @@ import TimeRange from "react-time-range";
 import moment from "moment";
 import { useState } from "react";
 
-export const ReserveForm = ({ price, user }) => {
+export const ReserveForm = ({ price, user}) => {
+  
   // const { register, handleSubmit } = useForm(); // using hookform in react
   // const [form, setForm] = useState({}); // store form input into a state
   const [dates, setDates] = useState([{ payload: "" }]); // store dates input into a state

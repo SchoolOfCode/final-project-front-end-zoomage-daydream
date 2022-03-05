@@ -5,11 +5,14 @@ import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import ProfileBox from "../../components/ProfileBox";
 import Card from "../../components/Card";
-import PreviousBookings from "../../components/PreviousBookings";
+
 import API_URL from "../../config";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Dashboard() {
   const [space, setSpace] = useState([]);
+  const { isAuthenticated } = useAuth0();
+
   useEffect(() => {
     const fetchCurrentBookings = async () => {
       const result = await fetch(`${API_URL}/spaces/`);
@@ -21,30 +24,36 @@ function Dashboard() {
   }, []);
   return (
     <div>
-      <Header />
-      <Sidebar />
-      <h1>My Bookings</h1>
-      <div className={css.currentBooking}>
-        <h2>Current Booking</h2>
-        {space.map((space) => {
-          return (
-            <Card
-              image={space.images[0]}
-              address={space.address}
-              starttime={space.starttime}
-              key={space.id}
-            />
-          );
-        })}
-      </div>
-      <div className={css.currentProfile}>
-        <ProfileBox />
-      </div>
-      <div className={css.historicalBookingTitle}>
-        <h1>History of Bookings</h1>
-      </div>
-      <PreviousBookings />
-      <Footer />
+      {isAuthenticated && (
+        <div>
+          <Header />
+          <Sidebar />
+          <h1 className={css.booking}>My Bookings</h1>
+          <div className={css.currentBooking}>
+            <h2 className={css.current}>Current Booking</h2>
+            {space.map((space) => {
+              return (
+                <Card
+                  image={space.images[0]}
+                  address={space.address}
+                  starttime={space.starttime}
+                  price={space.hourly_price}
+                  key={space.id}
+                />
+              );
+            })}
+          </div>
+          <div className={css.currentProfile}>
+            <ProfileBox />
+          </div>
+
+          <div className={css.historicalBookingTitle}>
+            <h1> History of Bookings</h1>
+          </div>
+       
+          <Footer />
+        </div>
+      )}
     </div>
   );
 }

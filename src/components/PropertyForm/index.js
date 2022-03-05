@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
-
+import API_URL from "../../config";
+import css from "./PropertyForm.module.css";
+import axios from "axios"
 
 const PropertyForm = () => {
- 
   const { register, handleSubmit } = useForm();
   const [uploadedImages, setUploadedImages] = useState("");
 
@@ -13,9 +14,50 @@ const PropertyForm = () => {
     setUploadedImages(images);
   };
 
-  const handleRegistration = (data) => {
-    const propertyDetailsData = Object.assign(data, { images: uploadedImages });
-    console.log("dd", propertyDetailsData);
+  const handleRegistration = async (data) => {
+    const propertyDetailsData = Object.assign(data, {
+      images: uploadedImages
+    });
+    const {
+      additionalinfo,
+      addressone,
+      addresstwo,
+      category_of_space,
+      city,
+      fraction_of_space,
+      fridgecheck,
+      images,
+      microwavecheck,
+      postcode,
+      region,
+      showercheck,
+      standingdeskcheck,
+      type_of_space,
+      wificheck
+    } = propertyDetailsData;
+    console.log("hi", propertyDetailsData);
+
+    const address = `${addressone}, ${addresstwo}, ${city}, ${region}, ${postcode}`;
+    const amenities = [
+      fridgecheck ? "fridge" : "",
+      microwavecheck ? "microwave" : "",
+      showercheck ? "shower" : "",
+      standingdeskcheck ? "standingdesk" : "",
+      wificheck ? "wifi" : ""
+    ];
+    const submit = axios.post(`${API_URL}/spaces`, {
+      additional_information: additionalinfo,
+      address: address,
+      purpose_of_space: category_of_space,
+      fraction_of_space: fraction_of_space,
+      images: images,
+      type_of_space: type_of_space,
+      amenities: amenities
+      
+    });
+   
+    const pData = await submit.json();
+
   };
 
   return (
@@ -76,7 +118,7 @@ const PropertyForm = () => {
             {...register("postcode")}
           />
 
-          <div className="SpacesDropDownContainer">
+          <div className={css.SpacesDropDownContainer}>
             <div>
               <label> Type of Space:</label>
               <br />
@@ -129,7 +171,7 @@ const PropertyForm = () => {
               </select>
             </div>
           </div>
-          <div className="amenitiesContainer">
+          <div className={css.amenitiesContainer}>
             <div>Amenities</div>
             <label>
               <input
@@ -171,7 +213,7 @@ const PropertyForm = () => {
               />
               Fridge
             </label>
-            <div className="additionalInfoContainer">
+            <div className={css.additionalInfoContainer}>
               <div>
                 <h2>Additional Information</h2>
               </div>
@@ -181,21 +223,14 @@ const PropertyForm = () => {
                 name="additionalinfo"
                 {...register("additionalinfo")}
               ></textarea>
-              <div className="ImageUpload">
-                {/* <input
-                  id="files"
-                  input
-                  type="file"
-                  name="images"
-                  multiple
-                  {...register("images")}
-                ></input> */}
+              <div className={css.ImageUpload}>
+                
                 <ImageUploader picture={propertyInfo} />
               </div>
             </div>
           </div>
 
-          <button>Submit</button>
+          <button className={css.submitButton}>Submit</button>
         </div>
         <div></div>
       </div>

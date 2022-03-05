@@ -15,7 +15,6 @@ const Reserve = () => {
   const [users] = useFetch(`${API_URL}/users/${id}`); //custom hook fetch
   const user = users[0];
 
-  console.log(space);
 
   return (
     <div className={css.reserveContainer}>
@@ -95,7 +94,7 @@ const Reserve = () => {
         <div>
           {user && space && (
             <div>
-              <ReserveForm price={space.hourly_price} user={user} />
+              <ReserveForm price={space.hourly_price} user={user}/>
             </div>
           )}
         </div>

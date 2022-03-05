@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import css from "./register.module.css";
@@ -9,21 +9,20 @@ import API_URL from "../../config";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Register = () => {
-   const { user } = useAuth0();
+  const { user } = useAuth0();
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm();
   const navigate = useNavigate();
+  const [data1, setData1]=useState()
 
   const onSubmit = async (userDetails) => {
-    // console.log(userDetails);
-
     const { firstName, surname, emailAddress, dateOfBirth, username } =
       userDetails;
     const fullName = firstName + " " + surname;
-    navigate("/dashboard");
+
     const post = await fetch(`${API_URL}/users`, {
       method: "POST",
       headers: {
@@ -36,12 +35,16 @@ const Register = () => {
         date_of_birth: dateOfBirth
       })
     });
-    navigate("/dashboard");
-  };
+    const data = post.json();
+    setData1(data)
+   };
+   
+   navigate("/");
 
   return (
     <div className={css.registerSect}>
       <Header />
+      <h1>Register with us</h1>
       <div className={css.mainContainer}>
         <form className={css.inputs} onSubmit={handleSubmit(onSubmit)}>
           <div className={css.category}>
@@ -108,7 +111,7 @@ const Register = () => {
         </form>
         <div className={css.backgroundRegister}>
           <img
-            className={css.imag}
+            className={css.img}
             src="https://www.introtodigital.com/wp-content/uploads/2020/01/Happy-PC-user.png"
             alt=""
           />
