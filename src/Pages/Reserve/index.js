@@ -6,6 +6,7 @@ import API_URL from "../../config";
 import { ReserveForm } from "../../components/ReserveForm";
 import css from "./reserve.module.css";
 import useFetch from "../../components/hooks/useFetch";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Reserve = () => {
   const location = useLocation();
@@ -14,8 +15,8 @@ const Reserve = () => {
   const space = spaces[0];
   const [users] = useFetch(`${API_URL}/users/${id}`); //custom hook fetch
   const user = users[0];
+  const {isAuthenticated} = useAuth0()
 
-  console.log(space);
 
   return (
     <div className={css.reserveContainer}>
@@ -94,9 +95,9 @@ const Reserve = () => {
         </div>
         <div>
           {user && space && (
-            <div>
+            isAuthenticated?<div>
               <ReserveForm price={space.hourly_price} user={user}/>
-            </div>
+            </div>:<p>Login to reserve the space</p>
           )}
         </div>
       </div>

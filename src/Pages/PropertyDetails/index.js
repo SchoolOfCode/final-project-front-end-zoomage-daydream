@@ -1,20 +1,20 @@
 import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import AddressInput from "../../components/AddressInput";
-import AdditionalInfo from "../../components/AdditionalInfo";
-import css from "./propertyDetailsForm.module.css";
-import CheckBox from "../../components/CheckBox";
-import ImageUploader from "../../components/ImageUploader";
-import SpacesDropDown from "../../components/SpacesDropDown";
+import { useAuth0 } from "@auth0/auth0-react";
+
 import PropertyForm from "../../components/PropertyForm";
 
 function PropertyDetails() {
+  const{isAuthenticated} = useAuth0()
   return (
+    <div>
+    {isAuthenticated&&
     <div>
       <Header />
       <PropertyForm />
       <Footer />
+      </div>}
     </div>
   );
 }

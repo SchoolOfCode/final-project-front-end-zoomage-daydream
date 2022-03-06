@@ -3,24 +3,24 @@ import Mission from "../../Pages/Mission";
 import Home from "../../Pages/Home";
 import Result from "../../Pages/ResultsPage";
 import Register from "../../Pages/Register";
-import Dashboard from "../../Pages/Dashboard";
+import Dashboard from "../../Pages/Dashboard/index.js"
 import Reserve from "../../Pages/Reserve";
 import PropertyDetails from "../../Pages/PropertyDetails";
 import "./App.css";
 
 function App() {
-  console.warn = () => {}; 
+  // console.warn = () => {};
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="mission" element={<Mission />} />
-        <Route path="result" element={<Result />} />
-        <Route path="registerhost" element={<Register />} />
+      <Route path="/" element={<Home />} />
+      <Route path="mission" element={<Mission />} />
+      <Route path="result" element={<Result />} />
+      <Route path="registerhost" element={<Register />} />
 
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="reserve" element={<Reserve />} />
-        <Route path="PropertyDetails" element={<PropertyDetails />} />
+      <Route path="dashboard" element={ <Dashboard/>} />
+      <Route path="reserve" element={<Reserve />} />
+      <Route path="PropertyDetails" element={<PropertyDetails />} />
       </Routes>
     </div>
   );
