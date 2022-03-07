@@ -71,7 +71,7 @@ const PropertyForm = () => {
       onSubmit={handleSubmit(handleRegistration)}
       className={css.formContainer}
     >
-      <div className="Address">
+      <div className={css.AddressContainer}>
         <div>
           <TextField
             required
@@ -126,150 +126,150 @@ const PropertyForm = () => {
             name="postcode"
             {...register("postcode")}
           />
+        </div>
+        <div className={css.SpacesDropDownContainer}>
+          <div>
+            <label> Type of Space:</label>
+            <br />
 
-          <div className={css.SpacesDropDownContainer}>
-            <div>
-              <label> Type of Space:</label>
-              <br />
-
-              <select
-                name="type_of_space"
-                id="spaces"
-                placeholder="Pick a Space"
-                {...register("type_of_space")}
-                required
-              >
-                <option value="">Select your option</option>
-                <option value="flat">House</option>
-                <option value="house">Apartment/Flat</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div>
-              <label> Purpose of space:</label>
-              <br />
-
-              <select
-                name="category_of_space"
-                id="spaces"
-                required
-                {...register("category_of_space")}
-              >
-                <option value="">Select your option</option>
-                <option value="remote working">Remote Working</option>
-                <option value="music space">Music Space</option>
-                <option value="gym space">Gym Space</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div>
-              <label> Types of Spaces:</label>
-              <br />
-
-              <select
-                name="fraction_of_space"
-                id="spaces"
-                {...register("fraction_of_space")}
-                required
-              >
-                <option value="">Select your option</option>
-                <option value="whole property">Whole Property</option>
-                <option value="private room">Private Room</option>
-                <option value="duplex condo">Duplex Condo</option>
-                <option value="conference room">Conference Room</option>
-              </select>
-            </div>
-          </div>
-          <div className={css.amenitiesContainer}>
-            <div>Amenities</div>
-            <label>
-              <input
-                type="checkbox"
-                name="wificheck"
-                {...register("wificheck")}
-              />
-              WiFi
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="showercheck"
-                {...register("showercheck")}
-              />
-              Shower
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="microwavecheck"
-                {...register("microwavecheck")}
-              />
-              Microwave
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="standingddeskcheck"
-                {...register("standingdeskcheck")}
-              />
-              Standing Desk
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="fridgecheck"
-                {...register("fridgecheck")}
-              />
-              Fridge
-            </label>
-            <div className={css.additionalInfoContainer}>
-              <div>
-                <h2>Additional Information</h2>
-              </div>
-              <textarea
-                rows="8"
-                cols="50"
-                name="additionalinfo"
-                {...register("additionalinfo")}
-              ></textarea>
-            </div>
-            <div className={css.ImageUpload}>
-              <ImageUploader picture={propertyInfo} />
-            </div>
-          </div>
-          <div className={css.datePicker}>
-            <DatePicker
-              // value={dates}
-              // onChange={setDates}
-              placeholder="Choose dates"
-              format="DD/MM/YYYY"
+            <select
+              name="type_of_space"
+              id="spaces"
+              S
+              placeholder="Pick a Space"
+              {...register("type_of_space")}
               required
-            />
+            >
+              <option value="">Select your option</option>
+              <option value="flat">House</option>
+              <option value="house">Apartment/Flat</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label> Purpose of space:</label>
+            <br />
+
+            <select
+              name="category_of_space"
+              id="spaces"
+              required
+              {...register("category_of_space")}
+            >
+              <option value="">Select your option</option>
+              <option value="remote working">Remote Working</option>
+              <option value="music space">Music Space</option>
+              <option value="gym space">Gym Space</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label> Types of Spaces:</label>
+            <br />
+
+            <select
+              name="fraction_of_space"
+              id="spaces"
+              {...register("fraction_of_space")}
+              required
+            >
+              <option value="">Select your option</option>
+              <option value="whole property">Whole Property</option>
+              <option value="private room">Private Room</option>
+              <option value="duplex condo">Duplex Condo</option>
+              <option value="conference room">Conference Room</option>
+            </select>
           </div>
         </div>
-        <div className={css.timeRange}>
-          <TimeRange
-            // startMoment={startTime}
-            // endMoment={endTime}
-            // onStartTimeChange={handleStartTime}
-            // onEndTimeChange={handleEndTime}
+        <div className={css.amenitiesContainer}>
+          <div>Amenities</div>
+          <label>
+            <input
+              type="checkbox"
+              name="wificheck"
+              {...register("wificheck")}
+            />
+            WiFi
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="showercheck"
+              {...register("showercheck")}
+            />
+            Shower
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="microwavecheck"
+              {...register("microwavecheck")}
+            />
+            Microwave
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="standingddeskcheck"
+              {...register("standingdeskcheck")}
+            />
+            Standing Desk
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="fridgecheck"
+              {...register("fridgecheck")}
+            />
+            Fridge
+          </label>
+          <div className={css.additionalInfoContainer}>
+            <div>
+              <h2>Additional Information</h2>
+            </div>
+            <textarea
+              rows="8"
+              cols="50"
+              name="additionalinfo"
+              {...register("additionalinfo")}
+            ></textarea>
+          </div>
+          <div className={css.ImageUpload}>
+            <ImageUploader picture={propertyInfo} />
+          </div>
+        </div>
+        <div className={css.datePicker}>
+          <DatePicker
+            // value={dates}
+            // onChange={setDates}
+            placeholder="Choose dates"
+            format="DD/MM/YYYY"
             required
           />
         </div>
-        <div className={css.price}>
-          <TextField
-            required
-            id="standard-required"
-            label="Price"
-            placeholder="Required"
-            variant="standard"
-            name="price"
-            {...register("price")}
-          />
-        </div>
-        <div className={css.submitButton}>
-          <button>Submit</button>
-        </div>
+      </div>
+      <div className={css.timeRange}>
+        <TimeRange
+          // startMoment={startTime}
+          // endMoment={endTime}
+          // onStartTimeChange={handleStartTime}
+          // onEndTimeChange={handleEndTime}
+          required
+        />
+      </div>
+      <div className={css.price}>
+        <TextField
+          required
+          id="standard-required"
+          label="Price"
+          placeholder="Required"
+          variant="standard"
+          name="price"
+          {...register("price")}
+        />
+      </div>
+      <div className={css.submitButton}>
+        <button>Submit</button>
       </div>
     </form>
   );
