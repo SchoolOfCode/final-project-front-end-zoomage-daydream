@@ -1,3 +1,4 @@
+
 .currentBooking {
   float: right;
 }
@@ -29,4 +30,19 @@
 
 .historicalBookingTitle {
   margin-top: 50%;
+}
+
+
+@media only screen and (min-width: 1008px) {
+  .dashboardSect {
+    display: flex;
+  }
+
+.sidebarContainer{
+  border: 2px solid black
+}
+
+.profileSect{
+  display: flex;
+}
 }

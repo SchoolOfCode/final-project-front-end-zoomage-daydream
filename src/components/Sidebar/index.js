@@ -19,34 +19,21 @@ function Sidebar() {
       </h2>
 
       <h2>
-        <FontAwesomeIcon icon={faHouse} className={css.sidebarIcons} />
-        Home
-      </h2>
-
-      <h2>
-        <FontAwesomeIcon icon={faMessage} className={css.sidebarIcons} />
-        Messages
-      </h2>
-
-      <h2>
         <FontAwesomeIcon icon={faCalendarCheck} className={css.sidebarIcons} />
         My Bookings
       </h2>
-
       <h2>
-        <FontAwesomeIcon icon={faHeart} className={css.sidebarIcons} />
-        Favourites
+        <FontAwesomeIcon icon={faCalendarCheck} className={css.sidebarIcons} />
+        Listings
       </h2>
+      <h2>
+        <FontAwesomeIcon icon={faMessage} className={css.sidebarIcons} />
+        Listings
+      </h2>
+
       <h2>
         <FontAwesomeIcon icon={faGear} className={css.sidebarIcons} />
         Settings
-      </h2>
-      <h2>
-        <FontAwesomeIcon
-          icon={faArrowRightFromBracket}
-          className={css.sidebarIcons}
-        />
-        Log Out
       </h2>
     </div>
   );

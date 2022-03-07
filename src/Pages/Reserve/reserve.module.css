@@ -1,3 +1,7 @@
+.bg{
+margin-left: 70rem;
+}
+
 .reserveContainer {
   display: flex;
   flex-direction: column;

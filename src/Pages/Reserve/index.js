@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import Footer from "../../components/Footer";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/Header";
@@ -7,6 +8,7 @@ import { ReserveForm } from "../../components/ReserveForm";
 import css from "./reserve.module.css";
 import useFetch from "../../components/hooks/useFetch";
 import { useAuth0 } from "@auth0/auth0-react";
+import CarouselImage from "../../components/Carousel";
 
 const Reserve = () => {
   const location = useLocation();
@@ -15,8 +17,7 @@ const Reserve = () => {
   const space = spaces[0];
   const [users] = useFetch(`${API_URL}/users/${id}`); //custom hook fetch
   const user = users[0];
-  const {isAuthenticated} = useAuth0()
-
+  const { isAuthenticated } = useAuth0();
 
   return (
     <div className={css.reserveContainer}>
@@ -32,33 +33,9 @@ const Reserve = () => {
           </div>
         )}
       </div>
-      <div className={css.images}>
-        <div className={css.imagesRight}>
-          {space &&
-            space.images.slice(0, 2).map((item, index) => {
-              return (
-                <div key={index}>
-                  <img className={css.images_right} src={item} alt="" />
-                </div>
-              );
-            })}
-        </div>
-        <div className={css.imageCenter}>
-          {space && (
-            <div>
-              <img className={css.images_center} src={space.images[2]} alt="" />
-            </div>
-          )}
-        </div>
-        <div className={css.imagesLeft}>
-          {space &&
-            space.images.slice(3, 5).map((item, index) => {
-              return (
-                <div key={index}>
-                  <img className={css.images_left} src={item} alt="" />
-                </div>
-              );
-            })}
+      <div>
+        <div>
+          {space && <CarouselImage images={spaces[0].images} />}
         </div>
       </div>
       <div className={css.bottomContainer}>
@@ -94,11 +71,15 @@ const Reserve = () => {
           </div>
         </div>
         <div>
-          {user && space && (
-            isAuthenticated?<div>
-              <ReserveForm price={space.hourly_price} user={user}/>
-            </div>:<p>Login to reserve the space</p>
-          )}
+          {user &&
+            space &&
+            (isAuthenticated ? (
+              <div>
+                <ReserveForm price={space.hourly_price} user={user} />
+              </div>
+            ) : (
+              <p>Login to reserve the space</p>
+            ))}
         </div>
       </div>
       <Footer />
