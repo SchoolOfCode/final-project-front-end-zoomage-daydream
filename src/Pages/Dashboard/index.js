@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import css from "./dashboard.module.css";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import Sidebar from "../../components/Sidebar";
-import ProfileBox from "../../components/ProfileBox";
 import Card from "../../components/Card";
 import Profile from "../../components/Profile";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,6 +17,7 @@ import {
 
 import API_URL from "../../config";
 import { useAuth0 } from "@auth0/auth0-react";
+import ProfileSect from "../../components/ProfileSection";
 
 function Dashboard() {
   const [space, setSpace] = useState([]);
@@ -88,45 +87,8 @@ function Dashboard() {
             </h2>
           </div>
           <div className={css.profileSect}>
-            <div className={css.profile}>
-              {" "}
-              {users[0] && isAuthenticated && (
-                <Profile
-                  date_of_birth={users[0].date_of_birth.split("").slice(0, 10)}
-                  email={user.email}
-                  full_name={users[0].full_name}
-                  username={users[0].username}
-                />
-              )}
-            </div>
-            <div className={css.currentBooking}>
-              <h2 className={css.current}>Current Booking</h2>
-              {space.map((space) => {
-                return (
-                  <Card
-                    image={space.images[0]}
-                    address={space.address}
-                    starttime={space.starttime}
-                    price={space.hourly_price}
-                    key={space.id}
-                  />
-                );
-              })}
-            </div>
-            <div className={css.currentBooking}>
-              <h2 className={css.current}>Current Listing</h2>
-              {space.map((space) => {
-                return (
-                  <Card
-                    image={space.images[0]}
-                    address={space.address}
-                    starttime={space.starttime}
-                    price={space.hourly_price}
-                    key={space.id}
-                  />
-                );
-              })}
-            </div>
+           <div><ProfileSect/></div>
+ 
           </div>
         </div>
       )}

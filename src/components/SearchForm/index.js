@@ -21,7 +21,8 @@ const SearchForm = () => {
   const [url1, setUrl] = useState(background);
   const [data1, setData] = useState(true);
 
-  const firstMount = useRef(false);
+
+  const firstMount = useRef(false);// useRef used to prevent useEffect from running on first mount.
 
   // Calendar for you to select your set of dates
   const datesSelected = dates.map((value) => {
