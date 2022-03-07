@@ -15,7 +15,11 @@ const Register = () => {
     handleSubmit,
     formState: { errors }
   } = useForm();
+<<<<<<< HEAD
   const navigate = useNavigate();
+=======
+  // const navigate = useNavigate();
+>>>>>>> RegisterHost
   const [data1, setData1] = useState();
 
   const onSubmit = async (userDetails) => {
@@ -39,7 +43,11 @@ const Register = () => {
     setData1(data);
   };
 
+<<<<<<< HEAD
   navigate("/");
+=======
+  //  navigate("/");
+>>>>>>> RegisterHost
 
   return (
     <div className={css.registerSect}>
@@ -77,7 +85,7 @@ const Register = () => {
               placeholder="Email Address"
               {...register("emailAddress")}
               className={css.form}
-              value={user.email}
+              // value={user.email}
               required
             />
           </div>
@@ -93,14 +101,14 @@ const Register = () => {
             />
           </div>
           <div className={css.category}>
-            <label className={css.labels}> PLEASE CHOOSE A USERNAME </label>
+            <label className={css.labels}>CHOOSE YOUR USERNAME </label>
             <br></br>
             <input
               type="text"
               placeholder="Choose a Username"
               {...register("username")}
               className={css.form}
-              value={user.nickname}
+              // value={user.nickname}
               required
             />
             <div>

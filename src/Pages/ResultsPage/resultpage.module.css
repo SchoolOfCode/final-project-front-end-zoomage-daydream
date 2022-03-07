@@ -3,6 +3,9 @@
   width: 100%;
 }
 
+/* yuiop */
+
+
 .result {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
