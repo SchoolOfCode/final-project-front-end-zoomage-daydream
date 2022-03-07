@@ -47,7 +47,7 @@
   .result {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 4rem;
+    grid-column-gap: 8rem;
     grid-row-gap: 1rem;
     margin-left: 6rem;
   }
@@ -62,7 +62,7 @@
   .result {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 15rem;
+    grid-column-gap: 8rem;
     grid-row-gap: 1rem;
     margin-left: 6rem;
   }

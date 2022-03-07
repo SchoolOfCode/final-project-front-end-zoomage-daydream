@@ -25,34 +25,6 @@ text {
 }
 
 .body {
-  /* border: 2px solid red; */
-  min-height: 0vh;
-  margin-top: auto;
-  /* height: 100%; */
-}
-
-.border {
-  outline: 0.5rem solid rgb(44, 58, 180, 0.7);
-  border-radius: 12px;
-  margin: 2rem;
-  padding: 1rem;
-  outline-offset: 0.5rem;
-  margin-bottom: 60px;
-}
-
-@media only screen and (min-width: 641px) {
-  h1 {
-    font-size: 3rem;
-    padding-bottom: 5rem;
-    padding-top: 2rem;
-  }
-  h3 {
-    font-size: 1.5rem;
-  }
-  .body {
-    min-height: 83vh;
-    margin-top: auto;
-  }
   height: 100%;
 }
 
