@@ -34,9 +34,7 @@ const Reserve = () => {
         )}
       </div>
       <div>
-        <div>
-          {space && <CarouselImage images={spaces[0].images} />}
-        </div>
+        <div>{space && <CarouselImage images={spaces[0].images} />}</div>
       </div>
       <div className={css.bottomContainer}>
         <div>
@@ -45,10 +43,10 @@ const Reserve = () => {
             {space && (
               <div className={css.details}>
                 {" "}
-                <p>Type of space:{space.type_of_space}</p>
+                <p>Type of space: {space.type_of_space}</p>
                 <p>Fraction of space: {space.fraction_of_space}</p>
                 <p>Check in: </p>
-                <p>Cancellation</p>
+                <p>Cancellation: At least 24 hours notice</p>
                 <p>Instructions on how to use go here</p>
               </div>
             )}{" "}

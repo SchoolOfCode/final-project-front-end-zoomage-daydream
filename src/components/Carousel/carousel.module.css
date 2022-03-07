@@ -1,7 +1,7 @@
 .reserveImage {
-  width: 80%;
+  width: 60%;
   height: 40.2rem;
-  margin-left: 10%;
+  margin-left: 20%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -20,20 +20,20 @@
   color: rgb(213, 233, 34);
   font-size: 3rem;
   z-index: 3;
-  color: gray
+  color: gray;
 }
 
 .arrowRight {
   top: 50%;
-  right:12%;
+  right: 12%;
   position: absolute;
   color: rgb(209, 198, 42);
   font-size: 3rem;
   z-index: 3;
-  color: gray
+  color: gray;
 }
 
-.arrows{
+.arrows {
   display: flex;
   justify-content: space-between;
 }
