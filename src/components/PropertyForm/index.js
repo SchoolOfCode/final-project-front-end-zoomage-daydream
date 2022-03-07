@@ -67,68 +67,73 @@ const PropertyForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(handleRegistration)}
-      className={css.formContainer}
-    >
-      <div className={css.AddressContainer}>
-        <div>
-          <TextField
-            required
-            id="standard-required"
-            label="Address Line 1 "
-            placeholder="Required"
-            variant="standard"
-            name="addressone"
-            {...register("addressone")}
-          />
-        </div>
-        <div>
-          <TextField
-            required
-            id="standard-required"
-            label="Address Line 2"
-            placeholder="Required"
-            variant="standard"
-            name="addresstwo"
-            {...register("addresstwo")}
-          />
-        </div>
-        <div>
-          <TextField
-            required
-            id="standard-required"
-            label="City"
-            placeholder="Required"
-            variant="standard"
-            name="city"
-            {...register("city")}
-          />
-        </div>
-        <div>
-          <TextField
-            required
-            id="standard-required"
-            label="Region"
-            placeholder="Required"
-            variant="standard"
-            name="region"
-            {...register("region")}
-          />
-        </div>
-        <div>
-          <TextField
-            required
-            id="standard-required"
-            label="Postal Code"
-            placeholder="Required"
-            variant="standard"
-            name="postcode"
-            {...register("postcode")}
-          />
-        </div>
-        <div className={css.SpacesDropDownContainer}>
+    <>
+      <div className={css.title}>
+        Please complete the following details about the space you intend to host
+      </div>
+      <form
+        onSubmit={handleSubmit(handleRegistration)}
+        className={css.formContainer}
+      >
+        <div className={css.addressContainer}>
           <div>
+            <TextField
+              required
+              id="standard-required"
+              label="Address Line 1 "
+              placeholder="Required"
+              variant="standard"
+              name="addressone"
+              {...register("addressone")}
+            />
+          </div>
+          <div>
+            <TextField
+              required
+              id="standard-required"
+              label="Address Line 2"
+              placeholder="Required"
+              variant="standard"
+              name="addresstwo"
+              {...register("addresstwo")}
+            />
+          </div>
+          <div>
+            <TextField
+              required
+              id="standard-required"
+              label="City"
+              placeholder="Required"
+              variant="standard"
+              name="city"
+              {...register("city")}
+            />
+          </div>
+          <div>
+            <TextField
+              required
+              id="standard-required"
+              label="Region"
+              placeholder="Required"
+              variant="standard"
+              name="region"
+              {...register("region")}
+            />
+          </div>
+          <div>
+            <TextField
+              required
+              id="standard-required"
+              label="Postal Code"
+              placeholder="Required"
+              variant="standard"
+              name="postcode"
+              {...register("postcode")}
+            />
+          </div>
+        </div>
+        <div className={css.spacesDropDownContainer}>
+          <div className={css.typeSpace}>
             <label> Type of Space:</label>
             <br />
 
@@ -146,7 +151,7 @@ const PropertyForm = () => {
               <option value="other">Other</option>
             </select>
           </div>
-          <div>
+          <div className={css.categorySpace}>
             <label> Purpose of space:</label>
             <br />
 
@@ -163,7 +168,7 @@ const PropertyForm = () => {
               <option value="other">Other</option>
             </select>
           </div>
-          <div>
+          <div className={css.fractionSpace}>
             <label> Types of Spaces:</label>
             <br />
 
@@ -181,8 +186,8 @@ const PropertyForm = () => {
             </select>
           </div>
         </div>
-        <div className={css.AmenitiesContainer}>
-          <div>Amenities</div>
+        <div className={css.amenitiesContainer}>
+          <div className={css.amenitiesTitle}>Amenities</div>
           <label>
             <input
               type="checkbox"
@@ -223,55 +228,64 @@ const PropertyForm = () => {
             />
             Fridge
           </label>
-          <div className={css.AdditionalInfoContainer}>
-            <div>
-              <h2>Additional Information</h2>
-            </div>
-            <textarea
-              rows="8"
-              cols="50"
-              name="additionalinfo"
-              {...register("additionalinfo")}
-            ></textarea>
+          <label>
+            <input type="checkbox" name="other" {...register("other")} />
+            Other
+          </label>
+        </div>
+        <div className={css.dateTimePrice}>
+          <div className={css.datePicker}>
+            <DatePicker
+              // value={dates}
+              // onChange={setDates}
+              placeholder="Choose dates"
+              format="DD/MM/YYYY"
+              required
+            />
           </div>
-          <div className={css.ImageUpload}>
-            <ImageUploader picture={propertyInfo} />
+
+          <div className={css.timeRange}>
+            <TimeRange
+              // startMoment={startTime}
+              // endMoment={endTime}
+              // onStartTimeChange={handleStartTime}
+              // onEndTimeChange={handleEndTime}
+              required
+            />
+          </div>
+
+          <div>
+            <TextField
+              required
+              id="standard-required"
+              label="Price"
+              placeholder="Required"
+              variant="standard"
+              name="price"
+              {...register("price")}
+            />
           </div>
         </div>
-        <div className={css.DatePicker}>
-          <DatePicker
-            // value={dates}
-            // onChange={setDates}
-            placeholder="Choose dates"
-            format="DD/MM/YYYY"
-            required
-          />
+        <div className={css.additionalInfoContainer}>
+          <div>
+            <h2>Additional Information</h2>
+          </div>
+          <textarea
+            rows="8"
+            cols="50"
+            name="additionalinfo"
+            placeholder=" Describe your property and other amenities available."
+            {...register("additionalinfo")}
+          ></textarea>
         </div>
-      </div>
-      <div className={css.TimeRange}>
-        <TimeRange
-          // startMoment={startTime}
-          // endMoment={endTime}
-          // onStartTimeChange={handleStartTime}
-          // onEndTimeChange={handleEndTime}
-          required
-        />
-      </div>
-      <div className={css.Price}>
-        <TextField
-          required
-          id="standard-required"
-          label="Price"
-          placeholder="Required"
-          variant="standard"
-          name="price"
-          {...register("price")}
-        />
-      </div>
-      <div className={css.SubmitButton}>
-        <button>Submit</button>
-      </div>
-    </form>
+        <div className={css.imageUpload}>
+          <ImageUploader picture={propertyInfo} />
+        </div>
+        <div className={css.submitButton}>
+          <button>Submit</button>
+        </div>
+      </form>
+    </>
   );
 };
 
