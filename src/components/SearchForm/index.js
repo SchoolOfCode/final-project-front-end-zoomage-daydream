@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./searchform.css";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
 import API_URL from "../../config";
+import background from "../../images/background.jpg";
+import cardPic1 from "../../images/cardPic1.jpg";
 import { useNavigate } from "react-router-dom";
-
 
 const SearchForm = () => {
   // const [bgimage, setBgImage] = useState();
@@ -16,8 +17,11 @@ const SearchForm = () => {
   const [startTime, setStartTime] = useState(moment()); // Time Range
   const [endTime, setEndTime] = useState(moment()); // Time Range
   const navigate = useNavigate(); // use navigate to navigate to a diffeerent page
+  const [bgImage, setBgImage] = useState(1);
+  const [url1, setUrl] = useState(background);
+  const [data1, setData] = useState(true);
 
-  const firstMount = useRef(false);
+  const firstMount = useRef(false); // useRef used to prevent useEffect from running on first mount.
 
   // Calendar for you to select your set of dates
   const datesSelected = dates.map((value) => {
@@ -51,22 +55,35 @@ const SearchForm = () => {
   useEffect(() => {
     if (firstMount.current === false) {
       firstMount.current = true;
-      return;
+      return 1;
     }
-
-    const fetchData = async () => {
-      const result = await fetch(
-        `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
-      );
-      const data = await result.json();
-      navigate("/result", { state: data })
-    };
-    fetchData();
+    if (firstMount.current && data1 === false) {
+      const fetchData = async () => {
+        const result = await fetch(
+          `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
+        );
+        const data = await result.json();
+        navigate("/result", { state: data });
+      };
+      fetchData();
+      setData(true);
+    }
   }, [form]);
 
+  // console.log(form);
+  // const imageChange = () => {
+  //   if (bgImage === 1) {
+  //     setBgImage(2);
+  //     setUrl(cardPic1);
+  //   } else if (bgImage === 2) {
+  //     setUrl(background);
+  //     setBgImage(1);
+  //   }
+  // };
+  // setInterval(imageChange, 10000);
 
   return (
-    <div className="formBackground">
+    <div className="formBackground" style={{ backgroundImage: url1 }}>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <div>
           {" "}
@@ -115,14 +132,19 @@ const SearchForm = () => {
             required
           >
             <option>Select</option>
-            <option value="flat">Flat</option>
+            <option value="flat">Apartment/Flat</option>
             <option value="house">House</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <option value="other">Other</option>
           </select>
         </div>
         <div className="submitSection">
-          <input type="submit" className="submit" />
+          <input
+            type="submit"
+            className="submit"
+            onClick={() => {
+              setData(false);
+            }}
+          />
         </div>
       </form>
     </div>

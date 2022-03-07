@@ -1,36 +1,54 @@
-.currentBooking {
-    float: right;
+.current {
+  font-family: "Philosopher", sans-serif;
 }
 
-.currentProfile {
-    float: left;
-    padding: 2rem;
-    border: 4px solid;
-    margin: 3rem;
-}
-
-/* .historicalBooking {
-    position: absolute;
-    bottom: 10%;
+@media only screen and (min-width: 1008px) {
+  .footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
+  .dashboardSect {
     display: flex;
-    align-items: center;
-  left: 50%;
-  transform: translateX(-50%);
-  justify-content: baseline;
+    min-height: calc(100vh - 14rem);
+  }
 
-} */
+  .sidebarContainer {
+    border: 2px solid black;
+  }
 
-.historicalBooking {
-    align-items: center;
-margin-top: 1rem;
+  .sidebarComponent {
+    padding: 2rem;
+  }
+
+  .profileSect {
+    width: 100%;
+  }
+
+  .bookings {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 40px;
-    grid-row-gap: 0px;
+    grid-column-gap: 25px;
+    grid-row-gap: 2px;
+    margin-left: 2rem;
+  }
+  .block {
+    display: inline-block;
+  }
+  .listings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 2px;
+    margin-left: 2rem;
+  }
 }
 
-.historicalBookingTitle{
-    margin-top: 50%;
+.dashboardSect {
+  display: flex;
+}
 
+.sidebarContainer {
+  border: 2px solid black;
+  background-color: rgba(236, 233, 232, 0.9);
 }

@@ -14,6 +14,7 @@ const Result = () => {
   const results = location.state.payload;
   // console.log(results);
 
+
   const sortHighToLow = (e) => {
     const filterResults = [...results];
     const value = e.target.value;
@@ -42,7 +43,7 @@ const Result = () => {
       <div className={css.locAndFilter}>
         {" "}
         <p className={css.locationName}>
-          Results found for {results[0].address.split(" ")[3].slice(0, 6)}
+          Results found for {results[0].address.split(" ")[3].slice(0, 10)}
         </p>
         <div className={css.filter}>
           <select onChange={sortHighToLow}>

@@ -1,0 +1,10 @@
+.propertyDetailsForm {
+  display: grid;
+  grid-template-columns: repeat(3, 10rem);
+  grid-template-rows: 10rem;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+  margin-left: 32%;
+  text-align: center;
+  margin-bottom: 30%;
+}

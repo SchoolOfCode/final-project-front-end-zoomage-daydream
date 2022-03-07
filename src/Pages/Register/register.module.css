@@ -1,82 +1,76 @@
-.registerSect {
-  width: 100%;
-  height: 100vh;
-}
-
 .mainContainer {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  height: 100%;
 }
 
+.registerSect {
+  width: 100%;
+}
+
+/* 5 inputs */
 .inputs {
-  margin: 1rem 0rem 0rem 2rem;
   display: block;
+  padding: 0.1rem 0.2rem;
+  margin-bottom: 10px;
+  margin-left: 4rem;
   line-height: 2rem;
 }
 
 .labels {
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 0.7rem;
+  line-height: 0.01 rem;
+}
+
+.main {
+  min-height: calc(100vh - 14rem);
 }
 
 .category {
   text-align: center;
   font-size: 0.8rem;
-  margin-left: 2rem;
+  margin-left: 1rem;
 
   /* line-height: 3rem; */
 }
 
 .form {
-  margin: 2rem;
-  transform: scale(1);
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
 }
 
 .backgroundRegister {
   padding-top: 3rem;
 }
 
-.imag {
-  width: 15rem;
-  margin-top: 13rem;
-  margin-right: 2rem;
+.img {
+  width: 10rem;
+  margin-bottom: 30rem;
+  margin-right: 5rem;
+  margin-left: 1rem;
   height: auto;
   display: inline-block;
 }
 
 .button {
   transform: scale(1.5);
+  background: #051bd9;
+  background-image: linear-gradient(to bottom, #051bd9, #2980b9);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 8px;
+  padding: 4px 8px 4px 8px;
+  margin-top: 2rem;
 }
 
-@media only screen and (min-width: 641px) {
-  .imag {
-    width: 22rem;
-    margin-top: 20rem;
-    margin-right: 1rem;
-    height: auto;
-    display: inline-block;
-  }
-  .category {
-    text-align: center;
-    font-size: 1.5rem;
-    height: 10rem;
-    /* line-height: 6rem; */
-  }
-  .registerSect {
-    width: 100%;
-    height: 84vh;
-  }
-  .button {
-    transform: scale(2);
-  }
-  .form {
-    margin: 2rem;
-    transform: scale(1.7);
-  }
-}
 @media only screen and (min-width: 1008px) {
-  .imag {
+  .img {
     width: 40rem;
     margin-top: 3rem;
     margin-right: 1rem;
@@ -97,33 +91,10 @@
   .button {
     transform: scale(2);
   }
-}
 
-.registerSect {
-  width: 100%;
-  height: 100vh;
-}
-
-@media only screen and (min-width: 1640px) {
-  .imag {
-    width: 70rem;
-    margin-top: 3rem;
-    margin-right: 1rem;
-    height: auto;
-    display: inline-block;
-  }
-  .category {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: 2rem;
-    height: 10rem;
-    /* line-height: 6rem; */
-  }
-  .form {
-    margin: 2rem;
-    transform: scale(2.4);
-  }
-  .button {
-    transform: scale(3.5);
+  .labels {
+    font-weight: 900;
+    font-size: 0.9rem;
+    line-height: 0.01 rem;
   }
 }

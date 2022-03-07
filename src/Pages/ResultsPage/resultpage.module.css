@@ -1,8 +1,9 @@
 .mainContainer {
   height: 100%;
   width: 100%;
-
 }
+
+/* yuiop */
 
 
 .result {
@@ -21,7 +22,7 @@
 
 .locationName {
   padding: 0.5rem;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .locAndFilter {
@@ -41,12 +42,15 @@
     grid-row-gap: 0rem;
     margin-left: 0rem;
   }
+  .locationName {
+    font-size: 1rem;
+  }
 }
 @media only screen and (min-width: 1008px) {
   .result {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 4rem;
+    grid-column-gap: 8rem;
     grid-row-gap: 1rem;
     margin-left: 6rem;
   }
@@ -56,3 +60,18 @@
     padding-right: 0;
   }
 }
+
+/* @media only screen and (min-width: 1640px) {
+  .result {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 8rem;
+    grid-row-gap: 1rem;
+    margin-left: 6rem;
+  }
+  .block {
+    display: inline-block;
+    padding-left: 0;
+    padding-right: 0;
+  }
+} */

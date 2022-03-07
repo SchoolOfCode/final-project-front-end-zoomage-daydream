@@ -3,10 +3,15 @@ import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
-import "./PropertyForm.css";
+
+
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 // import moment from "moment";
+
+import  "./PropertyForm.css";
+import axios from "axios"
+
 
 const PropertyForm = () => {
   // const [startTime, setStartTime] = useState(moment()); // Time Range
@@ -22,7 +27,6 @@ const PropertyForm = () => {
     const propertyDetailsData = Object.assign(data, {
       images: uploadedImages
     });
-    console.log("heloo again", propertyDetailsData);
     const {
       additionalinfo,
       addressone,
@@ -50,20 +54,23 @@ const PropertyForm = () => {
       standingdeskcheck ? "standingdesk" : "",
       wificheck ? "wifi" : ""
     ];
-    const formSubmission = await fetch(`${API_URL}spaces`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        additional_information: additionalinfo,
-        address: address,
-        purpose_of_space: category_of_space,
-        fraction_of_space: fraction_of_space,
-        images: images,
-        type_of_space: type_of_space,
-        amenities: amenities
-      })
+    const submit = axios.post(`${API_URL}/spaces`, {
+      additional_information: additionalinfo,
+      address: address,
+      purpose_of_space: category_of_space,
+      fraction_of_space: fraction_of_space,
+      images: images,
+      type_of_space: type_of_space,
+      amenities: amenities
+      
     });
+
     const postData = await formSubmission.json();
+
+   
+    const pData = await submit.json();
+
+
   };
 
   return (
@@ -256,6 +263,7 @@ const PropertyForm = () => {
             />
           </div>
 
+
           <div>
             <p> Please enter the price per hour for the space</p>
             <TextField
@@ -267,6 +275,65 @@ const PropertyForm = () => {
               name="price"
               {...register("price")}
             />
+
+          <div className={css.amenitiesContainer}>
+            <div>Amenities</div>
+            <label>
+              <input
+                type="checkbox"
+                name="wificheck"
+                {...register("wificheck")}
+              />
+              WiFi
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="showercheck"
+                {...register("showercheck")}
+              />
+              Shower
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="microwavecheck"
+                {...register("microwavecheck")}
+              />
+              Microwave
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="standingddeskcheck"
+                {...register("standingdeskcheck")}
+              />
+              Standing Desk
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="fridgecheck"
+                {...register("fridgecheck")}
+              />
+              Fridge
+            </label>
+            <div className={css.additionalInfoContainer}>
+              <div>
+                <h2>Additional Information</h2>
+              </div>
+              <textarea
+                rows="8"
+                cols="50"
+                name="additionalinfo"
+                {...register("additionalinfo")}
+              ></textarea>
+              <div className={css.ImageUpload}>
+                
+                <ImageUploader picture={propertyInfo} />
+              </div>
+            </div>
+
           </div>
         </div>
 

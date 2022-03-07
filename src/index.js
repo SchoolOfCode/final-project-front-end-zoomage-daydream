@@ -4,18 +4,20 @@ import "./index.css";
 import App from "./components/App";
 import { BrowserRouter } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
+import "antd/dist/antd.less";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Auth0Provider
-        domain={process.env.REACT_APP_DOMAIN}
-        clientId={process.env.REACT_APP_CLIENT}
-        redirectUri={window.location.origin}
-      >
+    <Auth0Provider
+      domain={process.env.REACT_APP_DOMAIN}
+      clientId={process.env.REACT_APP_CLIENT}
+      redirectUri={window.location.origin}
+    >
+      <BrowserRouter>
         <App />
-      </Auth0Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
