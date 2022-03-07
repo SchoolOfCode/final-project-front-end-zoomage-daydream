@@ -22,6 +22,7 @@ import ProfileSect from "../../components/ProfileSection";
 function Dashboard() {
   const [space, setSpace] = useState([]);
   const { user, isAuthenticated } = useAuth0();
+  const [current, setCurrent] = useState()
   const [users, setUsers] = useState([
     {
       date_of_birth: "wwww"
