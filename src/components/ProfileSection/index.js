@@ -43,16 +43,19 @@ function ProfileSect() {
     <div>
       {isAuthenticated && (
         <div className={css.profileSect}>
-          <div className={css.profile}>
-            {" "}
-            {users[0] && isAuthenticated && (
-              <Profile
-                date_of_birth={users[0].date_of_birth.split("").slice(0, 10)}
-                email={user.email}
-                full_name={users[0].full_name}
-                username={users[0].username}
-              />
-            )}
+          <div>
+          <h2>User Information</h2>
+            <div className={css.profile}>
+              {" "}
+              {users[0] && isAuthenticated && (
+                <Profile
+                  date_of_birth={users[0].date_of_birth.split("").slice(0, 10)}
+                  email={user.email}
+                  full_name={users[0].full_name}
+                  username={users[0].username}
+                />
+              )}
+            </div>
           </div>
           <div className={css.currentBooking}>
             <h2 className={css.current}>Current Booking</h2>

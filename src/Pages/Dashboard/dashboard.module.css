@@ -1,44 +1,37 @@
-
-.currentBooking {
-  float: right;
-}
-
-.currentProfile {
-  float: left;
-  padding: 2rem;
-  border: 4px solid;
-  margin: 3rem;
-}
-
-.booking {
-  font-size: 4rem;
-}
-
 .current {
   font-family: "Philosopher", sans-serif;
 }
 
-.historicalBooking {
-  align-items: center;
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 40px;
-  grid-row-gap: 0px;
-}
-
-.historicalBookingTitle {
-  margin-top: 50%;
-}
-
-
 @media only screen and (min-width: 1008px) {
+  .footer {
+   position: relative;
+  left: 0;
+  bottom: 0;
+
+  }
   .dashboardSect {
     display: flex;
+    min-height: calc(100vh - 14rem);
   }
 
-.sidebarContainer{
-  border: 2px solid black
+  .sidebarContainer {
+    border: 2px solid black;
+  }
+
+  .sidebarComponent {
+    padding: 2rem;
+  }
+
+  .profileSect {
+    width: 100%;
+  }
 }
+
+.dashboardSect {
+  display: flex;
+}
+
+.sidebarContainer {
+  border: 2px solid black;
+  background-color: rgba(236, 233, 232, 0.9);
 }
