@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import API_URL from "../../config";
 import Card from "../Card";
 
-const PreviousBookings = () => {
+const PreviousListings= () => {
   const [bookings, setBookings] = useState([]);
 
   const { isAuthenticated, user } = useAuth0();
@@ -23,11 +23,10 @@ const PreviousBookings = () => {
   }, []);
 
   console.log(bookings);
-  return bookings.slice(0,2).map((item) => {
+  return bookings.slice(0, 4).map((item) => {
     return (
       <div>
-
-      <h2>History of Bookings</h2>
+        <h2>History of Bookings</h2>
         <Card
           image={item.images[0]}
           address={item.address}
@@ -39,10 +38,6 @@ const PreviousBookings = () => {
       </div>
     );
   });
-
-
 };
 
-export default PreviousBookings;
-
-
+export default PreviousListings;

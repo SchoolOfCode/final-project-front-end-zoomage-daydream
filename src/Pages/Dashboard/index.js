@@ -18,11 +18,13 @@ import {
 import API_URL from "../../config";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProfileSect from "../../components/ProfileSection";
+import PreviousBookings from "../../components/PreviousBookings";
+import PreviousListings from "../../components/PreviousListings";
 
 function Dashboard() {
   const [space, setSpace] = useState([]);
   const { user, isAuthenticated } = useAuth0();
-  const [current, setCurrent] = useState(true);
+  const [current, setCurrent] = useState("profile");
   const [users, setUsers] = useState([
     {
       date_of_birth: "wwww"
@@ -54,51 +56,77 @@ function Dashboard() {
   const profile = () => {
     setCurrent("profile");
   };
+  const bookings = () => {
+    setCurrent("bookings");
+  };
+  const listings = () => {
+    setCurrent("listings");
+  };
 
   return (
-    <div>
+    <div className={css.dashboard}>
       <Header />
       {isAuthenticated && (
         <div className={css.dashboardSect}>
           <div className={css.sidebarContainer}>
-            <h2>
+            <h2 onClick={profile} className={css.sidebarComponent}>
               {" "}
-              <FontAwesomeIcon icon={faUser} className={css.sidebarIcons} />
+              <FontAwesomeIcon
+                onClick={profile}
+                icon={faUser}
+                className={css.sidebarIcons}
+              />
               Username
             </h2>
 
-            <h2>
+            <h2 onClick={bookings} className={css.sidebarComponent}>
               <FontAwesomeIcon
+                onClick={bookings}
                 icon={faCalendarCheck}
                 className={css.sidebarIcons}
               />
               My Bookings
             </h2>
-            <h2>
+            <h2 onClick={listings} className={css.sidebarComponent}>
               <FontAwesomeIcon
+                onClick={listings}
                 icon={faCalendarCheck}
                 className={css.sidebarIcons}
               />
               Listings
             </h2>
-            <h2>
+            <h2 className={css.sidebarComponent}>
               <FontAwesomeIcon icon={faMessage} className={css.sidebarIcons} />
-           Message
+              Message
             </h2>
 
-            <h2>
+            <h2 className={css.sidebarComponent}>
               <FontAwesomeIcon icon={faGear} className={css.sidebarIcons} />
               Settings
             </h2>
           </div>
-          
+
+          {current === "profile" && (
             <div className={css.profileSect}>
               <ProfileSect />
             </div>
-       
+          )}
+
+          {current === "bookings" && (
+            <div className={css.profileSect}>
+              <PreviousBookings />
+            </div>
+          )}
+          {current === "listings" && (
+            <div className={css.profileSect}>
+              <PreviousListings />
+            </div>
+          )}
         </div>
       )}
-      <Footer />
+      <div className={css.footer}>
+        <Footer />
+      </div>
     </div>
   );
 }
