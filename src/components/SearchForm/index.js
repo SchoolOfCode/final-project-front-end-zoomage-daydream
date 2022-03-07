@@ -21,8 +21,7 @@ const SearchForm = () => {
   const [url1, setUrl] = useState(background);
   const [data1, setData] = useState(true);
 
-
-  const firstMount = useRef(false);// useRef used to prevent useEffect from running on first mount.
+  const firstMount = useRef(false); // useRef used to prevent useEffect from running on first mount.
 
   // Calendar for you to select your set of dates
   const datesSelected = dates.map((value) => {
@@ -133,10 +132,9 @@ const SearchForm = () => {
             required
           >
             <option>Select</option>
-            <option value="flat">Flat</option>
+            <option value="flat">Apartment/Flat</option>
             <option value="house">House</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <option value="other">Other</option>
           </select>
         </div>
         <div className="submitSection">

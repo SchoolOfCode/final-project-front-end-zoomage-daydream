@@ -1,44 +1,53 @@
 h1 {
-    color: rgb(44, 58, 180);
-    text-align: center;
-    font-family: "Philosopher", sans-serif;
-    line-height: 32px;   /* within paragraph */
-    margin-bottom: 40px; /* between paragraphs */
-    margin-top: 40px; /* between paragraphs */
-  }
-  
-  h2 {
-    color: rgb(10, 10, 10);
-    text-align: center;
-  }
-  
-  h3 {
-    color: rgb(10, 10, 10);
-    text-align: center;
-    line-height: 32px;   /* within paragraph */
-    margin-bottom: 30px; /* between paragraphs */
-    border: 2px solid white;
-    
-    
-  }
-  
+  color: rgb(44, 58, 180);
+  text-align: center;
+  font-family: "Philosopher", sans-serif;
+  line-height: 32px; /* within paragraph */
+  margin-bottom: 40px; /* between paragraphs */
+  margin-top: 1rem; /* between paragraphs */
+}
+
+h3 {
+  color: rgb(10, 10, 10);
+  text-align: center;
+  line-height: 32px; /* within paragraph */
+  margin-bottom: 30px; /* between paragraphs */
+  border: 2px solid white;
+  font-size: 1rem;
+}
 
 text {
-    background-color: white;
-    text-align: center;
-  }
+  background-color: white;
+  text-align: center;
+}
 
 .body {
-    height: 100%;
+  /* border: 2px solid red; */
+  min-height: 0vh;
+  margin-top: auto;
+  /* height: 100%; */
+}
+
+.border {
+  outline: 0.5rem solid rgb(44, 58, 180, 0.7);
+  border-radius: 12px;
+  margin: 2rem;
+  padding: 1rem;
+  outline-offset: 0.5rem;
+  margin-bottom: 60px;
+}
+
+@media only screen and (min-width: 641px) {
+  h1 {
+    font-size: 3rem;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
   }
-
-  .border {
-    outline: 0.5rem solid rgb(44, 58, 180, 0.7);
-    border-radius: 12px;
-    margin: 2rem;
-    padding: 1rem;
-    outline-offset: 0.5rem;
-    margin-bottom: 60px; 
-    }
-      
-
+  h3 {
+    font-size: 1.5rem;
+  }
+  .body {
+    min-height: 83vh;
+    margin-top: auto;
+  }
+}
