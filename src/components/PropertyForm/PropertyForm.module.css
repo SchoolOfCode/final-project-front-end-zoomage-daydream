@@ -1,25 +1,32 @@
+.formContainer {
+  /* display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; */
+  border: 2px solid pink;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 12px;
+  grid-row-gap: 8px;
+}
+
 .additionalInfoContainer {
-  position: fixed;
-  top: 15%;
-  left: 70%;
-  width: 20%;
+
 }
 .SpacesDropDownContainer {
-  float: right;
-  margin: 10%;
+
 }
 .ImageUpload {
-  position: fixed;
-  bottom: 25%;
+  
 }
 .amenitiesContainer {
-  font-family: Arial, Helvetica, sans-serif;
-  position: fixed;
-  bottom: 45%;
+ 
 }
 .submitButton {
-  position: fixed;
-  bottom: 20%;
-  left: 50%;
-  float: right;
+  
+.datePicker {
+  /* grid-row-start: 1;
+  grid-column-start: 4; */
 }

@@ -4,8 +4,13 @@ import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
 import css from "./PropertyForm.module.css";
+import DatePicker from "react-multi-date-picker";
+import TimeRange from "react-time-range";
+// import moment from "moment";
 
 const PropertyForm = () => {
+  // const [startTime, setStartTime] = useState(moment()); // Time Range
+  // const [endTime, setEndTime] = useState(moment()); // Time Range
   const { register, handleSubmit } = useForm();
   const [uploadedImages, setUploadedImages] = useState("");
 
@@ -62,7 +67,10 @@ const PropertyForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(handleRegistration)}>
+    <form
+      onSubmit={handleSubmit(handleRegistration)}
+      className={css.formContainer}
+    >
       <div className="Address">
         <div>
           <TextField
@@ -229,10 +237,39 @@ const PropertyForm = () => {
               <ImageUploader picture={propertyInfo} />
             </div>
           </div>
-
-          <button className={css.submitButton}>Submit</button>
+          <div className={css.datePicker}>
+            <DatePicker
+              // value={dates}
+              // onChange={setDates}
+              placeholder="Choose dates"
+              format="DD/MM/YYYY"
+              required
+            />
+          </div>
         </div>
-        <div></div>
+        <div className={css.timeRange}>
+          <TimeRange
+            // startMoment={startTime}
+            // endMoment={endTime}
+            // onStartTimeChange={handleStartTime}
+            // onEndTimeChange={handleEndTime}
+            required
+          />
+        </div>
+        <div className={css.price}>
+          <TextField
+            required
+            id="standard-required"
+            label="Price"
+            placeholder="Required"
+            variant="standard"
+            name="price"
+            {...register("price")}
+          />
+        </div>
+        <div className={css.submitButton}>
+          <button>Submit</button>
+        </div>
       </div>
     </form>
   );
