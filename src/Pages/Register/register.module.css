@@ -17,16 +17,21 @@
   display: block;
   padding: 0.1rem 0.2rem;
   margin-bottom: 10px;
+  margin-left: 4rem;
+  line-height: 2rem;
  
 }
 
 /* text above each input */
 
 .labels {
-  font-weight: 900;
-  font-size: 25px;
-  margin: 2rem 0rem 0rem 1rem;
-  line-height: 0.05rem;
+  
+  font-weight: 700;
+  font-size: 0.7rem;
+  line-height: 0.01 rem;
+  
+  
+  
  
 }
 
@@ -52,16 +57,30 @@
 }
 
 .img {
-  width: 15rem;
-  margin-top: 13rem;
-  margin-right: 2rem;
+  width: 10rem;
+  margin-bottom: 30rem;
+  margin-right: 5rem;
+  margin-left: 1rem;
   height: auto;
   display: inline-block;
 }
 
-.button {
-  transform: scale(1.5);
-}
+
+  .button {
+    transform: scale(1.5);
+    background: #051BD9;
+    background-image: linear-gradient(to bottom, #051BD9, #2980b9);
+    -webkit-border-radius: 8;
+    -moz-border-radius: 8;
+    border-radius: 8px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 8px;
+    padding: 4px 8px 4px 8px;
+    margin-top: 2rem;
+   
+  }
+
 
 @media only screen and (min-width: 641px) {
   .img {
@@ -98,6 +117,8 @@
     margin: 2rem;
     transform: scale(1.7);
   }
+
+
 }
 
 

@@ -93,7 +93,7 @@ const Register = () => {
             />
           </div>
           <div className={css.category}>
-            <label className={css.labels}> PLEASE CHOOSE A USERNAME </label>
+            <label className={css.labels}>CHOOSE YOUR USERNAME </label>
             <br></br>
             <input
               type="text"
