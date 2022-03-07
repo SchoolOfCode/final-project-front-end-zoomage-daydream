@@ -10,6 +10,8 @@ import useFetch from "../../components/hooks/useFetch";
 import { useAuth0 } from "@auth0/auth0-react";
 import CarouselImage from "../../components/Carousel";
 
+import LoginButtonReserve from "../../components/LoginReserve";
+
 const Reserve = () => {
   const location = useLocation();
   const id = location.state;
@@ -45,9 +47,12 @@ const Reserve = () => {
                 {" "}
                 <p>Type of space: {space.type_of_space}</p>
                 <p>Fraction of space: {space.fraction_of_space}</p>
-                <p>Check in: </p>
+                <p>
+                  Check in: Up to fifteen minutes before your allocated start
+                  time
+                </p>
                 <p>Cancellation: At least 24 hours notice</p>
-                <p>Instructions on how to use go here</p>
+                <p>Ring the doorbell upon arrival</p>
               </div>
             )}{" "}
           </div>
@@ -76,7 +81,9 @@ const Reserve = () => {
                 <ReserveForm price={space.hourly_price} user={user} />
               </div>
             ) : (
-              <p>Login to reserve the space</p>
+              <p>
+                Please <LoginButtonReserve /> to reserve the space
+              </p>
             ))}
         </div>
       </div>
