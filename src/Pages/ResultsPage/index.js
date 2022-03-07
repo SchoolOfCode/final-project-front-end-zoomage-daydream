@@ -14,6 +14,7 @@ const Result = () => {
   const results = location.state.payload;
   // console.log(results);
 
+
   const sortHighToLow = (e) => {
     const filterResults = [...results];
     const value = e.target.value;

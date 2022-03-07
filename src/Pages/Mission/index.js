@@ -6,9 +6,9 @@ import Footer from "../../components/Footer";
 
 const Mission = () => {
   return (
-    <div>
+    <div className={css.body}>
       <Header />
-      <div className={css.body}>
+      <div className={css.ourMission}>
         <h1>Our Mission</h1>
         <div className={css.border}>
           <h3>

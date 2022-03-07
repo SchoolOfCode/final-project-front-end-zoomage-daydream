@@ -1,5 +1,19 @@
 @media only screen and (min-width: 1008px) {
 .profileSect{
   display: flex;
+  justify-content: space-around;
+
+}
+
+.profile{
+  height: 32rem;
+  width:22rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3%;
+  border: 5px solid black;
+  border-radius: 2rem;
+  margin-top: 2rem;
 }
 }
+
