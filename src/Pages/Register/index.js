@@ -1,4 +1,4 @@
-import React, {useState}from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import css from "./register.module.css";
@@ -15,8 +15,8 @@ const Register = () => {
     handleSubmit,
     formState: { errors }
   } = useForm();
-  const navigate = useNavigate();
-  const [data1, setData1]=useState()
+  // const navigate = useNavigate();
+  const [data1, setData1] = useState();
 
   const onSubmit = async (userDetails) => {
     const { firstName, surname, emailAddress, dateOfBirth, username } =
@@ -36,10 +36,10 @@ const Register = () => {
       })
     });
     const data = post.json();
-    setData1(data)
-   };
-   
-   navigate("/");
+    setData1(data);
+  };
+
+  //  navigate("/");
 
   return (
     <div className={css.registerSect}>
@@ -100,7 +100,6 @@ const Register = () => {
               placeholder="Choose a Username"
               {...register("username")}
               className={css.form}
-      
               // value={user.nickname}
               required
             />
