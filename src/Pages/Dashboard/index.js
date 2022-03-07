@@ -22,7 +22,7 @@ import ProfileSect from "../../components/ProfileSection";
 function Dashboard() {
   const [space, setSpace] = useState([]);
   const { user, isAuthenticated } = useAuth0();
-  const [current, setCurrent] = useState()
+  const [current, setCurrent] = useState(true);
   const [users, setUsers] = useState([
     {
       date_of_birth: "wwww"
@@ -50,6 +50,10 @@ function Dashboard() {
       fetchProfileData();
     }
   }, []);
+
+  const profile = () => {
+    setCurrent("profile");
+  };
 
   return (
     <div>
@@ -79,7 +83,7 @@ function Dashboard() {
             </h2>
             <h2>
               <FontAwesomeIcon icon={faMessage} className={css.sidebarIcons} />
-              Listings
+           Message
             </h2>
 
             <h2>
@@ -87,10 +91,11 @@ function Dashboard() {
               Settings
             </h2>
           </div>
-          <div className={css.profileSect}>
-           <div><ProfileSect/></div>
- 
-          </div>
+          
+            <div className={css.profileSect}>
+              <ProfileSect />
+            </div>
+       
         </div>
       )}
       <Footer />
