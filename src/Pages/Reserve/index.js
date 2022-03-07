@@ -31,7 +31,7 @@ const Reserve = () => {
             <p>{space.purpose_of_space}</p>
             <p>{space.address}</p>
             <p>4.5</p>
-            <p>Reviews(48)</p>
+            <p>Reviews(43)</p>
           </div>
         )}
       </div>
