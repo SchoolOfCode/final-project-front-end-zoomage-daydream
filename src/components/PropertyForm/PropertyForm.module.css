@@ -1,28 +1,22 @@
 .formContainer {
-  /* display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px; */
-  border: 2px solid pink;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 12px;
-  grid-row-gap: 8px;
 }
-
-.additionalInfoContainer {
+.AddressContainer {
+}
+.AdditionalInfoContainer {
 }
 .SpacesDropDownContainer {
 }
 .ImageUpload {
 }
-.amenitiesContainer {
+.AmenitiesContainer {
 }
-.submitButton {
+
+.DatePicker {
 }
-.datePicker {
-  /* grid-row-start: 1;
-  grid-column-start: 4; */
+
+.TimeRange {
+}
+.Price {
+}
+.SubmitButton {
 }

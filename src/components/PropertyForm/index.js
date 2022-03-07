@@ -181,7 +181,7 @@ const PropertyForm = () => {
             </select>
           </div>
         </div>
-        <div className={css.amenitiesContainer}>
+        <div className={css.AmenitiesContainer}>
           <div>Amenities</div>
           <label>
             <input
@@ -223,7 +223,7 @@ const PropertyForm = () => {
             />
             Fridge
           </label>
-          <div className={css.additionalInfoContainer}>
+          <div className={css.AdditionalInfoContainer}>
             <div>
               <h2>Additional Information</h2>
             </div>
@@ -238,7 +238,7 @@ const PropertyForm = () => {
             <ImageUploader picture={propertyInfo} />
           </div>
         </div>
-        <div className={css.datePicker}>
+        <div className={css.DatePicker}>
           <DatePicker
             // value={dates}
             // onChange={setDates}
@@ -248,7 +248,7 @@ const PropertyForm = () => {
           />
         </div>
       </div>
-      <div className={css.timeRange}>
+      <div className={css.TimeRange}>
         <TimeRange
           // startMoment={startTime}
           // endMoment={endTime}
@@ -257,7 +257,7 @@ const PropertyForm = () => {
           required
         />
       </div>
-      <div className={css.price}>
+      <div className={css.Price}>
         <TextField
           required
           id="standard-required"
@@ -268,7 +268,7 @@ const PropertyForm = () => {
           {...register("price")}
         />
       </div>
-      <div className={css.submitButton}>
+      <div className={css.SubmitButton}>
         <button>Submit</button>
       </div>
     </form>
