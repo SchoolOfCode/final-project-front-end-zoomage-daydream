@@ -1,5 +1,5 @@
-.bg{
-margin-left: 70rem;
+.bg {
+  margin-left: 70rem;
 }
 
 .reserveContainer {
@@ -54,6 +54,7 @@ margin-left: 70rem;
 .propertyHeader {
   text-align: center;
   padding: 1rem;
+  font-family: "Philosopher", sans-serif;
 }
 
 .details {
@@ -63,6 +64,7 @@ margin-left: 70rem;
 .amenitiesHeader {
   padding-left: 1rem;
   padding-top: 1rem;
+  font-family: "Philosopher", sans-serif;
 }
 
 .amenities {
@@ -187,6 +189,7 @@ margin-left: 70rem;
   .amenitiesHeader {
     padding-left: 1rem;
     padding-top: 1rem;
+    text-align: left;
   }
 
   .amenities {
@@ -247,6 +250,7 @@ margin-left: 70rem;
   .amenitiesHeader {
     padding-left: 1rem;
     padding-top: 1rem;
+    text-align: left;
   }
 
   .amenities {
