@@ -77,7 +77,7 @@ const Register = () => {
               placeholder="Email Address"
               {...register("emailAddress")}
               className={css.form}
-              value={user.email}
+              // value={user.email}
               required
             />
           </div>
@@ -100,7 +100,8 @@ const Register = () => {
               placeholder="Choose a Username"
               {...register("username")}
               className={css.form}
-              value={user.nickname}
+      
+              // value={user.nickname}
               required
             />
             <div>
