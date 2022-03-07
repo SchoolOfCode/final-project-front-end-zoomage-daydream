@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
-import css from "./PropertyForm.module.css";
+import "./PropertyForm.css";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 // import moment from "moment";
@@ -68,14 +68,14 @@ const PropertyForm = () => {
 
   return (
     <>
-      <div className={css.title}>
+      <div className="title">
         Please complete the following details about the space you intend to host
       </div>
       <form
         onSubmit={handleSubmit(handleRegistration)}
-        className={css.formContainer}
+        className="formContainer"
       >
-        <div className={css.addressContainer}>
+        <div className="addressContainer">
           <div>
             <TextField
               required
@@ -132,8 +132,8 @@ const PropertyForm = () => {
             />
           </div>
         </div>
-        <div className={css.spacesDropDownContainer}>
-          <div className={css.typeSpace}>
+        <div className="spacesDropDownContainer">
+          <div className="typeSpace">
             <label> Type of Space:</label>
             <br />
 
@@ -151,7 +151,7 @@ const PropertyForm = () => {
               <option value="other">Other</option>
             </select>
           </div>
-          <div className={css.categorySpace}>
+          <div className="categorySpace">
             <label> Purpose of space:</label>
             <br />
 
@@ -168,7 +168,7 @@ const PropertyForm = () => {
               <option value="other">Other</option>
             </select>
           </div>
-          <div className={css.fractionSpace}>
+          <div className="fractionSpace">
             <label> Types of Spaces:</label>
             <br />
 
@@ -186,8 +186,8 @@ const PropertyForm = () => {
             </select>
           </div>
         </div>
-        <div className={css.amenitiesContainer}>
-          <div className={css.amenitiesTitle}>Amenities</div>
+        <div className="amenitiesContainer">
+          <div className="amenitiesTitle">Amenities</div>
           <label>
             <input
               type="checkbox"
@@ -233,8 +233,9 @@ const PropertyForm = () => {
             Other
           </label>
         </div>
-        <div className={css.dateTimePrice}>
-          <div className={css.datePicker}>
+        <div className="dateTimePrice">
+          <div className="datePicker">
+            <p> Please choose the dates the space is available</p>
             <DatePicker
               // value={dates}
               // onChange={setDates}
@@ -244,7 +245,8 @@ const PropertyForm = () => {
             />
           </div>
 
-          <div className={css.timeRange}>
+          <div className="timeRange">
+            <p> Please choose the time the space is available</p>
             <TimeRange
               // startMoment={startTime}
               // endMoment={endTime}
@@ -255,6 +257,7 @@ const PropertyForm = () => {
           </div>
 
           <div>
+            <p> Please enter the price per hour for the space</p>
             <TextField
               required
               id="standard-required"
@@ -266,10 +269,10 @@ const PropertyForm = () => {
             />
           </div>
         </div>
-        <div className={css.additionalInfoContainer}>
-          <div>
-            <h2>Additional Information</h2>
-          </div>
+
+        <div className="additionalInfoContainer">
+          <p id="addinfop"> Additional Information</p>
+          <div></div>
           <textarea
             rows="8"
             cols="50"
@@ -278,10 +281,11 @@ const PropertyForm = () => {
             {...register("additionalinfo")}
           ></textarea>
         </div>
-        <div className={css.imageUpload}>
+        <div className="imageUpload">
+          <p>Please upload images of the space here</p>
           <ImageUploader picture={propertyInfo} />
         </div>
-        <div className={css.submitButton}>
+        <div className="submitButton">
           <button>Submit</button>
         </div>
       </form>
