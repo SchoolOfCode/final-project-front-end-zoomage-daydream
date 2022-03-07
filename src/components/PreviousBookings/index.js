@@ -27,7 +27,7 @@ const PreviousBookings = () => {
     return (
       <div>
 
-      <h2>History of Bookings</h2>
+     
         <Card
           image={item.images[0]}
           address={item.address}

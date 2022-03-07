@@ -4,10 +4,9 @@
 
 @media only screen and (min-width: 1008px) {
   .footer {
-   position: relative;
-  left: 0;
-  bottom: 0;
-
+    position: relative;
+    left: 0;
+    bottom: 0;
   }
   .dashboardSect {
     display: flex;
@@ -24,6 +23,24 @@
 
   .profileSect {
     width: 100%;
+  }
+
+  .bookings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 2px;
+    margin-left: 2rem;
+  }
+  .block {
+    display: inline-block;
+  }
+  .listings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 2px;
+    margin-left: 2rem;
   }
 }
 

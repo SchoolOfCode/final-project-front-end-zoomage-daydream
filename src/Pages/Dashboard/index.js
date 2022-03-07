@@ -113,13 +113,23 @@ function Dashboard() {
           )}
 
           {current === "bookings" && (
-            <div className={css.profileSect}>
-              <PreviousBookings />
+            <div>
+              <h2>History of Bookings</h2>
+              <div className={css.block}>
+                <div className={css.bookings}>
+                  <PreviousBookings />
+                </div>
+              </div>
             </div>
           )}
           {current === "listings" && (
-            <div className={css.profileSect}>
-              <PreviousListings />
+            <div>
+              <h2>History of Listings</h2>
+              <div className={css.block}>
+                <div className={css.listings}>
+                  <PreviousListings />
+                </div>
+              </div>
             </div>
           )}
         </div>

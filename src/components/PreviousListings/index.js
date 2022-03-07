@@ -26,7 +26,7 @@ const PreviousListings= () => {
   return bookings.slice(0, 4).map((item) => {
     return (
       <div>
-        <h2>History of Bookings</h2>
+      
         <Card
           image={item.images[0]}
           address={item.address}
