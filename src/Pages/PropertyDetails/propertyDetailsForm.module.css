@@ -1,10 +1,6 @@
-.propertyDetailsForm {
-  display: grid;
-  grid-template-columns: repeat(3, 10rem);
-  grid-template-rows: 10rem;
-  grid-column-gap: 10px;
-  grid-row-gap: 0px;
-  margin-left: 32%;
-  text-align: center;
-  margin-bottom: 30%;
-}
+/* .propertyDetails{
+  background-image: url("../../images/pexels-daan-stevens-939331.jpg");
+    background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */

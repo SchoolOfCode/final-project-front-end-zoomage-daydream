@@ -31,18 +31,13 @@ const Reserve = () => {
             <p>{space.purpose_of_space}</p>
             <p>{space.address}</p>
             <p>4.5</p>
-            <p>Reviews(43)</p>
+            <p>Reviews(44)</p>
           </div>
         )}
       </div>
       <div>
         <div className={css.CarouselImage}>
-          {space && (
-            <CarouselImage
-              
-              images={spaces[0].images}
-            />
-          )}
+          {space && <CarouselImage images={spaces[0].images} />}
         </div>
       </div>
       <div className={css.bottomContainer}>

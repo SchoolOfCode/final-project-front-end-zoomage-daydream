@@ -1,149 +1,221 @@
 .formContainer {
-  background-color: blueviolet;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  font-family: "Philosopher", sans-serif;
+}
+
+.topContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+
+.addressContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
+  transition: 0.3s;
+}
+
+.addressContainer:hover {
+  box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
+}
+.addressHeader {
+  text-align: center;
+}
+
+.spacesDropDownContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 6rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
+  transition: 0.3s;
+  width: 25%;
+}
+
+.spacesDropDownContainer:hover {
+  box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
+}
+
+.addressContainer input {
+  height: 4rem;
+  width: 80%;
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 1.2rem;
 }
 .title {
   text-align: center;
-  font-size: x-large;
+  font-size: 3rem;
   font-weight: bold;
-}
-.addressContainer {
-  background-color: pink;
-  margin: 3rem;
-  border: 0.2rem solid black;
+  color: rgb(44, 58, 180);
+  font-family: "Philosopher", sans-serif;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
 input#standard-required {
   /* classname taken from inspect, to resize the coponent from MUI for address input. */
-  width: 25rem;
+  width: 8rem;
   height: 4rem;
 }
-textarea {
-  /* additional info resizing */
-  width: 30rem;
-  height: 20rem;
-  float: left;
-  /* grid-area: 2 / 1 / 3 / 2; */
+
+.addinfop {
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: bold;
+}
+
+.textArea {
+  font-weight: bold;
+  font-size: 1rem;
+  width: 80%;
+  height: 60%;
 }
 
 .additionalInfoContainer {
-  background-color: red;
-  font-size: large;
-  margin-left: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
+  transition: 0.3s;
+  width: 25%;
   display: flex;
-  grid-column: 1/3;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  padding: 10%;
 }
-/* .additionalInfoAndImageContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  background-color: azure;
-  margin-top: 10rem;
-} */
 
-#addinfop {
-  display: flex;
-  grid-column: 1/3;
-  grid-area: 1 / 1 / 2 / 2;
+.additionalInfoContainer:hover {
+  box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
 }
-p#addinfop {
-  display: flex;
-  margin-left: 70px;
-}
-.spacesDropDownContainer {
-  padding: 2 rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: baseline;
-}
-.typeSpace {
-  background-color: blue;
-}
-.fractionSpace {
-  background: green;
-}
-.categorySpace {
-  background-color: silver;
-}
+
 .imageUpload {
-  background-color: beige;
-  display: flex;
-  grid-column: 3/4;
+  /* display: flex;
+  flex-direction: column;
   align-items: center;
+  width: 25%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
+  transition: 0.3s;
+  height: 20rem; */
+}
+
+.button{
+  display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
+}
+
+.submitButton {
+  background: #051bd9;
+  background-image: linear-gradient(to bottom, #051bd9, #2980b9);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 2rem;
+  padding: 4px 8px 4px 8px;
+  margin-top: 2rem;
+  width: 50%
+}
+
+.leftBottom {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-row-gap: 15rem;
+
+  width: 25%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
+  transition: 0.3s;
+  height: 20rem;
 }
-p {
-  display: flex;
-  justify-content: center;
-}
+
+
 
 .amenitiesTitle {
   font-weight: bold;
 }
 .amenitiesContainer {
-  background-color: orange;
   padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 11px;
-  margin-left: 2rem;
-  border: 0.2rem solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
+  transition: 0.3s;
+  width: 25%;
+}
+
+.amenitiesContainer:hover {
+  box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
+}
+
+.propertyFormTitles {
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.pounds {
+  font-size: 2rem;
 }
 
 .dateTimePrice {
-  /* bottom: 0%; */
-  background-color: brown;
-
   display: flex;
-  grid-column: 1/4;
-  align-items: baseline;
-  margin: 3rem;
-  padding: 5rem;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
+  transition: 0.3s;
+  width: 25%;
+}
 
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 5px;
+.datePrice {
+  padding: 2rem;
 }
-.datePicker {
-  /* display: flex;
-  flex-direction: column; */
+
+.dateTimePrice:hover {
+  box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
 }
-.timeRange {
-  /* display: flex;
-  flex-direction: column; */
-}
-.price {
-  /* display: flex;
-  flex-direction: column; */
-}
+
 .submitButton {
   display: flex;
-  grid-column: 1/4;
+
   align-items: center;
   justify-content: center;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+
+.leftBottom {
+  display: flex;
+  flex-direction: column;
 }
