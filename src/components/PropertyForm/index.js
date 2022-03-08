@@ -3,15 +3,13 @@ import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
-import  "./PropertyForm.css";
+import "./PropertyForm.css";
 import axios from "axios";
 import "./PropertyForm.css";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
 import { cardContentClasses, Input } from "@mui/material";
-
-
 
 const PropertyForm = () => {
   const [dates, setDates] = useState([{ payload: "" }]);
@@ -27,19 +25,19 @@ const PropertyForm = () => {
   const datesSelected = dates.map((value) => {
     return `${value.day}-${value.month}-${value.year}`;
   });
-console.log(datesSelected)
+  console.log(datesSelected);
 
- // sets the start time
- const handleStartTime = (e) => {
-  setStartTime(e.startTime);
-};
-// sets the end time
-const handleEndTime = (e) => {
-  setEndTime(e.endTime);
-};
-// gets the actual time from the startTime and EndTime date format
-let start = String(startTime).slice(11, 16);
-let end = String(endTime).slice(11, 16);
+  // sets the start time
+  const handleStartTime = (e) => {
+    setStartTime(e.startTime);
+  };
+  // sets the end time
+  const handleEndTime = (e) => {
+    setEndTime(e.endTime);
+  };
+  // gets the actual time from the startTime and EndTime date format
+  let start = String(startTime).slice(11, 16);
+  let end = String(endTime).slice(11, 16);
 
   const handleRegistration = async (data) => {
     const propertyDetailsData = Object.assign(data, {
@@ -94,167 +92,153 @@ let end = String(endTime).slice(11, 16);
         onSubmit={handleSubmit(handleRegistration)}
         className="formContainer"
       >
-        <div className="addressContainer">
-          <div>
-            <TextField
+        <div className="topContainer">
+          <div className="addressContainer">
+            <h2 className="addressHeader">Address Details</h2>
+            <input
               required
-              id="standard-required"
-              label="Address Line 1 "
-              placeholder="Required"
-              variant="standard"
+              placeholder="Address Line 1"
               name="addressone"
               {...register("addressone")}
             />
-          </div>
-          <div>
-            <TextField
+
+            <input
               required
-              id="standard-required"
-              label="Address Line 2"
-              placeholder="Required"
-              variant="standard"
+              placeholder="Address Line 2"
               name="addresstwo"
               {...register("addresstwo")}
             />
-          </div>
-          <div>
-            <TextField
+
+            <input
               required
-              id="standard-required"
-              label="City"
-              placeholder="Required"
-              variant="standard"
-              name="city"
+              placeholder="City"
+              name="City"
               {...register("city")}
             />
-          </div>
-          <div>
-            <TextField
+
+            <input
               required
-              id="standard-required"
-              label="Region"
-              placeholder="Required"
-              variant="standard"
+              placeholder="Region"
               name="region"
               {...register("region")}
             />
-          </div>
-          <div>
-            <TextField
+
+            <input
               required
-              id="standard-required"
-              label="Postal Code"
-              placeholder="Required"
-              variant="standard"
-              name="postcode"
+              placeholder="Post code"
+              name="Post code"
               {...register("postcode")}
             />
           </div>
-        </div>
-        <div className="spacesDropDownContainer">
-          <div className="typeSpace">
-            <label> Type of Space:</label>
-            <br />
+          <div className="spacesDropDownContainer">
+            <h2>Property Details</h2>
+            <div className="typeSpace">
+              <label> Type of Space:</label>
+              <br />
 
-            <select
-              name="type_of_space"
-              id="spaces"
-              S
-              placeholder="Pick a Space"
-              {...register("type_of_space")}
-              required
-            >
-              <option value="">Select your option</option>
-              <option value="flat">House</option>
-              <option value="house">Apartment/Flat</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div className="categorySpace">
-            <label> Purpose of space:</label>
-            <br />
+              <select
+                name="type_of_space"
+                id="spaces"
+                S
+                placeholder="Pick a Space"
+                {...register("type_of_space")}
+                required
+              >
+                <option value="">Select your option</option>
+                <option value="flat">House</option>
+                <option value="house">Apartment/Flat</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div className="typeSpace">
+              <label> Purpose of space:</label>
+              <br />
 
-            <select
-              name="category_of_space"
-              id="spaces"
-              required
-              {...register("category_of_space")}
-            >
-              <option value="">Select your option</option>
-              <option value="remote working">Remote Working</option>
-              <option value="music space">Music Space</option>
-              <option value="gym space">Gym Space</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div className="fractionSpace">
-            <label> Types of Spaces:</label>
-            <br />
+              <select
+                name="category_of_space"
+                id="spaces"
+                required
+                {...register("category_of_space")}
+              >
+                <option value="">Select your option</option>
+                <option value="remote working">Remote Working</option>
+                <option value="music space">Music Space</option>
+                <option value="gym space">Gym Space</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div cclassName="typeSpace">
+              <label> Types of Spaces:</label>
+              <br />
 
-            <select
-              name="fraction_of_space"
-              id="spaces"
-              {...register("fraction_of_space")}
-              required
-            >
-              <option value="">Select your option</option>
-              <option value="whole property">Whole Property</option>
-              <option value="private room">Private Room</option>
-              <option value="duplex condo">Duplex Condo</option>
-              <option value="conference room">Conference Room</option>
-            </select>
+              <select
+                name="fraction_of_space"
+                id="spaces"
+                {...register("fraction_of_space")}
+                required
+              >
+                <option value="">Select your option</option>
+                <option value="whole property">Whole Property</option>
+                <option value="private room">Private Room</option>
+                <option value="duplex condo">Duplex Condo</option>
+                <option value="conference room">Conference Room</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div className="amenitiesContainer">
-          <div className="amenitiesTitle">Amenities</div>
-          <label>
-            <input
-              type="checkbox"
-              name="wificheck"
-              {...register("wificheck")}
-            />
-            WiFi
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="showercheck"
-              {...register("showercheck")}
-            />
-            Shower
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="microwavecheck"
-              {...register("microwavecheck")}
-            />
-            Microwave
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="standingddeskcheck"
-              {...register("standingdeskcheck")}
-            />
-            Standing Desk
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              name="fridgecheck"
-              {...register("fridgecheck")}
-            />
-            Fridge
-          </label>
-          <label>
-            <input type="checkbox" name="other" {...register("other")} />
-            Other
-          </label>
+          <div className="amenitiesContainer">
+            <div className="amenitiesTitle">Amenities</div>
+            <label>
+              <input
+                type="checkbox"
+                name="wificheck"
+                {...register("wificheck")}
+              />
+              WiFi
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="showercheck"
+                {...register("showercheck")}
+              />
+              Shower
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="microwavecheck"
+                {...register("microwavecheck")}
+              />
+              Microwave
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="standingddeskcheck"
+                {...register("standingdeskcheck")}
+              />
+              Standing Desk
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="fridgecheck"
+                {...register("fridgecheck")}
+              />
+              Fridge
+            </label>
+            <label>
+              <input type="checkbox" name="other" {...register("other")} />
+              Other
+            </label>
+          </div>
         </div>
         <div className="dateTimePrice">
           <div className="datePicker">
-            <p className="propertyFormTitles"> Please choose the dates the space is available</p>
+            <p className="propertyFormTitles">
+              {" "}
+              Please choose the dates the space is available
+            </p>
             <DatePicker
               value={dates}
               onChange={setDates}
@@ -265,7 +249,10 @@ let end = String(endTime).slice(11, 16);
           </div>
 
           <div className="timeRange">
-            <p className="propertyFormTitles"> Please choose the time the space is available</p>
+            <p className="propertyFormTitles">
+              {" "}
+              Please choose the time the space is available
+            </p>
             <TimeRange
               startMoment={startTime}
               endMoment={endTime}
@@ -276,35 +263,41 @@ let end = String(endTime).slice(11, 16);
           </div>
 
           <div>
-            <p className="propertyFormTitles"> Please enter the price per hour for the space</p>
+            <p className="propertyFormTitles">
+              {" "}
+              Please enter the price per hour for the space
+            </p>
             <div className="priceContainer">
-            <label>£</label>
-            <input className="priceInputBox"
-              required
-              id="standard-required"
-              placeholder="Price"
-              name="price"
-              type="number"
-              {...register("price")}
-            />
+              <label className="pounds">£</label>
+              <input
+                className="priceInputBox"
+                required
+                id="standard-required"
+                placeholder="Price"
+                name="price"
+                type="number"
+                {...register("price")}
+              />
             </div>
           </div>
         </div>
+        <div className="infoContainer">
+          <div className="additionalInfoContainer">
+            <p className="addinfop"> Additional Information</p>
 
-        <div className="additionalInfoContainer">
-          <p id="addinfop"> Additional Information</p>
-          <div></div>
-          <textarea
-            rows="8"
-            cols="50"
-            name="additionalinfo"
-            placeholder=" Describe your property and other amenities available."
-            {...register("additionalinfo")}
-          ></textarea>
-        </div>
-        <div className="imageUpload">
-          <p>Please upload images of the space here</p>
-          <ImageUploader picture={propertyInfo} />
+            <textarea
+              className="textArea"
+              rows="8"
+              cols="50"
+              name="additionalinfo"
+              placeholder=" Describe your property and other amenities available."
+              {...register("additionalinfo")}
+            ></textarea>
+          </div>
+          <div className="imageUpload">
+            <p className="addinfop">Please upload images of the space here</p>
+            <ImageUploader picture={propertyInfo} />
+          </div>
         </div>
         <div className="submitButton">
           <button>Submit</button>

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { useAuth0 } from "@auth0/auth0-react";
+import css from "./propertyDetailsForm.module.css"
 
 import PropertyForm from "../../components/PropertyForm";
 
@@ -9,12 +10,12 @@ function PropertyDetails() {
   const{isAuthenticated} = useAuth0()
   return (
     <div>
-    {isAuthenticated&&
-    <div>
       <Header />
+    {isAuthenticated&&
+    <div className={css.propertyDetails}>
       <PropertyForm />
-      <Footer />
       </div>}
+      <Footer />
     </div>
   );
 }
