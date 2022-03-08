@@ -1,17 +1,46 @@
-
-
-
+.reserveContainer {
+  display: flex;
+  flex-direction: column;
+}
 
 .topContainer {
   padding: 1rem;
   font-size: x-small;
-  font-weight: bold;
+}
+.images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
-.caroselImage{
+.imagesRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.images_right {
+  width: 7rem;
+  height: 8rem;
+}
+.imageCenter {
+  padding: 1rem;
+}
+
+.images_center {
+  width: 15rem;
   height: 10rem;
 }
 
+.imagesLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.images_left {
+  width: 7rem;
+  height: 8rem;
+}
 
 .bottomContainer {
   display: flex;
@@ -21,7 +50,6 @@
 .propertyHeader {
   text-align: center;
   padding: 1rem;
-  font-family: "Philosopher", sans-serif;
 }
 
 .details {
@@ -31,7 +59,6 @@
 .amenitiesHeader {
   padding-left: 1rem;
   padding-top: 1rem;
-  font-family: "Philosopher", sans-serif;
 }
 
 .amenities {
@@ -156,7 +183,6 @@
   .amenitiesHeader {
     padding-left: 1rem;
     padding-top: 1rem;
-    text-align: left;
   }
 
   .amenities {
@@ -217,7 +243,6 @@
   .amenitiesHeader {
     padding-left: 1rem;
     padding-top: 1rem;
-    text-align: left;
   }
 
   .amenities {

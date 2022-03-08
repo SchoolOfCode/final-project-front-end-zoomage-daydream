@@ -8,6 +8,7 @@ import Reserve from "../../Pages/Reserve";
 import PropertyDetails from "../../Pages/PropertyDetails";
 import "./App.css";
 
+
 function App() {
   // console.warn = () => {};
   return (

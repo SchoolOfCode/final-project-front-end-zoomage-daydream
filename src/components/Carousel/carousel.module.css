@@ -1,0 +1,128 @@
+.reserveImage {
+  width: 60%;
+  margin-left: 20%;
+  height: 20.2rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 2px solid black;
+}
+
+.rImage {
+  width: 100%;
+  height: 20rem;
+}
+
+.arrowLeft {
+  position: absolute;
+  top: 45%;
+  left: 12%;
+  font-size: 1.5rem;
+  z-index: 3;
+  color: gray;
+}
+
+.arrowRight {
+  top: 45%;
+  right: 12%;
+  position: absolute;
+  font-size: 1.5rem;
+  z-index: 3;
+  color: gray;
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 480px) {
+  .reserveImage {
+    width: 60%;
+    margin-left: 20%;
+    height: 20.2rem;
+  }
+  .rImage {
+    width: 100%;
+    height: 20rem;
+  }
+
+  .arrowLeft {
+    position: absolute;
+    top: 40%;
+    left: 14%;
+  }
+
+  .arrowRight {
+    top: 40%;
+    right: 14%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .reserveImage {
+    width: 70%;
+    margin-left: 15%;
+    height: 30.2rem;
+  }
+  .rImage {
+    width: 100%;
+    height: 30rem;
+  }
+
+  .arrowLeft {
+    position: absolute;
+    top: 40%;
+    left: 12%;
+  }
+
+  .arrowRight {
+    top: 40%;
+    right: 12%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .reserveImage {
+    width: 70%;
+    margin-left: 15%;
+    height: 30.2rem;
+  }
+  .rImage {
+    width: 100%;
+    height: 30rem;
+  }
+
+  .arrowLeft {
+    position: absolute;
+    top: 45%;
+    left: 12%;
+  }
+
+  .arrowRight {
+    top: 45%;
+    right: 12%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .reserveImage {
+    width: 70%;
+    margin-left: 15%;
+    height: 40.2rem;
+  }
+  .rImage {
+    width: 100%;
+    height: 40rem;
+  }
+
+  .arrowLeft {
+    position: absolute;
+    top: 45%;
+    left: 12%;
+  }
+
+  .arrowRight {
+    top: 45%;
+    right: 12%;
+  }
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import Footer from "../../components/Footer";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/Header";
@@ -7,6 +8,9 @@ import { ReserveForm } from "../../components/ReserveForm";
 import css from "./reserve.module.css";
 import useFetch from "../../components/hooks/useFetch";
 import { useAuth0 } from "@auth0/auth0-react";
+import CarouselImage from "../../components/Carousel";
+
+import LoginButtonReserve from "../../components/LoginReserve";
 
 const Reserve = () => {
   const location = useLocation();
@@ -15,8 +19,7 @@ const Reserve = () => {
   const space = spaces[0];
   const [users] = useFetch(`${API_URL}/users/${id}`); //custom hook fetch
   const user = users[0];
-  const {isAuthenticated} = useAuth0()
-
+  const { isAuthenticated } = useAuth0();
 
   return (
     <div className={css.reserveContainer}>
@@ -28,37 +31,18 @@ const Reserve = () => {
             <p>{space.purpose_of_space}</p>
             <p>{space.address}</p>
             <p>4.5</p>
-            <p>Reviews(48)</p>
+            <p>Reviews(43)</p>
           </div>
         )}
       </div>
-      <div className={css.images}>
-        <div className={css.imagesRight}>
-          {space &&
-            space.images.slice(0, 2).map((item, index) => {
-              return (
-                <div key={index}>
-                  <img className={css.images_right} src={item} alt="" />
-                </div>
-              );
-            })}
-        </div>
-        <div className={css.imageCenter}>
+      <div>
+        <div className={css.CarouselImage}>
           {space && (
-            <div>
-              <img className={css.images_center} src={space.images[2]} alt="" />
-            </div>
+            <CarouselImage
+              
+              images={spaces[0].images}
+            />
           )}
-        </div>
-        <div className={css.imagesLeft}>
-          {space &&
-            space.images.slice(3, 5).map((item, index) => {
-              return (
-                <div key={index}>
-                  <img className={css.images_left} src={item} alt="" />
-                </div>
-              );
-            })}
         </div>
       </div>
       <div className={css.bottomContainer}>
@@ -68,11 +52,14 @@ const Reserve = () => {
             {space && (
               <div className={css.details}>
                 {" "}
-                <p>Type of space:{space.type_of_space}</p>
+                <p>Type of space: {space.type_of_space}</p>
                 <p>Fraction of space: {space.fraction_of_space}</p>
-                <p>Check in: </p>
-                <p>Cancellation</p>
-                <p>Instructions on how to use go here</p>
+                <p>
+                  Check in: Up to fifteen minutes before your allocated start
+                  time
+                </p>
+                <p>Cancellation: At least 24 hours notice</p>
+                <p>Ring the doorbell upon arrival</p>
               </div>
             )}{" "}
           </div>
@@ -94,11 +81,17 @@ const Reserve = () => {
           </div>
         </div>
         <div>
-          {user && space && (
-            isAuthenticated?<div>
-              <ReserveForm price={space.hourly_price} user={user}/>
-            </div>:<p>Login to reserve the space</p>
-          )}
+          {user &&
+            space &&
+            (isAuthenticated ? (
+              <div>
+                <ReserveForm price={space.hourly_price} user={user} />
+              </div>
+            ) : (
+              <p>
+                Please <LoginButtonReserve /> to reserve the space
+              </p>
+            ))}
         </div>
       </div>
       <Footer />

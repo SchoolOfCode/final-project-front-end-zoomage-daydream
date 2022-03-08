@@ -1,32 +1,78 @@
-.currentBooking {
-  float: right;
-}
-
-.currentProfile {
-  float: left;
-  padding: 2rem;
-  border: 4px solid;
-  margin: 3rem;
-}
-
-.booking {
-  font-size: 4rem;
-}
-
 .current {
   font-family: "Philosopher", sans-serif;
 }
 
-.historicalBooking {
-  align-items: center;
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 40px;
-  grid-row-gap: 0px;
+.label{
+    font-family: "Philosopher", sans-serif;
+  color: rgb(44, 58, 180);
+  text-align: center;
+  font-size: xx-large;
+  padding-top: 2rem;
 }
 
-.historicalBookingTitle {
-  margin-top: 50%;
+@media only screen and (min-width: 1008px) {
+  .footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
+  .dashboardSect {
+    display: flex;
+    min-height: calc(100vh - 14rem);
+  }
+
+  .sidebarContainer {
+    border: 2px solid black;
+    border-radius: 0.2rem;
+  
+  }
+
+  .sidebarComponent {
+    padding: 2rem;
+  }
+
+  .profileSect {
+    width: 100%;
+  }
+
+  .bookings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 2px;
+    margin-left: 2rem;
+  }
+  .block {
+    display: inline-block;
+  }
+  .listings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 25px;
+    grid-row-gap: 2px;
+    margin-left: 2rem;
+  }
+}
+
+.dashboardSect {
+  display: flex;
+}
+
+.labelDashboard{
+
+  padding-left: 0.5rem;
+}
+
+.sidebarContainer {
+  border: 2px solid rgb(238, 232, 232);
+  background-color: #F9F8F8;
+  width: 20rem;
+  color: rgb(78, 75, 75);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.sidebarContainer:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }

@@ -14,6 +14,7 @@ const Result = () => {
   const results = location.state.payload;
   // console.log(results);
 
+
   const sortHighToLow = (e) => {
     const filterResults = [...results];
     const value = e.target.value;
@@ -39,21 +40,22 @@ const Result = () => {
   return (
     <div className={css.mainContainer}>
       <Header />
-      <div className={css.locAndFilter}>
-        {" "}
-        <p className={css.locationName}>
-          Results found for {results[0].address.split(" ")[3].slice(0, 10)}
-        </p>
-        <div className={css.filter}>
-          <select onChange={sortHighToLow}>
-            <option></option>
-            <option value="low">Low to high</option>
-            <option value="high">High to Low</option>
-          </select>
+      <div className={css.main}>
+        <div className={css.locAndFilter}>
+          {" "}
+          <p className={css.locationName}>
+            Results found for {results[0].address.split(" ")[3].slice(0, 10)}
+          </p>
+          <div className={css.filter}>
+            <select onChange={sortHighToLow}>
+              <option>filter</option>
+              <option value="low">Low to high</option>
+              <option value="high">High to Low</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <div className={css.block}>
+        <div className={css.block}>
         <div className={css.result}>
           {" "}
           {lowToHigh[0]&&(filterState===false)
@@ -95,8 +97,9 @@ const Result = () => {
                 );
               })}
         </div>
+     
       </div>
-
+      </div>
       <Footer />
     </div>
   );
