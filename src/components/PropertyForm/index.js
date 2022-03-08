@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import TextField from "@mui/material/TextField";
+
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
 import "./PropertyForm.css";
@@ -9,7 +9,6 @@ import "./PropertyForm.css";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
-import { cardContentClasses, Input } from "@mui/material";
 
 const PropertyForm = () => {
   const [dates, setDates] = useState([{ payload: "" }]);
@@ -233,55 +232,56 @@ const PropertyForm = () => {
             </label>
           </div>
         </div>
-        <div className="dateTimePrice">
-          <div className="datePicker">
-            <p className="propertyFormTitles">
-              {" "}
-              Please choose the dates the space is available
-            </p>
-            <DatePicker
-              value={dates}
-              onChange={setDates}
-              placeholder="Choose dates"
-              format="DD/MM/YYYY"
-              required
-            />
-          </div>
-
-          <div className="timeRange">
-            <p className="propertyFormTitles">
-              {" "}
-              Please choose the time the space is available
-            </p>
-            <TimeRange
-              startMoment={startTime}
-              endMoment={endTime}
-              onStartTimeChange={handleStartTime}
-              onEndTimeChange={handleEndTime}
-              required
-            />
-          </div>
-
-          <div>
-            <p className="propertyFormTitles">
-              {" "}
-              Please enter the price per hour for the space
-            </p>
-            <div className="priceContainer">
-              <label className="pounds">£</label>
-              <input
-                className="priceInputBox"
+        <div className="bottomContainer">
+          <div className="dateTimePrice">
+            <div className="datePrice">
+              <p className="propertyFormTitles">
+                {" "}
+                Please choose the dates the space is available
+              </p>
+              <DatePicker
+                value={dates}
+                onChange={setDates}
+                placeholder="Choose dates"
+                format="DD/MM/YYYY"
                 required
-                id="standard-required"
-                placeholder="Price"
-                name="price"
-                type="number"
-                {...register("price")}
               />
             </div>
+
+            <div className="datePrice">
+              <p className="propertyFormTitles">
+                {" "}
+                Please choose the time the space is available
+              </p>
+              <TimeRange
+                startMoment={startTime}
+                endMoment={endTime}
+                onStartTimeChange={handleStartTime}
+                onEndTimeChange={handleEndTime}
+                required
+              />
+            </div>
+
+            <div className="datePrice">
+              <p className="propertyFormTitles">
+                {" "}
+                Please enter the price per hour for the space
+              </p>
+              <div className="priceContainer">
+                <label className="pounds">£</label>
+                <input
+                  className="priceInputBox"
+                  required
+                  id="standard-required"
+                  placeholder="Price"
+                  name="price"
+                  type="number"
+                  {...register("price")}
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="infoContainer">
+
           <div className="additionalInfoContainer">
             <p className="addinfop"> Additional Information</p>
 
@@ -294,13 +294,15 @@ const PropertyForm = () => {
               {...register("additionalinfo")}
             ></textarea>
           </div>
-          <div className="imageUpload">
-            <p className="addinfop">Please upload images of the space here</p>
-            <ImageUploader picture={propertyInfo} />
+          <div className="leftBottom">
+            <div className="imageUpload">
+              <p className="addinfop">Please upload images of the space here</p>
+              <ImageUploader picture={propertyInfo} />
+            </div>
+            <div className="button">
+              <button className="submitButton">Submit</button>
+            </div>
           </div>
-        </div>
-        <div className="submitButton">
-          <button>Submit</button>
         </div>
       </form>
     </>

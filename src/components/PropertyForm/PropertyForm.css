@@ -15,14 +15,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
+  width: 25%;
   padding: 1rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
   transition: 0.3s;
-
 }
 
+.addressContainer:hover {
+  box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
+}
 .addressHeader {
   text-align: center;
 }
@@ -34,9 +36,13 @@
   align-items: center;
   padding-bottom: 6rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
   transition: 0.3s;
-  width: 20%;
+  width: 25%;
+}
+
+.spacesDropDownContainer:hover {
+  box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
 }
 
 .addressContainer input {
@@ -44,8 +50,7 @@
   width: 80%;
   padding: 1rem;
   margin: 1rem;
-
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .title {
   text-align: center;
@@ -63,12 +68,6 @@ input#standard-required {
   height: 4rem;
 }
 
-.infoContainer {
-  font-size: large;
-  display: flex;
-  justify-content: space-around;
-}
-
 .addinfop {
   font-size: 1.5rem;
   text-align: center;
@@ -77,33 +76,74 @@ input#standard-required {
   font-weight: bold;
 }
 
-.textArea{
+.textArea {
   font-weight: bold;
   font-size: 1rem;
+  width: 80%;
+  height: 60%;
 }
 
 .additionalInfoContainer {
   border-radius: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
   transition: 0.3s;
-  width: 40%;
-  height: 15rem;
+  width: 25%;
   display: flex;
   flex-direction: column;
-
+  justify-content: flex-start;
   align-items: center;
 }
 
-.imageUpload{
+.additionalInfoContainer:hover {
+  box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
+}
 
-  display: flex;
+.imageUpload {
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
-    border-radius: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 25%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
   transition: 0.3s;
+  height: 20rem; */
 }
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitButton {
+  background: #051bd9;
+  background-image: linear-gradient(to bottom, #051bd9, #2980b9);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 2rem;
+  padding: 4px 8px 4px 8px;
+  margin-top: 2rem;
+  width: 50%
+}
+
+.leftBottom {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 15rem;
+
+  width: 25%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
+  transition: 0.3s;
+  height: 20rem;
+}
+
+
 
 .amenitiesTitle {
   font-weight: bold;
@@ -116,9 +156,13 @@ input#standard-required {
   align-items: flex-start;
 
   border-radius: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
   transition: 0.3s;
-  width: 15%;
+  width: 25%;
+}
+
+.amenitiesContainer:hover {
+  box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
 }
 
 .propertyFormTitles {
@@ -134,15 +178,21 @@ input#standard-required {
 
 .dateTimePrice {
   display: flex;
-  width: 90%;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-left: 5%;
   border-radius: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
   transition: 0.3s;
-  height: 10rem;
-  margin-bottom: 5%;
+  width: 25%;
+}
+
+.datePrice {
+  padding: 2rem;
+}
+
+.dateTimePrice:hover {
+  box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
 }
 
 .submitButton {
@@ -156,4 +206,16 @@ input#standard-required {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+
+.leftBottom {
+  display: flex;
+  flex-direction: column;
 }
