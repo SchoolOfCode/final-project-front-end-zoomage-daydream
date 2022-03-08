@@ -92,6 +92,7 @@ const SearchForm = () => {
         <div className="eachSect">
           <label className="label"> Location: </label>
           <input
+            id="location"
             className="field"
             type="text"
             placeholder="City"
