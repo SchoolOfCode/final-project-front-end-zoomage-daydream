@@ -59,7 +59,7 @@ const PropertyForm = () => {
       type_of_space,
       wificheck
     } = propertyDetailsData;
-    console.log("hi", propertyDetailsData);
+    console.log("hi", propertyDetailsData, start, end, datesSelected);
 
     const address = `${addressone}, ${addresstwo}, ${city}, ${region}, ${postcode}`;
     const amenities = [
@@ -79,7 +79,7 @@ const PropertyForm = () => {
       amenities: amenities
     });
 
-    const pData = await submit.json();
+    console.log(submit);
   };
 
   return (
@@ -138,7 +138,6 @@ const PropertyForm = () => {
               <select
                 name="type_of_space"
                 id="spaces"
-                S
                 placeholder="Pick a Space"
                 {...register("type_of_space")}
                 required
@@ -166,7 +165,7 @@ const PropertyForm = () => {
                 <option value="other">Other</option>
               </select>
             </div>
-            <div cclassName="typeSpace">
+            <div className="typeSpace">
               <label> Types of Spaces:</label>
               <br />
 
