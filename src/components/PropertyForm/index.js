@@ -8,17 +8,38 @@ import axios from "axios";
 import "./PropertyForm.css";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
-// import moment from "moment";
+import moment from "moment";
+import { cardContentClasses, Input } from "@mui/material";
+
+
 
 const PropertyForm = () => {
-  // const [startTime, setStartTime] = useState(moment()); // Time Range
-  // const [endTime, setEndTime] = useState(moment()); // Time Range
+  const [dates, setDates] = useState([{ payload: "" }]);
+  const [startTime, setStartTime] = useState(moment()); // Time Range
+  const [endTime, setEndTime] = useState(moment()); // Time Range
   const { register, handleSubmit } = useForm();
   const [uploadedImages, setUploadedImages] = useState("");
 
   const propertyInfo = (images) => {
     setUploadedImages(images);
   };
+
+  const datesSelected = dates.map((value) => {
+    return `${value.day}-${value.month}-${value.year}`;
+  });
+console.log(datesSelected)
+
+ // sets the start time
+ const handleStartTime = (e) => {
+  setStartTime(e.startTime);
+};
+// sets the end time
+const handleEndTime = (e) => {
+  setEndTime(e.endTime);
+};
+// gets the actual time from the startTime and EndTime date format
+let start = String(startTime).slice(11, 16);
+let end = String(endTime).slice(11, 16);
 
   const handleRegistration = async (data) => {
     const propertyDetailsData = Object.assign(data, {
@@ -233,10 +254,10 @@ const PropertyForm = () => {
         </div>
         <div className="dateTimePrice">
           <div className="datePicker">
-            <p> Please choose the dates the space is available</p>
+            <p className="propertyFormTitles"> Please choose the dates the space is available</p>
             <DatePicker
-              // value={dates}
-              // onChange={setDates}
+              value={dates}
+              onChange={setDates}
               placeholder="Choose dates"
               format="DD/MM/YYYY"
               required
@@ -244,27 +265,29 @@ const PropertyForm = () => {
           </div>
 
           <div className="timeRange">
-            <p> Please choose the time the space is available</p>
+            <p className="propertyFormTitles"> Please choose the time the space is available</p>
             <TimeRange
-              // startMoment={startTime}
-              // endMoment={endTime}
-              // onStartTimeChange={handleStartTime}
-              // onEndTimeChange={handleEndTime}
+              startMoment={startTime}
+              endMoment={endTime}
+              onStartTimeChange={handleStartTime}
+              onEndTimeChange={handleEndTime}
               required
             />
           </div>
 
           <div>
-            <p> Please enter the price per hour for the space</p>
-            <TextField
+            <p className="propertyFormTitles"> Please enter the price per hour for the space</p>
+            <div className="priceContainer">
+            <label>£</label>
+            <input className="priceInputBox"
               required
               id="standard-required"
-              label="Price"
-              placeholder="Required"
-              variant="standard"
+              placeholder="Price"
               name="price"
+              type="number"
               {...register("price")}
             />
+            </div>
           </div>
         </div>
 
