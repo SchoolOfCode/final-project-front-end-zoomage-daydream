@@ -45,15 +45,6 @@ textarea {
   grid-row-gap: 0px;
   padding: 10%;
 }
-/* .additionalInfoAndImageContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  background-color: azure;
-  margin-top: 10rem;
-} */
 
 #addinfop {
   display: flex;
