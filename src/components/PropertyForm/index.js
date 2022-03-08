@@ -3,8 +3,14 @@ import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
-import css from "./PropertyForm.module.css";
-import axios from "axios"
+// import css from "./PropertyForm.module.css";
+import axios from "axios";
+// import css from "./PropertyForm.module.css";
+
+import "./PropertyForm.css";
+import DatePicker from "react-multi-date-picker";
+import TimeRange from "react-time-range";
+// import moment from "moment";
 
 const PropertyForm = () => {
   const { register, handleSubmit } = useForm();
@@ -53,11 +59,9 @@ const PropertyForm = () => {
       images: images,
       type_of_space: type_of_space,
       amenities: amenities
-      
     });
-   
-    const pData = await submit.json();
 
+    const pData = await submit.json();
   };
 
   return (
@@ -118,7 +122,7 @@ const PropertyForm = () => {
             {...register("postcode")}
           />
 
-          <div className={css.SpacesDropDownContainer}>
+          <div>
             <div>
               <label> Type of Space:</label>
               <br />
@@ -171,7 +175,7 @@ const PropertyForm = () => {
               </select>
             </div>
           </div>
-          <div className={css.amenitiesContainer}>
+          <div>
             <div>Amenities</div>
             <label>
               <input
@@ -213,7 +217,7 @@ const PropertyForm = () => {
               />
               Fridge
             </label>
-            <div className={css.additionalInfoContainer}>
+            <div>
               <div>
                 <h2>Additional Information</h2>
               </div>
@@ -223,14 +227,14 @@ const PropertyForm = () => {
                 name="additionalinfo"
                 {...register("additionalinfo")}
               ></textarea>
-              <div className={css.ImageUpload}>
+              <div>
                 
                 <ImageUploader picture={propertyInfo} />
               </div>
             </div>
           </div>
 
-          <button className={css.submitButton}>Submit</button>
+          <button>Submit</button>
         </div>
         <div></div>
       </div>
