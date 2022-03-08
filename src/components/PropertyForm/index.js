@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
-import css from "./PropertyForm.module.css";
+import  "./PropertyForm.css";
 import axios from "axios";
 import "./PropertyForm.css";
 import DatePicker from "react-multi-date-picker";
