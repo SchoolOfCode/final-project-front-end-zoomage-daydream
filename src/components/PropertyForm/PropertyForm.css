@@ -1,0 +1,149 @@
+.formContainer {
+  background-color: blueviolet;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 2.5rem;
+}
+.title {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+.addressContainer {
+  background-color: pink;
+  margin: 3rem;
+  border: 0.2rem solid black;
+}
+
+input#standard-required {
+  /* classname taken from inspect, to resize the coponent from MUI for address input. */
+  width: 25rem;
+  height: 4rem;
+}
+textarea {
+  /* additional info resizing */
+  width: 30rem;
+  height: 20rem;
+  float: left;
+  /* grid-area: 2 / 1 / 3 / 2; */
+}
+
+.additionalInfoContainer {
+  background-color: red;
+  font-size: large;
+  margin-left: 3rem;
+  display: flex;
+  grid-column: 1/3;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 10%;
+}
+/* .additionalInfoAndImageContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background-color: azure;
+  margin-top: 10rem;
+} */
+
+#addinfop {
+  display: flex;
+  grid-column: 1/3;
+  grid-area: 1 / 1 / 2 / 2;
+}
+p#addinfop {
+  display: flex;
+  margin-left: 70px;
+}
+.spacesDropDownContainer {
+  padding: 2 rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: baseline;
+}
+.typeSpace {
+  background-color: blue;
+}
+.fractionSpace {
+  background: green;
+}
+.categorySpace {
+  background-color: silver;
+}
+.imageUpload {
+  background-color: beige;
+  display: flex;
+  grid-column: 3/4;
+  align-items: center;
+  justify-content: center;
+  align-items: baseline;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+p {
+  display: flex;
+  justify-content: center;
+}
+
+.amenitiesTitle {
+  font-weight: bold;
+}
+.amenitiesContainer {
+  background-color: orange;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 11px;
+  margin-left: 2rem;
+  border: 0.2rem solid black;
+}
+
+.dateTimePrice {
+  /* bottom: 0%; */
+  background-color: brown;
+
+  display: flex;
+  grid-column: 1/4;
+  align-items: baseline;
+  margin: 3rem;
+  padding: 5rem;
+  justify-content: space-around;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 5px;
+}
+.datePicker {
+  /* display: flex;
+  flex-direction: column; */
+}
+.timeRange {
+  /* display: flex;
+  flex-direction: column; */
+}
+.price {
+  /* display: flex;
+  flex-direction: column; */
+}
+.submitButton {
+  display: flex;
+  grid-column: 1/4;
+  align-items: center;
+  justify-content: center;
+}
