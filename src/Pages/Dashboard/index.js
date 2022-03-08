@@ -2,17 +2,12 @@ import React, { useState, useEffect } from "react";
 import css from "./dashboard.module.css";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import Card from "../../components/Card";
-import Profile from "../../components/Profile";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faHouse,
   faMessage,
   faCalendarCheck,
   faUser,
-  faHeart,
-  faGear,
-  faArrowRightFromBracket
+  faGear
 } from "@fortawesome/free-solid-svg-icons";
 
 import API_URL from "../../config";
@@ -76,7 +71,7 @@ function Dashboard() {
                 icon={faUser}
                 className={css.sidebarIcons}
               />
-              Username
+              <span className={css.labelDashboard}>{user.nickname}</span>
             </h2>
 
             <h2 onClick={bookings} className={css.sidebarComponent}>
@@ -85,7 +80,7 @@ function Dashboard() {
                 icon={faCalendarCheck}
                 className={css.sidebarIcons}
               />
-              My Bookings
+              <span className={css.labelDashboard}>My Bookings</span>
             </h2>
             <h2 onClick={listings} className={css.sidebarComponent}>
               <FontAwesomeIcon
@@ -93,16 +88,16 @@ function Dashboard() {
                 icon={faCalendarCheck}
                 className={css.sidebarIcons}
               />
-              Listings
+              <span className={css.labelDashboard}> Listings</span>
             </h2>
             <h2 className={css.sidebarComponent}>
               <FontAwesomeIcon icon={faMessage} className={css.sidebarIcons} />
-              Message
+              <span className={css.labelDashboard}> Message</span>
             </h2>
 
             <h2 className={css.sidebarComponent}>
               <FontAwesomeIcon icon={faGear} className={css.sidebarIcons} />
-              Settings
+              <span className={css.labelDashboard}> Settings</span>
             </h2>
           </div>
 
@@ -114,7 +109,7 @@ function Dashboard() {
 
           {current === "bookings" && (
             <div>
-              <h2>History of Bookings</h2>
+              <h2 className={css.label}>History of Bookings</h2>
               <div className={css.block}>
                 <div className={css.bookings}>
                   <PreviousBookings />
@@ -124,7 +119,7 @@ function Dashboard() {
           )}
           {current === "listings" && (
             <div>
-              <h2>History of Listings</h2>
+              <h2 className={css.label}>History of Listings</h2>
               <div className={css.block}>
                 <div className={css.listings}>
                   <PreviousListings />

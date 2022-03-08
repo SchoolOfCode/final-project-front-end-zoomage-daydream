@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import API_URL from "../../config";
 import Card from "../Card";
+import css from "./previousbookings.module.css"
 
 const PreviousBookings = () => {
   const [bookings, setBookings] = useState([]);

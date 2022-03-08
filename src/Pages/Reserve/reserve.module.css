@@ -1,50 +1,17 @@
-.bg {
-  margin-left: 70rem;
-}
 
-.reserveContainer {
-  display: flex;
-  flex-direction: column;
-}
+
+
 
 .topContainer {
   padding: 1rem;
   font-size: x-small;
-}
-.images {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  font-weight: bold;
 }
 
-.imagesRight {
-  display: flex;
-  flex-direction: column;
-}
-
-.images_right {
-  width: 7rem;
-  height: 8rem;
-}
-.imageCenter {
-  padding: 1rem;
-}
-
-.images_center {
-  width: 15rem;
+.caroselImage{
   height: 10rem;
 }
 
-.imagesLeft {
-  display: flex;
-  flex-direction: column;
-}
-
-.images_left {
-  width: 7rem;
-  height: 8rem;
-}
 
 .bottomContainer {
   display: flex;

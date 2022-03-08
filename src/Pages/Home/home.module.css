@@ -18,7 +18,6 @@
   grid-row-gap: 0px;
   width: 90%;
   overflow-x: scroll;
-  margin-left: 2rem;
 }
 
 .cards::-webkit-scrollbar {

@@ -44,7 +44,7 @@ function ProfileSect() {
       {isAuthenticated && (
         <div className={css.profileSect}>
           <div>
-          <h2>User Information</h2>
+            <h2 className={css.current}>User Information</h2>
             <div className={css.profile}>
               {" "}
               {users[0] && isAuthenticated && (

@@ -2,6 +2,14 @@
   font-family: "Philosopher", sans-serif;
 }
 
+.label{
+    font-family: "Philosopher", sans-serif;
+  color: rgb(44, 58, 180);
+  text-align: center;
+  font-size: xx-large;
+  padding-top: 2rem;
+}
+
 @media only screen and (min-width: 1008px) {
   .footer {
     position: relative;
@@ -15,6 +23,8 @@
 
   .sidebarContainer {
     border: 2px solid black;
+    border-radius: 0.2rem;
+  
   }
 
   .sidebarComponent {
@@ -48,7 +58,21 @@
   display: flex;
 }
 
+.labelDashboard{
+
+  padding-left: 0.5rem;
+}
+
 .sidebarContainer {
-  border: 2px solid black;
-  background-color: rgba(236, 233, 232, 0.9);
+  border: 2px solid rgb(238, 232, 232);
+  background-color: #F9F8F8;
+  width: 20rem;
+  color: rgb(78, 75, 75);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.sidebarContainer:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }

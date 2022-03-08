@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import css from "./register.module.css";
-import background from "../../images/background.jpg";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import API_URL from "../../config";
@@ -16,11 +15,12 @@ const Register = () => {
     formState: { errors }
   } = useForm();
   const navigate = useNavigate();
-  const [data1, setData1] = useState();
+
 
   const onSubmit = async (userDetails) => {
     const { firstName, surname, emailAddress, dateOfBirth, username } =
       userDetails;
+      console.log(userDetails)
     const fullName = firstName + " " + surname;
 
     const post = await fetch(`${API_URL}/users`, {
@@ -36,7 +36,6 @@ const Register = () => {
       })
     });
     const data = post.json();
-    setData1(data);
   };
 
   navigate("/");
@@ -79,7 +78,7 @@ const Register = () => {
                 placeholder="Email Address"
                 {...register("emailAddress")}
                 className={css.form}
-                // value={user.email}
+                value={user.email}
                 required
               />
             </div>
@@ -102,7 +101,7 @@ const Register = () => {
                 placeholder="Choose a Username"
                 {...register("username")}
                 className={css.form}
-                // value={user.nickname}
+                value={user.nickname}
                 required
               />
               <div>

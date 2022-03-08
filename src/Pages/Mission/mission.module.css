@@ -1,5 +1,17 @@
 .ourMission {
+min-height: calc(100vh - 9rem);
+}
+
+@media only screen and (min-width: 641px) {
+.ourMission {
+min-height: calc(100vh - 11rem);
+}
+}
+
+@media only screen and (min-width: 1008px) {
+.ourMission {
 min-height: calc(100vh - 14rem);
+}
 }
 
 h1 {
