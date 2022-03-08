@@ -3,19 +3,19 @@
   margin-bottom: 2rem;
 }
 .image {
-  width: 100%;
+  width: 10rem;
   height: 10rem;
-   border-radius: 0.5rem 0.5rem 0 0;
+    border-radius: 0.55rem 0.5rem 0 0;
 }
 .details {
   border: 2px solid black;
   display: inline-block;
-  width: 100%;
+  width: 10rem;
   height: 8rem;
   text-align: center;
   padding-top: 1rem;
   font-size: small;
-   border-radius: 0 0 0.5rem 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .card:hover {
@@ -30,17 +30,19 @@
 
 .card {
   box-shadow: 3px 5px rgba(172, 168, 168, 0.8);
+
+
 }
 
 @media only screen and (min-width: 480px) {
   .image {
-    width: 100%;
+    width: 12rem;
     height: 10rem;
   }
   .details {
     border: 2px solid black;
     display: inline-block;
-    width: 100%;
+    width: 12rem;
     height: 8rem;
     text-align: center;
     padding-top: 1rem;
@@ -50,24 +52,23 @@
 
 @media only screen and (min-width: 768px) {
   .image {
-    width: 100%;
+    width: 12rem;
     height: 14rem;
   }
   .details {
-    width: 100%;
+    width: 12rem;
     height: 10rem;
     font-size: 1.2rem;
   }
 }
-
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .image {
-    width: 100%;
-    height: 16rem;
+    width: 22rem;
+    height: 22rem;
   }
   .details {
-    width: 100%;
-    height: 11rem;
+    width: 22rem;
+    height: 10rem;
     font-size: 1.2rem;
   }
 }

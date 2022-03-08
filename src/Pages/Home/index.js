@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 
-import Card from "../../components/Card";
+import HomeCard from "./homeCards";
 import Footer from "../../components/Footer";
 import SearchForm from "../../components/SearchForm";
 import css from "./home.module.css";
@@ -47,7 +47,7 @@ const [users] = useFetch(`${API_URL}/users/`);
         {" "}
         {arrays.map((item, index) => {
           return (
-            <Card
+            <HomeCard
               image={item.images[0]}
               address={item.address}
               starttime={item.starttime}

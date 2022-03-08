@@ -36,7 +36,14 @@ const Reserve = () => {
         )}
       </div>
       <div>
-        <div>{space && <CarouselImage images={spaces[0].images} />}</div>
+        <div className={css.CarouselImage}>
+          {space && (
+            <CarouselImage
+              
+              images={spaces[0].images}
+            />
+          )}
+        </div>
       </div>
       <div className={css.bottomContainer}>
         <div>
