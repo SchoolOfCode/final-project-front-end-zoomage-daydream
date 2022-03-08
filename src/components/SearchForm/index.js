@@ -104,6 +104,7 @@ const SearchForm = () => {
           <label className="label">Dates:</label>
           <div className="dateContainer">
             <DatePicker
+              id="date"
               value={dates}
               onChange={setDates}
               placeholder="Choose dates"
