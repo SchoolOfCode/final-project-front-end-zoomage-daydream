@@ -8,11 +8,16 @@ community leaders and our neighbors to create a clean and safe place to work.\
 If you are interested in this project, please contact the School of Code (www.schoolfocode.co.uk) to get in touch with the team.\
 
 ### Tech, Frameworks and Libraries used or been considered for using: 
-Figma, Miro, TrelloBoard, Agile methodology, KanBan, hubspot.com for User Persona\
+Figma, Miro, TrelloBoard, Agile methodology, KanBan, \
+hubspot.com for User Persona\
 React.js, Node.js, Heroku, Postman, PostgreSQL,\
-Cypruss for testing, TDD, npm: react-social-icons,\
+Cypruss for testing, TDD, \
+npm: react-social-icons,\
 TimePicker - Ant Design, React Date Time Picker component - MUI, \
-npm i material-ui-address-input, Auth0, Netlify, cloudinary.com.
+npm i material-ui-address-input, \
+Auth0, Netlify, cloudinary.com, \
+for logo https://www.freelogodesign.org/ \
+for pictures https://www.pexels.com/
 
 
 ### Deployed here: (...in progress at the moment).
