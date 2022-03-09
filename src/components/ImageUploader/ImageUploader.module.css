@@ -7,3 +7,19 @@
   height: 1rem;
   text-align: center;
 }
+
+
+
+.fileUploader{
+  padding: 2rem;
+}
+
+.priceInputBox{
+ font-weight: bold;
+  color: red;
+  background-color: yellow;
+}
+
+.pounds{
+  color: green;
+}

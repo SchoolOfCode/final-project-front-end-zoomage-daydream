@@ -6,6 +6,7 @@ function HomeCard({ image, address, starttime, id, price }) {
   const navigate = useNavigate();
   const handleClick = (e) => {
     const id = e.target.id;
+    console.log(id)
     navigate("/reserve", { state: id });
   };
 
@@ -21,7 +22,7 @@ function HomeCard({ image, address, starttime, id, price }) {
           id={id}
         />
       </div>
-      <div className={css.details} data-testid="details">
+      <div className={css.details} data-testid="details" onClick={handleClick}>
         <p>{address}</p>
         <p>{starttime} - 17:00</p>
         <p>Sundays - Fridays</p>

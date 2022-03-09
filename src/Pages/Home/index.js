@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/Header";
 
 import HomeCard from "./homeCards";
@@ -37,7 +37,7 @@ const [users] = useFetch(`${API_URL}/users/`);
       }
     }
   }, [user]);
-
+// ddd
   return (
     <div className={css.home}>
       <Header />
