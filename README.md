@@ -1,85 +1,26 @@
-# The Front End Project Example
+# Hi there, 
 
-Some starter code to get you up and running quickly.
+This project is created by team of six people following the Agile methodology as a final project of School of Code Bootcamp.\
+Though there is no commercial business behind this app, the platform itself is a functional app\
+bringing the aim to improve the environment in our community by working with area businesses, \
+community leaders and our neighbors to create a clean and safe place to work.\
+\
+If you are interested in this project, please contact the School of Code (www.schoolfocode.co.uk) to get in touch with the team.\
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cwissy/examples_front-end-project-week)
+### Tech, Frameworks and Libraries used or been considered for using: 
+Figma, Miro, TrelloBoard, Agile methodology, KanBan, \
+hubspot.com for User Persona\
+React.js, Node.js, Heroku, Postman, PostgreSQL,\
+Cypruss for testing, TDD, \
+npm: react-social-icons,\
+TimePicker - Ant Design, React Date Time Picker component - MUI, \
+npm i material-ui-address-input, \
+Auth0, Netlify, cloudinary.com, \
+for logo https://www.freelogodesign.org/ \
+for pictures https://www.pexels.com/
 
-## For Deploying
 
-Make sure to set the `REACT_APP_API_URL` to be the url of your api. If you're deploying as part of the full project example, it will be from the [project week back end](https://github.com/cwissy/examples_back-end-project-week).
-
-## Guide
-
-[You can find the guide in this Google Doc](https://docs.google.com/document/d/1-8q034OBs1GMuMSMYuUYrpAEg37zh8qBMCOBcJoQamk/edit?usp=sharing)
+### Deployed here: (...in progress at the moment).
 
 
-## Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Presentation is in here: (...in progress at the moment).
