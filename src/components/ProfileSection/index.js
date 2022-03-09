@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import css from "./profilesection.module.css";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
+
+
 import Card from "../../components/Card";
 import Profile from "../../components/Profile";
 
