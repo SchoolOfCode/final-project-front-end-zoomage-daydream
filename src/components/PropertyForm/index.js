@@ -130,14 +130,14 @@ const PropertyForm = () => {
             />
           </div>
           <div className="spacesDropDownContainer">
-            <h2>Property Details</h2>
+            <h2 className="propertyDetailsTitle">Property Details</h2>
             <div className="typeSpace">
               <label> Type of Space:</label>
               <br />
 
               <select
                 name="type_of_space"
-                id="spaces"
+                id="threeSpacesContainers"
                 S
                 placeholder="Pick a Space"
                 {...register("type_of_space")}
@@ -155,7 +155,7 @@ const PropertyForm = () => {
 
               <select
                 name="category_of_space"
-                id="spaces"
+                id="threeSpacesContainers"
                 required
                 {...register("category_of_space")}
               >
@@ -166,13 +166,13 @@ const PropertyForm = () => {
                 <option value="other">Other</option>
               </select>
             </div>
-            <div cclassName="typeSpace">
+            <div className="typeSpace">
               <label> Types of Spaces:</label>
               <br />
 
               <select
                 name="fraction_of_space"
-                id="spaces"
+                id="threeSpacesContainers"
                 {...register("fraction_of_space")}
                 required
               >
@@ -186,50 +186,59 @@ const PropertyForm = () => {
           </div>
           <div className="amenitiesContainer">
             <div className="amenitiesTitle">Amenities</div>
-            <label>
+            <div className="amenitiesItemsDiv">
+            <div>
+            <label className="amenitiesItems">
               <input
                 type="checkbox"
                 name="wificheck"
+                className="amenitiesItems"
                 {...register("wificheck")}
               />
               WiFi
             </label>
-            <label>
+            </div>
+            <label className="amenitiesItems">
               <input
                 type="checkbox"
                 name="showercheck"
+                className="amenitiesItems"
                 {...register("showercheck")}
               />
               Shower
             </label>
-            <label>
+            <label className="amenitiesItems">
               <input
                 type="checkbox"
                 name="microwavecheck"
+                className="amenitiesItems"
                 {...register("microwavecheck")}
               />
               Microwave
             </label>
-            <label>
+            <label className="amenitiesItems">
               <input
                 type="checkbox"
                 name="standingddeskcheck"
+                className="amenitiesItems"
                 {...register("standingdeskcheck")}
               />
               Standing Desk
             </label>
-            <label>
+            <label className="amenitiesItems">
               <input
                 type="checkbox"
                 name="fridgecheck"
+                className="amenitiesItems"
                 {...register("fridgecheck")}
               />
               Fridge
             </label>
-            <label>
+            <label className="amenitiesItems">
               <input type="checkbox" name="other" {...register("other")} />
               Other
             </label>
+            </div>
           </div>
         </div>
         <div className="bottomContainer">
