@@ -33,7 +33,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
+  padding-left: 5.5%;
   padding-bottom: 6rem;
   border-radius: 1rem;
   box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
@@ -63,9 +64,10 @@
 }
 
 input#standard-required {
-  /* classname taken from inspect, to resize the coponent from MUI for address input. */
-  width: 8rem;
-  height: 4rem;
+  border: 2px solid black;
+  width: 4rem;
+  height: 3rem;
+  font-weight: bold;
 }
 
 .addinfop {
@@ -98,18 +100,9 @@ input#standard-required {
   box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
 }
 
-.imageUpload {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
-  transition: 0.3s;
-  height: 20rem; */
-}
 
-.button{
+
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,7 +119,7 @@ input#standard-required {
   font-size: 2rem;
   padding: 4px 8px 4px 8px;
   margin-top: 2rem;
-  width: 50%
+  width: 50%;
 }
 
 .leftBottom {
@@ -143,13 +136,14 @@ input#standard-required {
   height: 20rem;
 }
 
-
-
 .amenitiesTitle {
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: 1rem;
   font-weight: bold;
 }
 .amenitiesContainer {
-  padding: 2rem;
+  padding: 1.2rem 2rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -166,14 +160,17 @@ input#standard-required {
 }
 
 .propertyFormTitles {
-  color: black;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .pounds {
   font-size: 2rem;
+}
+
+imput#standard-required {
+  border: 5px solid black;
 }
 
 .dateTimePrice {
@@ -218,4 +215,33 @@ input#standard-required {
 .leftBottom {
   display: flex;
   flex-direction: column;
+}
+
+.propertyDetailsTitle {
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: bold;
+}
+
+.typeSpace {
+  color: black;
+  font-size: x-large;
+}
+
+#threeSpacesContainers {
+  color: black;
+  font-size: large;
+}
+
+.amenitiesItems {
+  font-size: 1.3rem;
+}
+
+.amenitiesItemsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
 }

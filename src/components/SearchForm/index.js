@@ -84,7 +84,7 @@ const SearchForm = () => {
 
   return (
     <div className="formBackground" style={{ backgroundImage: url1 }}>
-      <form className="form" onSubmit={handleSubmit(onSubmit)}>
+      <form id="fbackground"className="form" onSubmit={handleSubmit(onSubmit)}>
         <div>
           {" "}
           <h2 className="formHeading">Reserve Your Space</h2>
@@ -93,6 +93,7 @@ const SearchForm = () => {
           <label className="label"> Location: </label>
           <input
             id="location"
+       
             className="field"
             type="text"
             placeholder="City"
@@ -104,7 +105,7 @@ const SearchForm = () => {
           <label className="label">Dates:</label>
           <div className="dateContainer">
             <DatePicker
-              id="date"
+            id="dates"
               value={dates}
               onChange={setDates}
               placeholder="Choose dates"
@@ -116,6 +117,7 @@ const SearchForm = () => {
 
         <div className="times">
           <TimeRange
+          id="time"
             startMoment={startTime}
             endMoment={endTime}
             onStartTimeChange={handleStartTime}
@@ -141,6 +143,7 @@ const SearchForm = () => {
         </div>
         <div className="submitSection">
           <input
+          id="submit"
             type="submit"
             className="submit"
             onClick={() => {

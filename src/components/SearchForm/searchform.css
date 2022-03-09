@@ -250,6 +250,8 @@ input.rmdp-input {
   input.rmdp-input {
     height: 1.8rem;
     width: 11rem;
+    border: 2px solid black;
+    font-weight: bold;
   }
   .labelSpace {
     font-size: 1.5rem;

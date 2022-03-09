@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 {
     "plugins": [
       "cypress"
     ]
   }
+=======
+// {
+//   "extends": [
+//     "plugin:cypress/recommended"
+//   ]
+// }
+>>>>>>> property_details_FKR
