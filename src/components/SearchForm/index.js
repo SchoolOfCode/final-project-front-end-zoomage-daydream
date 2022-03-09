@@ -116,6 +116,7 @@ const SearchForm = () => {
 
         <div className="times">
           <TimeRange
+            className="timerange"
             startMoment={startTime}
             endMoment={endTime}
             onStartTimeChange={handleStartTime}
