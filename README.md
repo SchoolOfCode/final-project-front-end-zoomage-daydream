@@ -12,10 +12,10 @@ Figma, Miro, TrelloBoard, Agile methodology, KanBan, hubspot.com for User Person
 React.js, Node.js, Heroku, Postman, PostgreSQL,\
 Cypruss for testing, TDD, npm: react-social-icons,\
 TimePicker - Ant Design, React Date Time Picker component - MUI, \
-npm i material-ui-address-input Auth0, Netlify, cloudinary.com.
+npm i material-ui-address-input, Auth0, Netlify, cloudinary.com.
 
 
-### Deployed here: (...in progress)
+### Deployed here: (...in progress at the moment).
 
 
-### Presentation is in here: (...in progress)
+### Presentation is in here: (...in progress at the moment).
