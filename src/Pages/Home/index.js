@@ -21,15 +21,12 @@ const [users] = useFetch(`${API_URL}/users/`);
 
 
 
-
-
-
   useEffect(() => {
     if (isAuthenticated === true) {
       const usersArray = users.map((item) => {
         return item.email;
       });
-      if (spaces.length > 0) {
+      if (users.length > 0) {
         const userStatus = usersArray.includes(user.email);
         if (userStatus === !true) {
           navigate("/registerhost");
@@ -37,7 +34,7 @@ const [users] = useFetch(`${API_URL}/users/`);
       }
     }
   }, [user]);
-// ddd
+
   return (
     <div className={css.home}>
       <Header />

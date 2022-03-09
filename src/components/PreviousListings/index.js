@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import API_URL from "../../config";
 import Card from "../Card";
+import "./previousListings.css"
 
-const PreviousListings= () => {
+const PreviousListings = () => {
   const [bookings, setBookings] = useState([]);
 
   const { isAuthenticated, user } = useAuth0();
@@ -13,31 +14,40 @@ const PreviousListings= () => {
   useEffect(() => {
     if (isAuthenticated === true) {
       const fetchProfileData = async () => {
-        const url = `${API_URL}/spaces/`;
+        const url = `${API_URL}/spaces/?email=${email}`;
         const res = await fetch(url);
         const data = await res.json();
+        console.log("he", data.payload);
         setBookings(data.payload);
       };
       fetchProfileData();
     }
   }, []);
 
-  console.log(bookings);
-  return bookings.slice(0, 4).map((item) => {
-    return (
-      <div>
-      
-        <Card
-          image={item.images[0]}
-          address={item.address}
-          starttime={item.starttime}
-          price={item.hourly_price}
-          key={item.id}
-          id={item.id}
-        />
-      </div>
-    );
-  });
+  return (
+    <div>
+      {bookings.length === 0 && (
+        <div>
+          <p className="listingsText">You currently do not have any listings</p>
+        </div>
+      )}
+      {bookings.length > 0 &&
+        bookings.map((item) => {
+          return (
+            <div>
+              <Card
+                image={item.images[0]}
+                address={item.address}
+                starttime={item.starttime}
+                price={item.hourly_price}
+                key={item.id}
+                id={item.id}
+              />
+            </div>
+          );
+        })}
+    </div>
+  );
 };
 
 export default PreviousListings;
