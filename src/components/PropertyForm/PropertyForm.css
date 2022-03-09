@@ -100,16 +100,7 @@ input#standard-required {
   box-shadow: 0 8px 16px 0 rgb(44, 58, 180);
 }
 
-.imageUpload {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
-  border-radius: 1rem;
-  box-shadow: 0 4px 8px 0 rgb(44, 58, 180);
-  transition: 0.3s;
-  height: 20rem; */
-}
+
 
 .button {
   display: flex;

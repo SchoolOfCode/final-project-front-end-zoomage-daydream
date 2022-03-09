@@ -13,7 +13,6 @@ ReactDOM.render(
       domain={process.env.REACT_APP_DOMAIN}
       clientId={process.env.REACT_APP_CLIENT}
       redirectUri={window.location.origin}
-      audience="https://dev-jpr90dts.us.auth0.com/api/v2/"
     >
       <BrowserRouter>
         <App />
