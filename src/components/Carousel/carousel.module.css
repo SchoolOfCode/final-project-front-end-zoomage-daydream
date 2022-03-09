@@ -107,6 +107,7 @@
 @media only screen and (min-width: 1600px) {
   .reserveImage {
     width: 70%;
+    max-width: 60rem;
     margin-left: 15%;
     height: 40.2rem;
   }
@@ -124,5 +125,11 @@
   .arrowRight {
     top: 45%;
     right: 12%;
+  }
+
+  .carousel {
+    display:flex;
+    justify-content: center;
+    
   }
 }

@@ -92,6 +92,7 @@ const SearchForm = () => {
         <div className="eachSect">
           <label className="label"> Location: </label>
           <input
+            id="location"
             className="field"
             type="text"
             placeholder="City"
@@ -103,6 +104,7 @@ const SearchForm = () => {
           <label className="label">Dates:</label>
           <div className="dateContainer">
             <DatePicker
+              id="date"
               value={dates}
               onChange={setDates}
               placeholder="Choose dates"
