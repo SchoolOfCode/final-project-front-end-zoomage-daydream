@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
-import "./propertyForm.css";
+import "./PropertyForm.css";
 import axios from "axios";
-import "./propertyForm.css";
+
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
@@ -187,57 +187,57 @@ const PropertyForm = () => {
           <div className="amenitiesContainer">
             <div className="amenitiesTitle">Amenities</div>
             <div className="amenitiesItemsDiv">
-            <div>
-            <label className="amenitiesItems">
-              <input
-                type="checkbox"
-                name="wificheck"
-                className="amenitiesItems"
-                {...register("wificheck")}
-              />
-              WiFi
-            </label>
-            </div>
-            <label className="amenitiesItems">
-              <input
-                type="checkbox"
-                name="showercheck"
-                className="amenitiesItems"
-                {...register("showercheck")}
-              />
-              Shower
-            </label>
-            <label className="amenitiesItems">
-              <input
-                type="checkbox"
-                name="microwavecheck"
-                className="amenitiesItems"
-                {...register("microwavecheck")}
-              />
-              Microwave
-            </label>
-            <label className="amenitiesItems">
-              <input
-                type="checkbox"
-                name="standingddeskcheck"
-                className="amenitiesItems"
-                {...register("standingdeskcheck")}
-              />
-              Standing Desk
-            </label>
-            <label className="amenitiesItems">
-              <input
-                type="checkbox"
-                name="fridgecheck"
-                className="amenitiesItems"
-                {...register("fridgecheck")}
-              />
-              Fridge
-            </label>
-            <label className="amenitiesItems">
-              <input type="checkbox" name="other" {...register("other")} />
-              Other
-            </label>
+              <div>
+                <label className="amenitiesItems">
+                  <input
+                    type="checkbox"
+                    name="wificheck"
+                    className="amenitiesItems"
+                    {...register("wificheck")}
+                  />
+                  WiFi
+                </label>
+              </div>
+              <label className="amenitiesItems">
+                <input
+                  type="checkbox"
+                  name="showercheck"
+                  className="amenitiesItems"
+                  {...register("showercheck")}
+                />
+                Shower
+              </label>
+              <label className="amenitiesItems">
+                <input
+                  type="checkbox"
+                  name="microwavecheck"
+                  className="amenitiesItems"
+                  {...register("microwavecheck")}
+                />
+                Microwave
+              </label>
+              <label className="amenitiesItems">
+                <input
+                  type="checkbox"
+                  name="standingddeskcheck"
+                  className="amenitiesItems"
+                  {...register("standingdeskcheck")}
+                />
+                Standing Desk
+              </label>
+              <label className="amenitiesItems">
+                <input
+                  type="checkbox"
+                  name="fridgecheck"
+                  className="amenitiesItems"
+                  {...register("fridgecheck")}
+                />
+                Fridge
+              </label>
+              <label className="amenitiesItems">
+                <input type="checkbox" name="other" {...register("other")} />
+                Other
+              </label>
             </div>
           </div>
         </div>
