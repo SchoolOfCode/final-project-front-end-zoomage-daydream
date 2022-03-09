@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
-import "./PropertyForm.css";
+import "./propertyForm.css";
 import axios from "axios";
-import "./PropertyForm.css";
+import "./propertyForm.css";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";

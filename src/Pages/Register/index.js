@@ -36,6 +36,7 @@ const Register = () => {
       })
     });
     const data = post.json();
+
   };
 
   navigate("/");

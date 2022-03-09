@@ -34,15 +34,17 @@ const ImageUploader = ({ picture }) => {
   };
 
   return (
-    <div>
-      <input type="file" onChange={handleClick} />
+    <div className={css.fileUploader}>
+
+        <input type="file" onChange={handleClick} />
+  
 
       {images !== undefined ? (
         images.map((item, index) => (
           <div className={css.images} key={index}>
             <p>{item.name}</p>
 
-            <button value={index} onClick={handleDelete}>
+            <button className={css.buttom} value={index} onClick={handleDelete}>
               x
             </button>
           </div>

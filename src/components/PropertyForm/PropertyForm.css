@@ -110,7 +110,7 @@ input#standard-required {
   height: 20rem; */
 }
 
-.button{
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,7 +127,7 @@ input#standard-required {
   font-size: 2rem;
   padding: 4px 8px 4px 8px;
   margin-top: 2rem;
-  width: 50%
+  width: 50%;
 }
 
 .leftBottom {
@@ -144,20 +144,17 @@ input#standard-required {
   height: 20rem;
 }
 
-
-
 .amenitiesTitle {
   font-size: 1.5rem;
   text-align: center;
   padding-bottom: 1rem;
   font-weight: bold;
-
 }
 .amenitiesContainer {
-  padding: 2rem;
+  padding: 1.2rem 2rem 2rem 2rem;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
+  justify-content: space-around;
   align-items: flex-start;
 
   border-radius: 1rem;
@@ -171,8 +168,7 @@ input#standard-required {
 }
 
 .propertyFormTitles {
-  color: black;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -241,17 +237,16 @@ input#standard-required {
 #threeSpacesContainers {
   color: black;
   font-size: large;
-
 }
 
 .amenitiesItems {
-  color: red;
-  font-size: larger;
+
+  font-size: 1.3rem;
 }
 
 .amenitiesItemsDiv {
-  background-color: #051bd9;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 80%;
 }
