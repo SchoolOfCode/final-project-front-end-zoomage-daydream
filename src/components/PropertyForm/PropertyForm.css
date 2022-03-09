@@ -64,9 +64,10 @@
 }
 
 input#standard-required {
-  /* classname taken from inspect, to resize the coponent from MUI for address input. */
-  width: 8rem;
-  height: 4rem;
+  border: 2px solid black;
+  width: 4rem;
+  height: 3rem;
+  font-weight: bold;
 }
 
 .addinfop {
@@ -177,6 +178,10 @@ input#standard-required {
   font-size: 2rem;
 }
 
+imput#standard-required {
+  border: 5px solid black;
+}
+
 .dateTimePrice {
   display: flex;
   flex-direction: column;
@@ -240,7 +245,6 @@ input#standard-required {
 }
 
 .amenitiesItems {
-
   font-size: 1.3rem;
 }
 
