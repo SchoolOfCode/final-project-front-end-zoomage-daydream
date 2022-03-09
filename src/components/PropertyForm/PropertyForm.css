@@ -65,9 +65,10 @@
 
 input#standard-required {
   border: 2px solid black;
-  width: 4rem;
+  width: 5rem;
   height: 3rem;
   font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .addinfop {

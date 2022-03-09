@@ -11,6 +11,17 @@ describe("space-app-homepage", () => {
     cy.get("#location").type("london").should("have.value", "london");
   });
   it("testing  date", () => {
-    cy.get("#date").type("02-02-2022").should("have.value", "02-02-2022");
+    cy.get("#date").click();
+    cy.contains("5").click();
+    cy.contains("March").click();
+    cy.contains("April").click();
+    cy.contains("5").click();
+    cy.get("#date")
+      .invoke("val")
+      .should("deep.equal", "05/03/2022, 05/04/2022");
+  });
+  it("tests the time", () => {
+    cy.get(".timerange").click();
+    cy.contains("07:00 AM").click();
   });
 });

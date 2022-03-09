@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     "plugins": [
       "cypress"
@@ -11,3 +12,8 @@
 //   ]
 // }
 >>>>>>> property_details_FKR
+=======
+{
+  "plugins": ["cypress"]
+}
+>>>>>>> 96997646b1034af0055779337725819037b6730f

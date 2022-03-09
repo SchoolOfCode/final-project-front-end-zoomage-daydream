@@ -11,10 +11,10 @@ function PropertyDetails() {
   return (
     <div>
       <Header />
-    {isAuthenticated&&
+    
     <div className={css.propertyDetails}>
       <PropertyForm />
-      </div>}
+      </div>
       <Footer />
     </div>
   );

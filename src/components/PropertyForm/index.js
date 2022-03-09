@@ -58,7 +58,7 @@ const PropertyForm = () => {
       type_of_space,
       wificheck
     } = propertyDetailsData;
-    console.log("hi", propertyDetailsData);
+    console.log("hi", propertyDetailsData, start, end, datesSelected);
 
     const address = `${addressone}, ${addresstwo}, ${city}, ${region}, ${postcode}`;
     const amenities = [
@@ -78,7 +78,7 @@ const PropertyForm = () => {
       amenities: amenities
     });
 
-    const pData = await submit.json();
+    console.log(submit);
   };
 
   return (
@@ -137,7 +137,6 @@ const PropertyForm = () => {
               <select
                 name="type_of_space"
                 id="threeSpacesContainers"
-                S
                 placeholder="Pick a Space"
                 {...register("type_of_space")}
                 required
@@ -186,57 +185,57 @@ const PropertyForm = () => {
           <div className="amenitiesContainer">
             <div className="amenitiesTitle">Amenities</div>
             <div className="amenitiesItemsDiv">
-            <div>
-            <label className="amenitiesItems">
-              <input
-                type="checkbox"
-                name="wificheck"
-                className="amenitiesItems"
-                {...register("wificheck")}
-              />
-              WiFi
-            </label>
-            </div>
-            <label className="amenitiesItems">
-              <input
-                type="checkbox"
-                name="showercheck"
-                className="amenitiesItems"
-                {...register("showercheck")}
-              />
-              Shower
-            </label>
-            <label className="amenitiesItems">
-              <input
-                type="checkbox"
-                name="microwavecheck"
-                className="amenitiesItems"
-                {...register("microwavecheck")}
-              />
-              Microwave
-            </label>
-            <label className="amenitiesItems">
-              <input
-                type="checkbox"
-                name="standingddeskcheck"
-                className="amenitiesItems"
-                {...register("standingdeskcheck")}
-              />
-              Standing Desk
-            </label>
-            <label className="amenitiesItems">
-              <input
-                type="checkbox"
-                name="fridgecheck"
-                className="amenitiesItems"
-                {...register("fridgecheck")}
-              />
-              Fridge
-            </label>
-            <label className="amenitiesItems">
-              <input type="checkbox" name="other" {...register("other")} />
-              Other
-            </label>
+              <div>
+                <label className="amenitiesItems">
+                  <input
+                    type="checkbox"
+                    name="wificheck"
+                    className="amenitiesItems"
+                    {...register("wificheck")}
+                  />
+                  WiFi
+                </label>
+              </div>
+              <label className="amenitiesItems">
+                <input
+                  type="checkbox"
+                  name="showercheck"
+                  className="amenitiesItems"
+                  {...register("showercheck")}
+                />
+                Shower
+              </label>
+              <label className="amenitiesItems">
+                <input
+                  type="checkbox"
+                  name="microwavecheck"
+                  className="amenitiesItems"
+                  {...register("microwavecheck")}
+                />
+                Microwave
+              </label>
+              <label className="amenitiesItems">
+                <input
+                  type="checkbox"
+                  name="standingddeskcheck"
+                  className="amenitiesItems"
+                  {...register("standingdeskcheck")}
+                />
+                Standing Desk
+              </label>
+              <label className="amenitiesItems">
+                <input
+                  type="checkbox"
+                  name="fridgecheck"
+                  className="amenitiesItems"
+                  {...register("fridgecheck")}
+                />
+                Fridge
+              </label>
+              <label className="amenitiesItems">
+                <input type="checkbox" name="other" {...register("other")} />
+                Other
+              </label>
             </div>
           </div>
         </div>
