@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import css from "./dashboard.module.css";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import Box from "@mui/material/Box";
+import Alert from "@mui/material/Alert";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMessage,
