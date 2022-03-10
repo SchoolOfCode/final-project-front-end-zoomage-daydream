@@ -27,6 +27,7 @@ function Dashboard() {
       date_of_birth: "wwww"
     }
   ]);
+  
 
   useEffect(() => {
     const fetchCurrentBookings = async () => {
@@ -63,6 +64,27 @@ function Dashboard() {
   return (
     <div className={css.dashboard}>
       <Header />
+      <Box sx={{ width: "100%" }}>
+        <Collapse in={open}>
+          <Alert
+            action={
+              <IconButton
+                aria-label="close"
+                color="info"
+                size="small"
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <CloseIcon fontSize="inherit" />
+              </IconButton>
+            }
+            sx={{ mb: 2 }}
+          >
+            New feature, coming soon !
+          </Alert>
+        </Collapse>
+      </Box>
       {isAuthenticated && (
         <div className={css.dashboardSect}>
           <div className={css.sidebarContainer}>
@@ -93,8 +115,25 @@ function Dashboard() {
               <span className={css.labelDashboard}> Listings</span>
             </h2>
             <h2 className={css.sidebarComponent}>
-              <FontAwesomeIcon icon={faMessage} className={css.sidebarIcons} />
-              <span className={css.labelDashboard}> Message</span>
+              <FontAwesomeIcon
+                icon={faMessage}
+                className={css.sidebarIcons}
+                disabled={open}
+                variant="outlined"
+                onClick={() => {
+                  setOpen(true);
+                }}
+              />
+              <span
+                className={css.labelDashboard}
+                disabled={open}
+                variant="outlined"
+                onClick={() => {
+                  setOpen(true);
+                }}
+              >
+                Message
+              </span>
             </h2>
 
             <h2 className={css.sidebarComponent}>
