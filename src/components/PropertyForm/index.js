@@ -3,11 +3,13 @@ import { useForm } from "react-hook-form";
 
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
+import {useAuth0} from "@auth0/auth0-react";
 import "./PropertyForm.css";
 import axios from "axios";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 const PropertyForm = () => {
   const [dates, setDates] = useState([{ payload: "" }]);
@@ -15,6 +17,8 @@ const PropertyForm = () => {
   const [endTime, setEndTime] = useState(moment()); // Time Range
   const { register, handleSubmit } = useForm();
   const [uploadedImages, setUploadedImages] = useState("");
+  const {user} = useAuth0()
+  const navigate = useNavigate()
 
   const propertyInfo = (images) => {
     setUploadedImages(images);
@@ -23,7 +27,7 @@ const PropertyForm = () => {
   const datesSelected = dates.map((value) => {
     return `${value.day}-${value.month}-${value.year}`;
   });
-  console.log(datesSelected);
+ 
 
   // sets the start time
   const handleStartTime = (e) => {
@@ -43,6 +47,7 @@ const PropertyForm = () => {
     });
     const {
       additionalinfo,
+      price,
       addressone,
       addresstwo,
       category_of_space,
@@ -69,16 +74,21 @@ const PropertyForm = () => {
       wificheck ? "wifi" : ""
     ];
     const submit = axios.post(`${API_URL}/spaces`, {
+      email: user.email,
       additional_information: additionalinfo,
       address: address,
       purpose_of_space: category_of_space,
       fraction_of_space: fraction_of_space,
       images: images,
       type_of_space: type_of_space,
-      amenities: amenities
+      amenities: amenities,
+      startTime: start,
+      endTime: end,
+      date: datesSelected,
+      hourly_price: price
     });
 
-    console.log(submit);
+    navigate("/dashboard")
   };
 
   return (

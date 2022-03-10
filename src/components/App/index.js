@@ -10,7 +10,7 @@ import "./App.css";
 
 
 function App() {
-  // console.warn = () => {};
+  console.warn = () => {};
   return (
     <div className="App">
       <Routes>
