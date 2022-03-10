@@ -2,12 +2,6 @@ import React, { useState, useEffect } from "react";
 import css from "./dashboard.module.css";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import Box from "@mui/material/Box";
-import Alert from "@mui/material/Alert";
-import IconButton from "@mui/material/IconButton";
-import Collapse from "@mui/material/Collapse";
-import Button from "@mui/material/Button";
-import CloseIcon from "@mui/icons-material/Close";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMessage,
@@ -22,6 +16,7 @@ import ProfileSect from "../../components/ProfileSection";
 import PreviousBookings from "../../components/PreviousBookings";
 import PreviousListings from "../../components/PreviousListings";
 
+
 function Dashboard() {
   const [space, setSpace] = useState([]);
   const { user, isAuthenticated } = useAuth0();
@@ -32,8 +27,6 @@ function Dashboard() {
     }
   ]);
   const [open, setOpen] = React.useState(false);
-  
-  
 
   useEffect(() => {
     const fetchCurrentBookings = async () => {
@@ -70,27 +63,6 @@ function Dashboard() {
   return (
     <div className={css.dashboard}>
       <Header />
-      <Box sx={{ width: "100%" }}>
-        <Collapse in={open}>
-          <Alert
-            action={
-              <IconButton
-                aria-label="close"
-                color="info"
-                size="small"
-                onClick={() => {
-                  setOpen(false);
-                }}
-              >
-                <CloseIcon fontSize="inherit" />
-              </IconButton>
-            }
-            sx={{ mb: 2 }}
-          >
-            New feature, coming soon !
-          </Alert>
-        </Collapse>
-      </Box>
       {isAuthenticated && (
         <div className={css.dashboardSect}>
           <div className={css.sidebarContainer}>
@@ -130,16 +102,7 @@ function Dashboard() {
                   setOpen(true);
                 }}
               />
-              <span
-                className={css.labelDashboard}
-                disabled={open}
-                variant="outlined"
-                onClick={() => {
-                  setOpen(true);
-                }}
-              >
-                Message
-              </span>
+              Message
             </h2>
 
             <h2 className={css.sidebarComponent}>
