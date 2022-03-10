@@ -16,7 +16,6 @@ import ProfileSect from "../../components/ProfileSection";
 import PreviousBookings from "../../components/PreviousBookings";
 import PreviousListings from "../../components/PreviousListings";
 
-
 function Dashboard() {
   const [space, setSpace] = useState([]);
   const { user, isAuthenticated } = useAuth0();
