@@ -10,9 +10,8 @@
   display: inline-grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 8%;
-padding: 0;
-margin:0
-
+  padding: 0;
+  margin: 0;
 }
 
 .block {
@@ -20,71 +19,82 @@ margin:0
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-right:3%;
+  padding-right: 3%;
   padding-left: 3%;
-  margin:0
+  margin: 0;
 }
 
 .locationName {
-  padding: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .locAndFilter {
   display: flex;
   justify-content: space-between;
+  padding: 0.5rem 0.4rem 0.4rem;
 }
 
-.filter {
-  padding: 0.5rem;
+.filterButton {
   font-size: 0.7rem;
+  font-weight: 450rem;
+  border: 2px solid black;
 }
 
 @media only screen and (min-width: 480px) {
   .main {
-  min-height: calc(100vh - 9rem);
-}
+    min-height: calc(100vh - 9rem);
+  }
   .result {
-    
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 20%;
     grid-row-gap: 0rem;
-  
   }
+
   .locationName {
-    font-size: 1rem;
+    font-weight: 450rem;
+    font-size: 1.3rem;
+    font-weight: bold;
   }
+
+  .locAndFilter {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+  }
+  .filterButton {
+  font-size: 1.2rem;
+  font-weight: 450rem;
+}
 }
 @media only screen and (min-width: 768px) {
-    .main {
-  min-height: calc(100vh - 14rem);
-}
+  .main {
+    min-height: calc(100vh - 14rem);
+  }
   .result {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 4%;
     grid-row-gap: 0rem;
-   
   }
-  .locationName {
-    font-size: 1rem;
+ .locationName {
+    font-size: 1.5rem;
+    font-weight:450;
   }
+
+  .locAndFilter {
+    padding: 0.5rem 1rem 1rem;
+  }
+  .filterButton {
+  font-size: 1.4rem;
+  font-weight: 450rem;
 }
-
-
-
-
+}
 
 @media only screen and (min-width: 1024px) {
   .result {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap:6% ;
+    grid-column-gap: 6%;
     grid-row-gap: rem;
   }
 }
-
-
-
-
-

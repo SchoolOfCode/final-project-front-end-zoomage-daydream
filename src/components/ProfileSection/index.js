@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import css from "./profilesection.module.css";
 
-
-import Card from "../../components/Card";
+import HomeCard from "../../Pages/Home/homeCards.js";
 import Profile from "../../components/Profile";
 
 import API_URL from "../../config";
@@ -10,12 +9,14 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 function ProfileSect() {
   const [space, setSpace] = useState([]);
+  const [listings, setListing] = useState([]);
   const { user, isAuthenticated } = useAuth0();
   const [users, setUsers] = useState([
     {
       date_of_birth: "wwww"
     }
   ]);
+  const email = user.email;
 
   useEffect(() => {
     const fetchCurrentBookings = async () => {
@@ -26,6 +27,22 @@ function ProfileSect() {
     };
     fetchCurrentBookings();
   }, []);
+console.log(email)
+  useEffect(() => {
+    const fetchCurrentListings = async () => {
+      const result = await fetch(`${API_URL}/spaces/?email=${email}`);
+      const data = await result.json();
+      const listingArray = data.payload;
+      const sortedListingArray = listingArray.sort((a, b) => {
+        return b.id - a.id;
+      });
+      console.log(sortedListingArray)
+      setListing(sortedListingArray);
+    };
+    fetchCurrentListings();
+  }, []);
+
+  console.log(listings);
 
   useEffect(() => {
     if (isAuthenticated === true) {
@@ -61,29 +78,40 @@ function ProfileSect() {
             <h2 className={css.current}>Current Booking</h2>
             {space.map((space) => {
               return (
-                <Card
+                <HomeCard
                   image={space.images[0]}
                   address={space.address}
                   starttime={space.starttime}
                   price={space.hourly_price}
                   key={space.id}
+                  id={space.id}
                 />
               );
             })}
           </div>
+
           <div className={css.currentBooking}>
             <h2 className={css.current}>Current Listing</h2>
-            {space.map((space) => {
-              return (
-                <Card
-                  image={space.images[0]}
-                  address={space.address}
-                  starttime={space.starttime}
-                  price={space.hourly_price}
-                  key={space.id}
-                />
-              );
-            })}
+            {listings.length===0&& (
+              <div>
+                <p className={css.listingProfile}>
+                  You currently do not have any listing
+                </p>
+              </div>
+            )}
+            {listings.length>0 &&
+              listings.slice(0,1).map((space) => {
+                return (
+                  <HomeCard
+                    image={space.images[0]}
+                    address={space.address}
+                    starttime={space.starttime}
+                    price={space.hourly_price}
+                    key={space.id}
+                    id={space.id}
+                  />
+                );
+              })}
           </div>
         </div>
       )}

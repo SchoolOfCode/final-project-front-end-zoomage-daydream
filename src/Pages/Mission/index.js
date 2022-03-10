@@ -11,7 +11,7 @@ const Mission = () => {
       <div className={css.ourMission}>
         <h1>Our Mission</h1>
         <div className={css.border}>
-          <h3>
+          <h3 className={css.innerText}>
             <div>
               Thank you for your interest in our Space App. <br />
               This project is created by team of six people following the Agile

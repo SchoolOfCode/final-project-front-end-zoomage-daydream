@@ -6,8 +6,7 @@ import TimeRange from "react-time-range";
 import moment from "moment";
 import { useState } from "react";
 
-export const ReserveForm = ({ price, user}) => {
-
+export const ReserveForm = ({ price, user }) => {
   const [dates, setDates] = useState([{ payload: "" }]); // store dates input into a state
   const [startTime, setStartTime] = useState(moment()); // Time Range
   const [endTime, setEndTime] = useState(moment()); // Time Range
@@ -74,14 +73,19 @@ export const ReserveForm = ({ price, user}) => {
       <div className={css.reserveBottom}>
         <div className={css.selectSection}>
           <label className={css.people}>No of People</label>
-          <select className={css.sect}>
+          <select
+            className={`${css.sect} ${css.speople}
+          `}
+          >
             <option>1</option>
             <option>2</option>
             <option>3+</option>
           </select>
         </div>
         <div className={css.priceSection}>
-          <p className={css.sect}>
+          <p
+            className={css.sect}
+          >
             £{price} x {hourDifference}hrs x {numberOfDays}days
           </p>
           <p className={css.sect}>£{totalPrice}</p>

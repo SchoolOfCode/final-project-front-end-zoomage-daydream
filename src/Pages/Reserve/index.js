@@ -36,7 +36,7 @@ const Reserve = () => {
         )}
       </div>
       <div>
-        <div className={css.CarouselImage}>
+        <div className={css.carouselImage}>
           {space && <CarouselImage images={spaces[0].images} />}
         </div>
       </div>
@@ -47,14 +47,24 @@ const Reserve = () => {
             {space && (
               <div className={css.details}>
                 {" "}
-                <p>Type of space: {space.type_of_space}</p>
-                <p>Fraction of space: {space.fraction_of_space}</p>
-                <p>
-                  Check in: Up to fifteen minutes before your allocated start
-                  time
+                <p className={css.eachDetail}>
+                  <span className={css.eachDetailLabel}>Type of space:</span>{" "}
+                  {space.type_of_space}{" "}
                 </p>
-                <p>Cancellation: At least 24 hours notice</p>
-                <p>Ring the doorbell upon arrival</p>
+                <p className={css.eachDetail}>
+                  <span className={css.eachDetailLabel}>
+                    Fraction of space:
+                  </span>{" "}
+                  {space.fraction_of_space}
+                </p>
+                <p className={css.eachDetail}>
+                  <span className={css.eachDetailLabel}>Check in:</span> Up to
+                  fifteen minutes before your allocated start time
+                </p>
+                <p className={css.eachDetail}>
+                  <span className={css.eachDetailLabel}>Cancellation:</span> At least 24 hours notice
+                </p>
+                <p className={css.eachDetail}>Ring the doorbell upon arrival</p>
               </div>
             )}{" "}
           </div>
@@ -70,7 +80,7 @@ const Reserve = () => {
             {space && (
               <div className={css.host}>
                 {" "}
-                <p>Our host says "{space.additional_information}"</p>
+                <p className={css.hostInformation}>Our host says "{space.additional_information}"</p>
               </div>
             )}
           </div>

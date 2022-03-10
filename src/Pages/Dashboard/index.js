@@ -10,44 +10,16 @@ import {
   faGear
 } from "@fortawesome/free-solid-svg-icons";
 
-import API_URL from "../../config";
+
 import { useAuth0 } from "@auth0/auth0-react";
 import ProfileSect from "../../components/ProfileSection";
 import PreviousBookings from "../../components/PreviousBookings";
 import PreviousListings from "../../components/PreviousListings";
 
 function Dashboard() {
-  const [space, setSpace] = useState([]);
   const { user, isAuthenticated } = useAuth0();
   const [current, setCurrent] = useState("profile");
-  const [users, setUsers] = useState([
-    {
-      date_of_birth: "wwww"
-    }
-  ]);
-
-
-  useEffect(() => {
-    const fetchCurrentBookings = async () => {
-      const result = await fetch(`${API_URL}/spaces/`);
-      const data = await result.json();
-      const array = data.payload.slice(0, 1);
-      setSpace(array);
-    };
-    fetchCurrentBookings();
-  }, []);
-
-  useEffect(() => {
-    if (isAuthenticated === true) {
-      const fetchProfileData = async () => {
-        const url = `${API_URL}/users/?email=${user.email}`;
-        const res = await fetch(url);
-        const data = await res.json();
-        setUsers(data.payload);
-      };
-      fetchProfileData();
-    }
-  }, []);
+  const [alertMessage, setAlertMessage] = useState(false);
 
   const profile = () => {
     setCurrent("profile");
@@ -59,9 +31,24 @@ function Dashboard() {
     setCurrent("listings");
   };
 
+  const alert = () => {
+    setAlertMessage(true);
+  };
+  const closeAlert = () => {
+    setAlertMessage(false);
+  };
+
   return (
     <div className={css.dashboard}>
       <Header />
+      {alertMessage && (
+        <div className={css.alertMessage}>
+          <p>New feature coming soon!</p>
+          <button className={css.closeAlert} onClick={closeAlert}>
+            x
+          </button>
+        </div>
+      )}
       {isAuthenticated && (
         <div className={css.dashboardSect}>
           <div className={css.sidebarContainer}>
@@ -87,22 +74,21 @@ function Dashboard() {
               <FontAwesomeIcon
                 onClick={listings}
                 icon={faCalendarCheck}
-                className={css.sidebarIcons}
+                className={css. sidebarIcons}
               />
               <span className={css.labelDashboard}> Listings</span>
             </h2>
-            <h2 className={css.sidebarComponent}>
+            <h2 className={css.sidebarComponent} onClick={alert}>
               <FontAwesomeIcon
                 icon={faMessage}
                 className={css.sidebarIcons}
-        
-              
+                onClick={alert}
               />
-              Message
+             <span className={css.labelDashboard}>  Message</span>
             </h2>
 
-            <h2 className={css.sidebarComponent}>
-              <FontAwesomeIcon icon={faGear} className={css.sidebarIcons} />
+            <h2 className={css.sidebarComponent} onClick={alert}>
+              <FontAwesomeIcon icon={faGear} className={css.sidebarIcons} onClick={alert}/>
               <span className={css.labelDashboard}> Settings</span>
             </h2>
           </div>

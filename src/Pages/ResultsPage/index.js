@@ -47,7 +47,7 @@ const Result = () => {
             Results found for {results[0].address.split(" ")[3].slice(0, 10)}
           </p>
           <div className={css.filter}>
-            <select onChange={sortHighToLow}>
+            <select onChange={sortHighToLow} className={css.filterButton}>
               <option>filter</option>
               <option value="low">Low to high</option>
               <option value="high">High to Low</option>

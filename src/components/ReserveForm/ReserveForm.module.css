@@ -39,16 +39,19 @@ div #react-time-range {
 }
 
 .selectSection {
-margin-left: 1.8rem;
+  margin-left: 1.4rem;
 }
 
-.priceSection{
-  margin-left: 2rem;
+.priceSection {
+  margin-left: 1.3rem;
 }
-.sect{
+.sect {
   margin-bottom: 0.6rem;
 }
 
+.speople{
+  border: 2px solid black;
+}
 
 .label {
   font-family: "Philosopher", sans-serif;
@@ -60,6 +63,7 @@ margin-left: 1.8rem;
   border: 2px solid black;
   margin: 1rem;
   line-height: 1.5rem;
+  width:20rem;
 }
 
 .button {
@@ -73,9 +77,34 @@ margin-left: 1.8rem;
 }
 .people {
   margin-right: 1rem;
+
 }
 
 .reserveBottom {
   margin-left: 1rem;
 }
 
+/* input.rmdp-input {
+  border: 2px solid black;
+} */
+
+@media only screen and (min-width:1500px){
+  .reserveSpace {
+  border: 2px solid black;
+  margin: 1rem;
+  line-height: 1.5rem;
+  width:25rem;
+}
+.date {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 0.8rem;
+  margin-right: 4rem;
+}
+
+.price {
+  margin-right: 4rem;
+ 
+}
+
+}

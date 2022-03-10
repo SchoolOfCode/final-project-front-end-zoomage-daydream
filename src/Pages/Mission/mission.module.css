@@ -23,7 +23,7 @@ h1 {
   padding-top: 40px; /* between paragraphs */
 }
 
-h3 {
+.innerText{
   color: rgb(10, 10, 10);
   text-align: center;
   line-height: 32px; /* within paragraph */
