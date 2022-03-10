@@ -7,6 +7,7 @@ import moment from "moment";
 import API_URL from "../../config";
 import background from "../../images/background.jpg";
 import cardPic1 from "../../images/cardPic1.jpg";
+
 import { useNavigate } from "react-router-dom";
 
 const SearchForm = () => {
@@ -70,21 +71,17 @@ const SearchForm = () => {
     }
   }, [form]);
 
-  // console.log(form);
-  // const imageChange = () => {
-  //   if (bgImage === 1) {
-  //     setBgImage(2);
-  //     setUrl(cardPic1);
-  //   } else if (bgImage === 2) {
-  //     setUrl(background);
-  //     setBgImage(1);
-  //   }
-  // };
-  // setInterval(imageChange, 10000);
+ 
+
+
+
 
   return (
-    <div className="formBackground" style={{ backgroundImage: url1 }}>
-      <form id="fbackground"className="form" onSubmit={handleSubmit(onSubmit)}>
+    <div
+      className="formBackground"
+      
+    >
+      <form id="fbackground" className="form" onSubmit={handleSubmit(onSubmit)}>
         <div>
           {" "}
           <h2 className="formHeading">Reserve Your Space</h2>
@@ -93,7 +90,6 @@ const SearchForm = () => {
           <label className="label"> Location: </label>
           <input
             id="location"
-       
             className="field"
             type="text"
             placeholder="City"
@@ -105,7 +101,7 @@ const SearchForm = () => {
           <label className="label">Dates:</label>
           <div className="dateContainer">
             <DatePicker
-            id="dates"
+              id="dates"
               value={dates}
               onChange={setDates}
               placeholder="Choose dates"
@@ -117,7 +113,7 @@ const SearchForm = () => {
 
         <div className="times">
           <TimeRange
-          id="time"
+            id="time"
             startMoment={startTime}
             endMoment={endTime}
             onStartTimeChange={handleStartTime}
@@ -143,7 +139,7 @@ const SearchForm = () => {
         </div>
         <div className="submitSection">
           <input
-          id="submit"
+            id="submit"
             type="submit"
             className="submit"
             onClick={() => {
