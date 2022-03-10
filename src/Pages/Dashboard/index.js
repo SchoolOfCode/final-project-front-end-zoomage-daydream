@@ -25,7 +25,7 @@ function Dashboard() {
       date_of_birth: "wwww"
     }
   ]);
-  const [open, setOpen] = React.useState(false);
+
 
   useEffect(() => {
     const fetchCurrentBookings = async () => {
@@ -95,11 +95,8 @@ function Dashboard() {
               <FontAwesomeIcon
                 icon={faMessage}
                 className={css.sidebarIcons}
-                disabled={open}
-                variant="outlined"
-                onClick={() => {
-                  setOpen(true);
-                }}
+        
+              
               />
               Message
             </h2>

@@ -64,6 +64,7 @@
   border-radius: 0.3rem;
   margin-left: 2.2rem;
   display: flex;
+  border: 2px solid black;
 }
 
 .label {
@@ -75,12 +76,12 @@
 .labelSpace {
   font-family: "Philosopher", sans-serif;
   font-size: 1rem;
-   font-weight: bold;
+  font-weight: bold;
 }
 .field {
   width: 9.5rem;
   height: 1.4rem;
-  border: 1px solid rgb(228, 226, 226);
+  border: 1px solid black;
   border-radius: 0.3rem;
 }
 
@@ -105,6 +106,7 @@ div #react-time-range select {
   padding: 0.2rem;
   font-size: x-small;
   margin-left: 0.6rem;
+  border: 2px solid black;
 }
 
 input.rmdp-input {
@@ -123,14 +125,15 @@ input.rmdp-input {
 
 .submit {
   width: 4rem;
-   font-weight: bold;
+  font-weight: bold;
+  border: 2px solid black;
 }
 
 @media only screen and (min-width: 641px) {
   .form {
     background-color: rgba(242, 242, 247);
-    width: 28rem;
-    height: 24rem;
+    width: 30rem;
+    height: 27rem;
     margin: 2rem 2rem 2rem 1rem;
     border-radius: 5%;
   }
@@ -155,6 +158,7 @@ input.rmdp-input {
   div #react-time-range select {
     padding: 0.2rem;
     font-size: large;
+    border: 2px solid black;
   }
   div #react-time-range {
     margin-bottom: 1rem;
@@ -167,8 +171,8 @@ input.rmdp-input {
 
   .field {
     width: 11rem;
-    height: 1.8rem;
-
+    height: 2rem;
+border: 2px solid black;
     border-radius: 0.3rem;
   }
 
@@ -201,14 +205,13 @@ input.rmdp-input {
     height: 1.8rem;
     border-radius: 0.3rem;
     margin-left: 3rem;
+    border: 2px solid black;
   }
 }
 
 @media only screen and (min-width: 1008px) {
   .form {
-
     margin: 4rem 0rem 0rem 4rem;
-    
   }
   .formBackground {
     height: 80vh;
@@ -230,6 +233,7 @@ input.rmdp-input {
   div #react-time-range select {
     padding: 0.2rem;
     font-size: large;
+    border: 2px solid black;
   }
   div #react-time-range {
     margin-bottom: 1rem;
@@ -242,16 +246,17 @@ input.rmdp-input {
 
   .field {
     width: 11rem;
-    height: 1.8rem;
-
+    height: 2rem;
+    border: 2px solid black;
     border-radius: 0.3rem;
+    font-size: 1rem;
   }
 
   input.rmdp-input {
-    height: 1.8rem;
+    height: 2rem;
     width: 11rem;
     border: 2px solid black;
-    font-weight: bold;
+    font-size: 1rem;
   }
   .labelSpace {
     font-size: 1.5rem;
@@ -260,7 +265,7 @@ input.rmdp-input {
 
   .spaceType {
     margin-bottom: 0.4rem;
-    margin-left: 3.5rem;
+    margin-left: 4.4rem;
   }
 
   .submitSection {
@@ -278,5 +283,6 @@ input.rmdp-input {
     height: 1.8rem;
     border-radius: 0.3rem;
     margin-left: 3rem;
+    border: 2px solid black;
   }
 }
