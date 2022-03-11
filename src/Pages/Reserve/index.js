@@ -62,7 +62,8 @@ const Reserve = () => {
                   fifteen minutes before your allocated start time
                 </p>
                 <p className={css.eachDetail}>
-                  <span className={css.eachDetailLabel}>Cancellation:</span> At least 24 hours notice
+                  <span className={css.eachDetailLabel}>Cancellation:</span> At
+                  least 24 hours notice
                 </p>
                 <p className={css.eachDetail}>Ring the doorbell upon arrival</p>
               </div>
@@ -80,7 +81,9 @@ const Reserve = () => {
             {space && (
               <div className={css.host}>
                 {" "}
-                <p className={css.hostInformation}>Our host says "{space.additional_information}"</p>
+                <p className={css.hostInformation}>
+                  Our host says "{space.additional_information}"
+                </p>
               </div>
             )}
           </div>
@@ -93,9 +96,7 @@ const Reserve = () => {
                 <ReserveForm price={space.hourly_price} user={user} />
               </div>
             ) : (
-              <p>
-                Please <LoginButtonReserve /> to reserve the space
-              </p>
+              <LoginButtonReserve />
             ))}
         </div>
       </div>

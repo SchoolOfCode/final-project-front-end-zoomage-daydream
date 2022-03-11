@@ -1,15 +1,18 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import React, { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+
 import API_URL from "../../config";
 import Card from "../Card";
-import css from "./previousbookings.module.css"
+// import css from "./previousbookings.module.css"
 
+// previous booking component
 const PreviousBookings = () => {
+  // the bookings fetched from the API is put into a state each time
   const [bookings, setBookings] = useState([]);
 
+  // isAuthenticated and user is destructured from Auth0 each time
   const { isAuthenticated, user } = useAuth0();
-  const email = user.email;
+  // const email = user.email;
 
   useEffect(() => {
     if (isAuthenticated === true) {

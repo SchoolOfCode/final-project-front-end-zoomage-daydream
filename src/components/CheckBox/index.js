@@ -1,5 +1,7 @@
 import css from "./CheckBox.module.css";
 
+
+// check box component
 const CheckBox = () => {
   return (
     <div className={css.amenitiesContainer}>

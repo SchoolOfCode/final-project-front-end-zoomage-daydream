@@ -1,6 +1,3 @@
-import React from "react";
-
-// import { SocialIcon } from "react-social-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTwitter,
@@ -11,6 +8,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import css from "./Footer.module.css";
 
+// footer component
 const Footer = () => {
   return (
     <footer className={css.footerContainer}>

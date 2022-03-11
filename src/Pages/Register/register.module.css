@@ -1,4 +1,4 @@
-.mainContainer {
+@media only screen and (min-width: 1008px) {.mainContainer {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
@@ -70,7 +70,7 @@
   margin-top: 2rem;
 }
 
-@media only screen and (min-width: 1008px) {
+
   .img {
     width: 40rem;
     margin-top: 3rem;

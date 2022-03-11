@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./searchform.css";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import DatePicker from "react-multi-date-picker";
 import TimeRange from "react-time-range";
 import moment from "moment";
 import API_URL from "../../config";
-import background from "../../images/background.jpg";
-import cardPic1 from "../../images/cardPic1.jpg";
+
 
 import { useNavigate } from "react-router-dom";
 
@@ -18,8 +17,6 @@ const SearchForm = () => {
   const [startTime, setStartTime] = useState(moment()); // Time Range
   const [endTime, setEndTime] = useState(moment()); // Time Range
   const navigate = useNavigate(); // use navigate to navigate to a diffeerent page
-  const [bgImage, setBgImage] = useState(1);
-  const [url1, setUrl] = useState(background);
   const [data1, setData] = useState(true);
 
   const firstMount = useRef(false); // useRef used to prevent useEffect from running on first mount.

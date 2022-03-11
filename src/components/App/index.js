@@ -1,4 +1,6 @@
 import { Routes, Route } from "react-router-dom";
+
+
 import Mission from "../../Pages/Mission";
 import Home from "../../Pages/Home";
 import Result from "../../Pages/ResultsPage";
@@ -8,11 +10,12 @@ import Reserve from "../../Pages/Reserve";
 import PropertyDetails from "../../Pages/PropertyDetails";
 import "./App.css";
 
-
+// The App component
 function App() {
   console.warn = () => {};
   return (
     <div className="App">
+    {/* All routes for each page. Each component was passed into the routes as an element */}
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path="mission" element={<Mission />} />
