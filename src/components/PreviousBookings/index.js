@@ -12,7 +12,7 @@ const PreviousBookings = () => {
 
   // isAuthenticated and user is destructured from Auth0 each time
   const { isAuthenticated, user } = useAuth0();
-  // const email = user.email;
+  const email = user.email;
 
   useEffect(() => {
     if (isAuthenticated === true) {
@@ -27,11 +27,9 @@ const PreviousBookings = () => {
   }, []);
 
   console.log(bookings);
-  return bookings.slice(0,2).map((item) => {
+  return bookings.slice(0, 2).map((item) => {
     return (
       <div>
-
-     
         <Card
           image={item.images[0]}
           address={item.address}
@@ -43,10 +41,6 @@ const PreviousBookings = () => {
       </div>
     );
   });
-
-
 };
 
 export default PreviousBookings;
-
-
