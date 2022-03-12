@@ -85,7 +85,7 @@ const PropertyForm = () => {
       startTime: start,
       endTime: end,
       date: datesSelected,
-      hourly_price: price
+      hourly_price: Number(price)
     });
 
     navigate("/dashboard")
