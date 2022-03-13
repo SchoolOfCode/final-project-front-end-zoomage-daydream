@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 import ImageUploader from "../../components/ImageUploader";
 import API_URL from "../../config";
-import {useAuth0} from "@auth0/auth0-react";
+import { useAuth0 } from "@auth0/auth0-react";
 import "./PropertyForm.css";
 import axios from "axios";
 import DatePicker from "react-multi-date-picker";
@@ -17,8 +17,8 @@ const PropertyForm = () => {
   const [endTime, setEndTime] = useState(moment()); // Time Range
   const { register, handleSubmit } = useForm();
   const [uploadedImages, setUploadedImages] = useState("");
-  const {user} = useAuth0()
-  const navigate = useNavigate()
+  const { user } = useAuth0();
+  const navigate = useNavigate();
 
   const propertyInfo = (images) => {
     setUploadedImages(images);
@@ -27,7 +27,6 @@ const PropertyForm = () => {
   const datesSelected = dates.map((value) => {
     return `${value.day}-${value.month}-${value.year}`;
   });
- 
 
   // sets the start time
   const handleStartTime = (e) => {
@@ -63,33 +62,55 @@ const PropertyForm = () => {
       type_of_space,
       wificheck
     } = propertyDetailsData;
-    console.log("hi", propertyDetailsData, start, end, datesSelected);
 
     const address = `${addressone}, ${addresstwo}, ${city}, ${region}, ${postcode}`;
-    const amenities = [
-      fridgecheck ? "fridge" : "",
-      microwavecheck ? "microwave" : "",
-      showercheck ? "shower" : "",
-      standingdeskcheck ? "standingdesk" : "",
-      wificheck ? "wifi" : ""
-    ];
-    const submit = axios.post(`${API_URL}/spaces`, {
-      email: user.email,
-      additional_information: additionalinfo,
-      address: address,
-      purpose_of_space: category_of_space,
-      fraction_of_space: fraction_of_space,
-      images: images,
-      type_of_space: type_of_space,
-      amenities: amenities,
-      startTime: start,
-      endTime: end,
-      date: datesSelected,
-      hourly_price: Number(price)
-    });
+    const amenities = [];
 
-    navigate("/dashboard")
+  
+    if (fridgecheck) {
+      amenities.push("Fridge");
+    }
+    if (microwavecheck) {
+      amenities.push("microwave");
+    }
+    if (showercheck) {
+      amenities.push("shower");
+    }
+    if (standingdeskcheck) {
+      amenities.push("standingdesk");
+    }
+    if (wificheck) {
+      amenities.push("Wifi");
+    }
+
+ 
+
+    const post = await fetch(`http://localhost:5001/spaces`, {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: user.email,
+        additional_information: additionalinfo,
+        address: address,
+        purpose_of_space: category_of_space,
+        fraction_of_space: fraction_of_space,
+        images: images,
+        type_of_space: type_of_space,
+        amenities: amenities,
+        startTime: start,
+        endTime: end,
+        date: datesSelected,
+        hourly_price: Number(price)
+      })
+    });
+    const dat = await post.json();
+
+    // navigate("/dashboard")
   };
+
 
   return (
     <>
