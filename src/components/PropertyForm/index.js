@@ -108,7 +108,7 @@ const PropertyForm = () => {
     });
     const dat = await post.json();
 
-    // navigate("/dashboard")
+    navigate("/dashboard")
   };
 
 
