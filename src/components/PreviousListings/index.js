@@ -17,7 +17,6 @@ const PreviousListings = () => {
         const url = `${API_URL}/spaces/?email=${email}`;
         const res = await fetch(url);
         const data = await res.json();
-        console.log("he", data.payload);
         setBookings(data.payload);
       };
       fetchProfileData();

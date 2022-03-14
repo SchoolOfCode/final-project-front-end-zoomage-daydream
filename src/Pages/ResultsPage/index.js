@@ -34,8 +34,7 @@ const Result = () => {
     }
   };
 
-  console.log(lowToHigh[0]);
-  console.log(results[0]);
+
 
   return (
     <div className={css.mainContainer}>
