@@ -6,7 +6,6 @@ import TimeRange from "react-time-range";
 import moment from "moment";
 import API_URL from "../../config";
 
-
 import { useNavigate } from "react-router-dom";
 
 const SearchForm = () => {
@@ -48,7 +47,7 @@ const SearchForm = () => {
     setForm(obj);
   };
 
-  const { location, type_of_space } = form;
+  const { location, purpose_of_space } = form;
 
   useEffect(() => {
     if (firstMount.current === false) {
@@ -58,7 +57,7 @@ const SearchForm = () => {
     if (firstMount.current && data1 === false) {
       const fetchData = async () => {
         const result = await fetch(
-          `${API_URL}/spaces/?address=${location}&type_of_space=${type_of_space}`
+          `${API_URL}/spaces/?address=${location}&purpose_of_space=${purpose_of_space}`
         );
         const data = await result.json();
         navigate("/result", { state: data });
@@ -68,16 +67,8 @@ const SearchForm = () => {
     }
   }, [form]);
 
- 
-
-
-
-
   return (
-    <div
-      className="formBackground"
-      
-    >
+    <div className="formBackground">
       <form id="fbackground" className="form" onSubmit={handleSubmit(onSubmit)}>
         <div>
           {" "}
@@ -110,9 +101,8 @@ const SearchForm = () => {
 
         <div className="times">
           <TimeRange
-          id="time"
+            id="time"
             className="timerange"
-
             startMoment={startTime}
             endMoment={endTime}
             onStartTimeChange={handleStartTime}
@@ -124,16 +114,17 @@ const SearchForm = () => {
           <label className="labelSpace"> Type of space:</label>
 
           <select
-            name="type_of_space"
+            name="purpose_of_space"
             id="spaces"
             className="spaces"
-            {...register("type_of_space")}
+            {...register("purpose_of_space")}
             required
           >
             <option>Select</option>
-            <option value="flat">Apartment/Flat</option>
-            <option value="house">House</option>
-            <option value="other">Other</option>
+            <option value="remote">Remote Working</option>
+            <option value="gym">Gym Space</option>
+            <option value="music">Music Space</option>
+            <option value="kitchen">Kitchen</option>
           </select>
         </div>
         <div className="submitSection">
