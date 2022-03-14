@@ -1,17 +1,17 @@
 .ourMission {
-min-height: calc(100vh - 9rem);
+  min-height: calc(100vh - 9rem);
 }
 
 @media only screen and (min-width: 641px) {
-.ourMission {
-min-height: calc(100vh - 11rem);
-}
+  .ourMission {
+    min-height: calc(100vh - 11rem);
+  }
 }
 
 @media only screen and (min-width: 1008px) {
-.ourMission {
-min-height: calc(100vh - 14rem);
-}
+  .ourMission {
+    min-height: calc(100vh - 14rem);
+  }
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 {
   padding-top: 40px; /* between paragraphs */
 }
 
-.innerText{
+.innerText {
   color: rgb(10, 10, 10);
   text-align: center;
   line-height: 32px; /* within paragraph */
@@ -46,4 +46,8 @@ text {
   padding: 1rem;
   outline-offset: 0.5rem;
   margin-bottom: 60px;
+}
+.mission {
+  font-size: 2rem;
+  line-height: 3rem;
 }
