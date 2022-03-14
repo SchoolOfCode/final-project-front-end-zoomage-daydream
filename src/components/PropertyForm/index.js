@@ -85,7 +85,7 @@ const PropertyForm = () => {
 
  
 
-    const post = await fetch(`${API_URL}/spaces`, {
+    const post = await fetch(`http://localhost:5001/spaces`, {
       method: "POST",
 
       headers: {
