@@ -27,7 +27,7 @@ function ProfileSect() {
     };
     fetchCurrentBookings();
   }, []);
-console.log(email)
+
   useEffect(() => {
     const fetchCurrentListings = async () => {
       const result = await fetch(`${API_URL}/spaces/?email=${email}`);
@@ -36,13 +36,12 @@ console.log(email)
       const sortedListingArray = listingArray.sort((a, b) => {
         return b.id - a.id;
       });
-      console.log(sortedListingArray)
+
       setListing(sortedListingArray);
     };
     fetchCurrentListings();
   }, []);
 
-  console.log(listings);
 
   useEffect(() => {
     if (isAuthenticated === true) {
@@ -76,31 +75,24 @@ console.log(email)
           </div>
           <div className={css.currentBooking}>
             <h2 className={css.current}>Current Booking</h2>
-            {space.map((space) => {
-              return (
-                <HomeCard
-                  image={space.images[0]}
-                  address={space.address}
-                  starttime={space.starttime}
-                  price={space.hourly_price}
-                  key={space.id}
-                  id={space.id}
-                />
-              );
-            })}
+            <div>
+              <p className={css.listingProfile}>
+                You currently do not have any bookings
+              </p>
+            </div>
           </div>
 
           <div className={css.currentBooking}>
             <h2 className={css.current}>Current Listing</h2>
-            {listings.length===0&& (
+            {listings.length === 0 && (
               <div>
                 <p className={css.listingProfile}>
                   You currently do not have any listing
                 </p>
               </div>
             )}
-            {listings.length>0 &&
-              listings.slice(0,1).map((space) => {
+            {listings.length > 0 &&
+              listings.slice(0, 1).map((space) => {
                 return (
                   <HomeCard
                     image={space.images[0]}

@@ -6,7 +6,6 @@ function HomeCard({ image, address, starttime, id, price }) {
   const navigate = useNavigate();
   const handleClick = (e) => {
     const id = e.target.id;
-    console.log(id)
     navigate("/reserve", { state: id });
   };
 

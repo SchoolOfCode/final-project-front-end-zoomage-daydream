@@ -26,21 +26,12 @@ const PreviousBookings = () => {
     }
   }, []);
 
-  console.log(bookings);
-  return bookings.slice(0, 2).map((item) => {
-    return (
-      <div>
-        <Card
-          image={item.images[0]}
-          address={item.address}
-          starttime={item.starttime}
-          price={item.hourly_price}
-          key={item.id}
-          id={item.id}
-        />
-      </div>
-    );
-  });
+  
+  return (
+    <div>
+      <p className="listingsText">You currently do not have any listings</p>
+    </div>
+  );
 };
 
 export default PreviousBookings;
