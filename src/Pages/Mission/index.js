@@ -26,7 +26,7 @@ const Mission = () => {
               most local and convenient option, thereby reducing travel costs
               and so their carbon footprint. Space also enables older people who
               may be lonely or isolated to welcome some company into their
-              residence. Our aim is to bring people together.
+              residence.
             </div>
             <br></br>
             <div className={css.mission}>
