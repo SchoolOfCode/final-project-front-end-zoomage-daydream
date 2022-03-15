@@ -21,6 +21,8 @@ const Reserve = () => {
   const user = users[0];
   const { isAuthenticated } = useAuth0();
 
+  console.log(user)
+
   return (
     <div className={css.reserveContainer}>
       <Header />
@@ -89,11 +91,11 @@ const Reserve = () => {
           </div>
         </div>
         <div>
-          {
+          {user&&
             space &&
             (isAuthenticated ? (
               <div>
-                <ReserveForm price={space.hourly_price} user={user} />
+                {<ReserveForm price={space.hourly_price} user={user} />}
               </div>
             ) : (
               <LoginButtonReserve />
