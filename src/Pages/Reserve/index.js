@@ -13,15 +13,16 @@ import CarouselImage from "../../components/Carousel";
 import LoginButtonReserve from "../../components/LoginReserve";
 
 const Reserve = () => {
+  const random = Math.floor(Math.random() * 15);
   const location = useLocation();
   const id = location.state;
   const [spaces] = useFetch(`${API_URL}/spaces/${id}`); //custom hook fetch
   const space = spaces[0];
-  const [users] = useFetch(`${API_URL}/users/${id}`); //custom hook fetch
+  const [users] = useFetch(`${API_URL}/users/${random}`); //custom hook fetch
   const user = users[0];
   const { isAuthenticated } = useAuth0();
 
-  console.log(user)
+  console.log(user);
 
   return (
     <div className={css.reserveContainer}>
@@ -91,7 +92,7 @@ const Reserve = () => {
           </div>
         </div>
         <div>
-          {user&&
+          {user &&
             space &&
             (isAuthenticated ? (
               <div>
