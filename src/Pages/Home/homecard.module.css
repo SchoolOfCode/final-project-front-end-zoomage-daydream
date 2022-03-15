@@ -5,7 +5,7 @@
 .image {
   width: 10rem;
   height: 10rem;
-    border-radius: 0.55rem 0.5rem 0 0;
+  border-radius: 0.55rem 0.5rem 0 0;
 }
 .details {
   border: 2px solid black;
@@ -15,7 +15,7 @@
   text-align: center;
   padding-top: 1rem;
   font-size: small;
-    border-radius: 0 0 0.5rem 0.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .card:hover {
@@ -30,8 +30,6 @@
 
 .card {
   box-shadow: 3px 5px rgba(172, 168, 168, 0.8);
-
-
 }
 
 @media only screen and (min-width: 480px) {
@@ -68,7 +66,7 @@
   }
   .details {
     width: 22rem;
-    height: 10rem;
+    height: 11rem;
     font-size: 1.2rem;
   }
 }
