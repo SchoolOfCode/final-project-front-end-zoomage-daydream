@@ -20,7 +20,7 @@ const Reserve = () => {
   const [users] = useFetch(`${API_URL}/users/${id}`); //custom hook fetch
   const user = users[0];
   const { isAuthenticated } = useAuth0();
-
+console.log("s",space)
   return (
     <div className={css.reserveContainer}>
       <Header />
@@ -89,7 +89,7 @@ const Reserve = () => {
           </div>
         </div>
         <div>
-          {user &&
+          {
             space &&
             (isAuthenticated ? (
               <div>
