@@ -26,10 +26,9 @@ const PreviousBookings = () => {
     }
   }, []);
 
-  
   return (
     <div>
-      <p className="listingsText">You currently do not have any listings</p>
+      <p className="listingsText">You currently do not have any bookings</p>
     </div>
   );
 };

@@ -10,7 +10,6 @@ import {
   faGear
 } from "@fortawesome/free-solid-svg-icons";
 
-
 import { useAuth0 } from "@auth0/auth0-react";
 import ProfileSect from "../../components/ProfileSection";
 import PreviousBookings from "../../components/PreviousBookings";
@@ -74,7 +73,7 @@ function Dashboard() {
               <FontAwesomeIcon
                 onClick={listings}
                 icon={faCalendarCheck}
-                className={css. sidebarIcons}
+                className={css.sidebarIcons}
               />
               <span className={css.labelDashboard}> Listings</span>
             </h2>
@@ -84,11 +83,15 @@ function Dashboard() {
                 className={css.sidebarIcons}
                 onClick={alert}
               />
-             <span className={css.labelDashboard}>  Message</span>
+              <span className={css.labelDashboard}> Message</span>
             </h2>
 
             <h2 className={css.sidebarComponent} onClick={alert}>
-              <FontAwesomeIcon icon={faGear} className={css.sidebarIcons} onClick={alert}/>
+              <FontAwesomeIcon
+                icon={faGear}
+                className={css.sidebarIcons}
+                onClick={alert}
+              />
               <span className={css.labelDashboard}> Settings</span>
             </h2>
           </div>
