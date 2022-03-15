@@ -42,7 +42,6 @@ function ProfileSect() {
     fetchCurrentListings();
   }, []);
 
-
   useEffect(() => {
     if (isAuthenticated === true) {
       const fetchProfileData = async () => {
@@ -87,7 +86,7 @@ function ProfileSect() {
             {listings.length === 0 && (
               <div>
                 <p className={css.listingProfile}>
-                  You currently do not have any listing
+                  You currently do not have any listings
                 </p>
               </div>
             )}
