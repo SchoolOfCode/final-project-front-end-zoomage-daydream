@@ -82,7 +82,7 @@ const PropertyForm = () => {
       amenities.push("Wifi");
     }
 
-    const post = await fetch(`http://localhost:5001/spaces`, {
+    const post = await fetch(`${API_URL}/spaces`, {
       method: "POST",
 
       headers: {
