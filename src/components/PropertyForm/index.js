@@ -66,7 +66,6 @@ const PropertyForm = () => {
     const address = `${addressone}, ${addresstwo}, ${city}, ${region}, ${postcode}`;
     const amenities = [];
 
-  
     if (fridgecheck) {
       amenities.push("Fridge");
     }
@@ -82,8 +81,6 @@ const PropertyForm = () => {
     if (wificheck) {
       amenities.push("Wifi");
     }
-
- 
 
     const post = await fetch(`http://localhost:5001/spaces`, {
       method: "POST",
@@ -108,9 +105,8 @@ const PropertyForm = () => {
     });
     const dat = await post.json();
 
-    navigate("/dashboard")
+    navigate("/dashboard");
   };
-
 
   return (
     <>
@@ -132,7 +128,6 @@ const PropertyForm = () => {
             />
 
             <input
-              required
               placeholder="Address Line 2"
               name="addresstwo"
               {...register("addresstwo")}
