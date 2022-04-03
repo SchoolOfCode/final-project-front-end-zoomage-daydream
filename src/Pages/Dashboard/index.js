@@ -40,7 +40,7 @@ function Dashboard() {
   return (
     <div className={css.dashboard}>
       <Header />
-      {alertMessage && (
+      {alertMessage&& (
         <div className={css.alertMessage}>
           <p>New feature coming soon!</p>
           <button className={css.closeAlert} onClick={closeAlert}>

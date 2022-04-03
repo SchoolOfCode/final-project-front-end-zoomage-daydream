@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 import "antd/dist/antd.less";
 
-
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
@@ -14,17 +13,9 @@ ReactDOM.render(
       clientId={process.env.REACT_APP_CLIENT}
       redirectUri={window.location.origin}
     >
-
-
-
-
       <BrowserRouter>
         <App />
       </BrowserRouter>
-
-
-
-
     </Auth0Provider>
   </React.StrictMode>,
   document.getElementById("root")

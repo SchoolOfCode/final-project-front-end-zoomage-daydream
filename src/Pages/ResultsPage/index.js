@@ -12,8 +12,6 @@ const Result = () => {
   const [highToLow, setHighToLow] = useState([]);
   const [filterState, setFilterState] = useState("")
   const results = location.state.payload;
-  // console.log(results);
-
 
   const sortHighToLow = (e) => {
     const filterResults = [...results];
@@ -25,12 +23,13 @@ const Result = () => {
       );
       setFilterState(true)
       setHighToLow(sortHigh);
-    } else if (value === "low") {
-      const sortHigh = filterResults.sort(
+    } 
+    else if (value === "low") {
+      const sortLow = filterResults.sort(
         (a, b) => a.hourly_price - b.hourly_price
       );
       setFilterState(false)
-      setLowToHigh(sortHigh);
+      setLowToHigh(sortLow);
     }
   };
 
@@ -96,7 +95,7 @@ const Result = () => {
                 );
               })}
         </div>
-     
+ <a href="www.google.com">Google!</a>
       </div>
       </div>
       <Footer />
