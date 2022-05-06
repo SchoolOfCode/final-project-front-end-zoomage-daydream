@@ -33,7 +33,7 @@ function Card({ image, address, starttime, id, price }) {
         <p>{starttime} - 17:00</p>
         <p>Sundays - Fridays</p>
         <p>Price: £{price}/hour</p>
-        <p>4.5*</p>
+        <p>4,5*</p>
       </div>
     </div>
   );
