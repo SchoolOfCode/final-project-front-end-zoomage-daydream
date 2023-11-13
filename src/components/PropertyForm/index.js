@@ -332,8 +332,8 @@ const PropertyForm = () => {
               <p className="addinfop">Please upload images of the space here</p>
               <ImageUploader picture={propertyInfo} />
             </div>
-            <div className="button">
               <button className="submitButton">Submit</button>
+            <div className="button">
             </div>
           </div>
         </div>
